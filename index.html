@@ -1,8 +1,15 @@
-<!DOCTYPE html><html lang="hi">
-<head><meta charset="UTF-8"><meta name="viewport"
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
 content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>Neelam's Rakhi Mission 🎀</title><style>
+<title>Neelam's Rakhi Mission 🎀</title>
+
+<style>
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@400;600;700&display=swap');
 
@@ -61,11 +68,10 @@ body{
 
 
 /* =========================
-   PAGE
+   PAGES
 ========================= */
 
 .page{
-
   min-height:100vh;
   min-height:100svh;
 
@@ -74,7 +80,7 @@ body{
   align-items:center;
   justify-content:center;
 
-  padding:45px 18px 115px;
+  padding:45px 18px 110px;
 
   text-align:center;
 }
@@ -84,17 +90,6 @@ body{
 
   animation:enter .55s ease;
 }
-
-
-/* IMPORTANT:
-   Page 4 ko content ke according
-   height lene dena.
-*/
-
-.page.letterPage{
-  align-items:flex-start;
-}
-
 
 @keyframes enter{
 
@@ -112,11 +107,10 @@ body{
 
 
 /* =========================
-   BOX
+   MAIN BOX
 ========================= */
 
 .box{
-
   width:min(650px,100%);
 
   padding:35px 22px;
@@ -141,6 +135,7 @@ body{
 
 .emoji{
   font-size:75px;
+
   margin-bottom:10px;
 
   animation:bob 2s infinite ease-in-out;
@@ -155,7 +150,6 @@ body{
 }
 
 h1{
-
   color:#9b1948;
 
   font-size:
@@ -167,7 +161,6 @@ h1{
 }
 
 h2{
-
   color:#9b1948;
 
   font-size:30px;
@@ -176,14 +169,12 @@ h2{
 }
 
 p{
-
   font-size:17px;
 
   line-height:1.8;
 }
 
 .cursive{
-
   font-family:Caveat,cursive;
 
   font-size:32px;
@@ -230,16 +221,16 @@ button:active{
 
 button:disabled{
   opacity:.4;
+
   cursor:not-allowed;
 }
 
 
 /* =========================
-   MISSION
+   MISSIONS
 ========================= */
 
 .mission{
-
   display:grid;
 
   gap:13px;
@@ -273,6 +264,7 @@ button:disabled{
 
 .tick{
   float:right;
+
   display:none;
 }
 
@@ -282,7 +274,7 @@ button:disabled{
 
 
 /* =========================
-   CARDS
+   SECRET CARDS
 ========================= */
 
 .cards{
@@ -307,6 +299,7 @@ button:disabled{
   display:flex;
 
   align-items:center;
+
   justify-content:center;
 
   padding:18px;
@@ -344,19 +337,15 @@ button:disabled{
 }
 
 
-/* ==================================================
-   LETTER PAGE
-================================================== */
-
-/*
-   Closed envelope
-*/
+/* =================================================
+   ENVELOPE
+================================================= */
 
 .envelope{
 
   width:300px;
 
-  height:195px;
+  height:185px;
 
   margin:45px auto 30px;
 
@@ -374,15 +363,15 @@ button:disabled{
   perspective:1000px;
 
   transition:
-  height .8s ease;
+  height .7s ease;
 
   touch-action:manipulation;
 }
 
 
-/*
+/* =========================
    LETTER PAPER
-*/
+========================= */
 
 .letter{
 
@@ -393,25 +382,21 @@ button:disabled{
 
   width:86%;
 
-  /*
-     Closed state
-  */
-
-  height:180px;
+  height:165px;
 
   background:#fffdf4;
 
   border-radius:8px;
 
-  padding:20px 17px;
+  padding:12px 13px;
 
   color:#6d293d;
 
   font-family:Caveat,cursive;
 
-  font-size:21px;
+  font-size:17px;
 
-  line-height:1.35;
+  line-height:1.18;
 
   text-align:left;
 
@@ -423,15 +408,14 @@ button:disabled{
   0 5px 18px rgba(0,0,0,.10);
 
   transition:
-  height .8s ease,
-  transform .8s ease;
-
+  height .7s ease,
+  transform .7s ease;
 }
 
 
-/*
-   FLAP
-*/
+/* =========================
+   ENVELOPE FLAP
+========================= */
 
 .flap{
 
@@ -460,13 +444,12 @@ button:disabled{
   transform .7s ease;
 
   pointer-events:none;
-
 }
 
 
-/*
-   FRONT OF ENVELOPE
-*/
+/* =========================
+   ENVELOPE FRONT
+========================= */
 
 .envelope:after{
 
@@ -497,42 +480,25 @@ button:disabled{
 }
 
 
-/* ==================================================
+/* =========================
    OPEN LETTER
-================================================== */
-
-/*
-   THIS IS THE MAIN FIX.
-
-   Open hote hi envelope/page
-   content ke according bada hoga.
-*/
+========================= */
 
 .envelope.open{
 
-  height:540px;
+  height:365px;
 
 }
-
-
-/*
-   Letter becomes full readable paper.
-*/
 
 .envelope.open .letter{
 
-  height:480px;
+  height:320px;
 
-  transform:translateY(0);
+  transform:translateY(-2px);
 
-  overflow:visible;
+  overflow:hidden;
 
 }
-
-
-/*
-   Flap opens.
-*/
 
 .envelope.open .flap{
 
@@ -541,20 +507,9 @@ button:disabled{
 }
 
 
-/*
-   Letter button spacing
-*/
-
-#letterBtn{
-
-  margin-top:35px;
-
-}
-
-
-/* ==================================================
+/* =========================
    GIFT
-================================================== */
+========================= */
 
 .gift{
 
@@ -578,6 +533,7 @@ button:disabled{
   bottom:0;
 
   width:100%;
+
   height:105px;
 
   background:#9b1948;
@@ -594,6 +550,7 @@ button:disabled{
   left:68px;
 
   width:35px;
+
   height:100%;
 
   background:#f5c75d;
@@ -604,9 +561,11 @@ button:disabled{
   position:absolute;
 
   top:15px;
+
   left:-7px;
 
   width:184px;
+
   height:35px;
 
   background:#b52c5b;
@@ -627,6 +586,7 @@ button:disabled{
   left:75px;
 
   width:35px;
+
   height:100%;
 
   background:#f5c75d;
@@ -702,7 +662,7 @@ button:disabled{
 
 
 /* =========================
-   FLOATING
+   FLOATING EMOJIS
 ========================= */
 
 .float{
@@ -747,28 +707,8 @@ button:disabled{
 
     padding-top:50px;
 
-    padding-bottom:115px;
+    padding-bottom:110px;
   }
-
-
-  .page.letterPage{
-
-    /*
-       Letter page full content
-       ke according scroll hogi.
-    */
-
-    display:none;
-
-  }
-
-
-  .page.letterPage.active{
-
-    display:flex;
-
-  }
-
 
   .box{
 
@@ -777,62 +717,44 @@ button:disabled{
     border-radius:26px;
   }
 
-
   h1{
 
     font-size:
     clamp(40px,14vw,65px);
-
   }
-
 
   h2{
     font-size:27px;
   }
 
-
   p{
     font-size:15.5px;
   }
-
 
   .emoji{
     font-size:65px;
   }
 
-
   .cards{
     grid-template-columns:1fr;
   }
-
 
   .secret{
     min-height:105px;
   }
 
 
-  /* MOBILE LETTER */
+  /* =========================
+     MOBILE LETTER
+  ========================= */
 
   .envelope{
 
     width:min(290px,90vw);
 
-    height:190px;
+    height:180px;
 
     margin-top:40px;
-
-  }
-
-
-  /*
-     Mobile open state.
-     Big enough for entire message.
-  */
-
-  .envelope.open{
-
-    height:620px;
-
   }
 
 
@@ -842,47 +764,45 @@ button:disabled{
 
     left:6%;
 
-    height:175px;
+    height:160px;
 
-    padding:22px 17px;
+    padding:11px 12px;
 
-    font-size:20px;
+    font-size:15.5px;
 
-    line-height:1.35;
+    line-height:1.15;
+  }
 
+
+  .envelope.open{
+
+    height:350px;
   }
 
 
   .envelope.open .letter{
 
-    height:555px;
+    height:305px;
 
-    transform:translateY(0);
+    transform:translateY(-2px);
 
-    overflow:visible;
-
+    overflow:hidden;
   }
 
 
   #letterBtn{
 
-    margin-top:35px;
-
+    margin-top:30px;
   }
 
 }
 
 
 /* =========================
-   VERY SMALL PHONE
+   SMALL PHONES
 ========================= */
 
 @media(max-width:360px){
-
-  .box{
-    padding:25px 12px;
-  }
-
 
   .envelope{
 
@@ -891,231 +811,450 @@ button:disabled{
   }
 
 
-  .envelope.open{
+  .letter{
 
-    height:650px;
+    font-size:14.5px;
 
+    line-height:1.12;
+
+    padding:10px 11px;
   }
 
 
-  .letter{
+  .envelope.open{
 
-    font-size:18px;
-
-    line-height:1.32;
-
-    padding:20px 14px;
+    height:340px;
 
   }
 
 
   .envelope.open .letter{
 
-    height:585px;
+    height:295px;
 
   }
 
 }
 
-</style></head><body><div
+</style>
+
+</head>
+
+
+<body>
+
+
+<div
 class="progress"
 id="progress">
-</div><!-- ==================================================
-     PAGE 1
-================================================== --><section class="page active"><div class="box"><div class="emoji">
-🎀
-</div><p>
-SECRET MISSION • 2026
-</p><h1>
-Neelam ❤️
-</h1><p>Aaj normal Raksha Bandhan nahi hai...
+</div>
 
-<br>kyunki tumhare bhai ne tumhare liye
+
+<!-- =================================================
+     PAGE 1
+================================================= -->
+
+<section class="page active">
+
+<div class="box">
+
+<div class="emoji">
+🎀
+</div>
+
+<p>
+SECRET MISSION • 2026
+</p>
+
+<h1>
+Neelam ❤️
+</h1>
+
+<p>
+
+Aaj normal Raksha Bandhan nahi hai...
+
+<br>
+
+kyunki tumhare bhai ne tumhare liye
 ek secret mission banaya hai. 😎
 
-</p><p class="cursive">
+</p>
+
+<p class="cursive">
 Ready ho?
-</p><button onclick="next()">
+</p>
+
+<button onclick="next()">
 MISSION START 🚀
-</button></div></section><!-- ==================================================
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
      PAGE 2
-================================================== --><section class="page"><div class="box"><div class="emoji">
+================================================= -->
+
+<section class="page">
+
+<div class="box">
+
+<div class="emoji">
 🪢
-</div><h2>
+</div>
+
+<h2>
 RAKHI MISSION
-</h2><p>Neeche ke teen missions complete karo.
+</h2>
 
-<br>Tabhi secret unlock hoga. 👀
+<p>
 
-</p><div class="mission"><div
+Neeche ke teen missions complete karo.
+
+<br>
+
+Tabhi secret unlock hoga. 👀
+
+</p>
+
+
+<div class="mission">
+
+
+<div
 class="task"
 onclick="completeTask(this)"
->❤️ Mission 01 — Bhai ko smile dena
+>
+
+❤️ Mission 01 — Bhai ko smile dena
 
 <span class="tick">
 ✅
-</span></div><div
+</span>
+
+</div>
+
+
+<div
 class="task"
 onclick="completeTask(this)"
->😂 Mission 02 — Bhai ki bakwaas tolerate karna
+>
+
+😂 Mission 02 — Bhai ki bakwaas tolerate karna
 
 <span class="tick">
 ✅
-</span></div><div
+</span>
+
+</div>
+
+
+<div
 class="task"
 onclick="completeTask(this)"
->🫂 Mission 03 — Bhai ko ek virtual hug
+>
+
+🫂 Mission 03 — Bhai ko ek virtual hug
 
 <span class="tick">
 ✅
-</span></div></div><button
+</span>
+
+</div>
+
+
+</div>
+
+
+<button
 id="missionBtn"
 disabled
 onclick="next()"
-
-«»
+>
 
 ALL MISSIONS COMPLETE 🔒
 
-</button></div></section><!-- ==================================================
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
      PAGE 3
-================================================== --><section class="page"><div class="box"><p>
+================================================= -->
+
+<section class="page">
+
+<div class="box">
+
+<p>
 LEVEL 2
-</p><h1>
+</p>
+
+<h1>
 Secret Cards ✨
-</h1><p>Har card ke andar ek secret hai.
+</h1>
 
-<br>Tap karke dekho.
+<p>
 
-</p><div class="cards"><div
+Har card ke andar ek secret hai.
+
+<br>
+
+Tap karke dekho.
+
+</p>
+
+
+<div class="cards">
+
+
+<div
 class="secret"
 onclick="flip(this)"
-><div class="front">💗
+>
+
+<div class="front">
+
+💗
 <br>
 Tap Me
 
-</div><div class="inside">Tu important hai ❤️
+</div>
 
-</div></div><div
+<div class="inside">
+
+Tu important hai ❤️
+
+</div>
+
+</div>
+
+
+<div
 class="secret"
 onclick="flip(this)"
-><div class="front">😂
+>
+
+<div class="front">
+
+😂
 <br>
 Tap Me
 
-</div><div class="inside">Teri bakwaas bhi special hai 😂
+</div>
 
-</div></div><div
+<div class="inside">
+
+Teri bakwaas bhi special hai 😂
+
+</div>
+
+</div>
+
+
+<div
 class="secret"
 onclick="flip(this)"
-><div class="front">🫂
+>
+
+<div class="front">
+
+🫂
 <br>
 Tap Me
 
-</div><div class="inside">Bhai hamesha tere side hai.
+</div>
 
-</div></div><div
+<div class="inside">
+
+Bhai hamesha tere side hai.
+
+</div>
+
+</div>
+
+
+<div
 class="secret"
 onclick="flip(this)"
-><div class="front">🎀
+>
+
+<div class="front">
+
+🎀
 <br>
 Tap Me
 
-</div><div class="inside">Happy Raksha Bandhan, Neelam!
+</div>
 
-</div></div></div><button onclick="next()">
+<div class="inside">
+
+Happy Raksha Bandhan, Neelam!
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<button onclick="next()">
 NEXT SECRET 💌
-</button></div></section><!-- ==================================================
-     PAGE 4
-================================================== --><section
-class="page letterPage"
-id="letterPage"
-><div class="box"><p>
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 4 - LETTER
+================================================= -->
+
+<section class="page">
+
+<div class="box">
+
+<p>
 PRIVATE MESSAGE
-</p><h1>
+</p>
+
+<h1>
 Bhai Ki Chitthi 💌
-</h1><p>
+</h1>
+
+<p>
 Envelope par tap karo...
-</p><div
+</p>
+
+
+<div
 class="envelope"
 id="envelope"
 onclick="openLetter(this)"
-><!-- LETTER --><div class="letter">Dear Neelam ❤️
+>
 
-<br><br>
+
+<div class="letter">
+
+Dear Neelam ❤️
+
+<br>
 
 Tum mujhe apna bhai maano ya na maano,
 lekin main tumhe apni behen maanta hoon. 🫂
 
-<br><br>
+<br>
 
-Tumne mujhe kaha tha na ki
-tum mere liye special ho...
+Tumne kaha tha na ki tum mere liye special ho...
+toh yaad rakhna, tum bhi mere liye bahut special ho. ❤️
 
-toh bas itna yaad rakhna,
-tum bhi mere liye bahut special ho. ❤️
-
-<br><br>
+<br>
 
 Tumhari har problem mein
-main hamesha tumhare saath khada rahunga.
+main hamesha tumhare saath rahunga.
 
-<br>Chahe situation kaisi bhi ho,
-tumhe kabhi akela feel nahi hone dunga.
-
-<br><br>
+<br>
 
 Meri bas yahi dua hai ki
 tum hamesha khush raho,
 hamesha haste raho,
-
 aur tum par kabhi koi takleef na aaye. ✨
 
-<br><br>
-
-Life mein tumhe woh saari khushiyan mile
-jinki tum deserve karti ho.
-
-<br><br>
+<br>
 
 Happy Raksha Bandhan, Neelam! 🎀❤️
 
-<br><br>
+<br>
 
 — Tumhara Bhai 🫂
 
-</div><!-- FLAP --><div class="flap">
-</div></div><button
+</div>
+
+
+<div class="flap">
+</div>
+
+
+</div>
+
+
+<button
 id="letterBtn"
 disabled
 onclick="next()"
-
-«»
+>
 
 SECRET GIFT 🎁
 
-</button></div></section><!-- ==================================================
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
      PAGE 5
-================================================== --><section class="page"><div class="box"><p>
+================================================= -->
+
+<section class="page">
+
+<div class="box">
+
+<p>
 FINAL LEVEL
-</p><h1>
+</p>
+
+<h1>
 Mystery Gift 🎁
-</h1><p>Box ko tap karo...
+</h1>
 
-<br>shayad kuch interesting mile. 👀
+<p>
 
-</p><div
+Box ko tap karo...
+
+<br>
+
+shayad kuch interesting mile. 👀
+
+</p>
+
+
+<div
 class="gift"
 id="gift"
 onclick="openGift(this)"
-><div class="lid">
-</div><div class="giftbody">
-</div></div><div
+>
+
+<div class="lid">
+</div>
+
+<div class="giftbody">
+</div>
+
+</div>
+
+
+<div
 class="giftResult"
 id="giftResult"
-><h2>
+>
+
+<h2>
 🎉 SURPRISE! 🎉
-</h2><p>Is baar expensive gift nahi de paaya...
+</h2>
+
+<p>
+
+Is baar expensive gift nahi de paaya...
 
 <br><br>
 
@@ -1126,46 +1265,102 @@ jo paise se nahi milta. ❤️
 
 <strong>
 Ye poori website sirf tumhare liye hai.
-</strong></p></div><button
+</strong>
+
+</p>
+
+</div>
+
+
+<button
 id="giftBtn"
 disabled
 onclick="next()"
-
-«»
+>
 
 LAST SCREEN ❤️
 
-</button></div></section><!-- ==================================================
-     PAGE 6
-================================================== --><section class="page"><div class="box"><div class="emoji">
-🫂
-</div><p>
-MISSION COMPLETE
-</p><h1>
-Neelam ❤️
-</h1><p>Chahe life kitni bhi busy ho,
+</button>
 
-<br>hamari ye bhai-behen wali bonding
+</div>
+
+</section>
+
+
+<!-- =================================================
+     PAGE 6
+================================================= -->
+
+<section class="page">
+
+<div class="box">
+
+<div class="emoji">
+🫂
+</div>
+
+<p>
+MISSION COMPLETE
+</p>
+
+<h1>
+Neelam ❤️
+</h1>
+
+<p>
+
+Chahe life kitni bhi busy ho,
+
+<br>
+
+hamari ye bhai-behen wali bonding
 hamesha special rahegi.
 
-</p><p class="cursive">Stay Happy.
+</p>
+
+<p class="cursive">
+
+Stay Happy.
 Stay Crazy.
 Stay Neelam. ✨
 
-</p><button onclick="celebrate()">🎊 FINAL SURPRISE
+</p>
 
-</button></div></section><!-- ==================================================
-     NAVIGATION
-================================================== --><div class="nav"><button onclick="previous()">
+
+<button onclick="celebrate()">
+
+🎊 FINAL SURPRISE
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =================================================
+     NAV
+================================================= -->
+
+<div class="nav">
+
+<button onclick="previous()">
 ‹
-</button><button onclick="next()">
+</button>
+
+<button onclick="next()">
 ›
-</button></div><script>
+</button>
+
+</div>
 
 
-/* ==================================================
+<script>
+
+
+/* =========================
    PAGE SYSTEM
-================================================== */
+========================= */
 
 let current = 0;
 
@@ -1211,10 +1406,6 @@ function show(index){
   percentage + "%";
 
 
-  /*
-    New page ko top se start karo.
-  */
-
   window.scrollTo({
     top:0,
     behavior:"smooth"
@@ -1226,20 +1417,12 @@ function show(index){
 }
 
 
-/* =========================
-   NEXT
-========================= */
-
 function next(){
 
   show(current + 1);
 
 }
 
-
-/* =========================
-   PREVIOUS
-========================= */
 
 function previous(){
 
@@ -1248,9 +1431,9 @@ function previous(){
 }
 
 
-/* ==================================================
-   MISSION
-================================================== */
+/* =========================
+   MISSIONS
+========================= */
 
 let completed = 0;
 
@@ -1260,9 +1443,7 @@ function completeTask(el){
   if(
     el.classList.contains("done")
   ){
-
     return;
-
   }
 
 
@@ -1282,7 +1463,7 @@ function completeTask(el){
     btn.disabled = false;
 
     btn.innerHTML =
-      "MISSION UNLOCKED 🔓";
+    "MISSION UNLOCKED 🔓";
 
 
     celebrateSmall();
@@ -1292,9 +1473,9 @@ function completeTask(el){
 }
 
 
-/* ==================================================
+/* =========================
    CARDS
-================================================== */
+========================= */
 
 function flip(card){
 
@@ -1303,9 +1484,9 @@ function flip(card){
 }
 
 
-/* ==================================================
+/* =========================
    LETTER
-================================================== */
+========================= */
 
 let letterOpened = false;
 
@@ -1313,9 +1494,7 @@ let letterOpened = false;
 function openLetter(el){
 
   if(letterOpened){
-
     return;
-
   }
 
 
@@ -1323,28 +1502,6 @@ function openLetter(el){
 
 
   el.classList.add("open");
-
-
-  /*
-    Letter open hone ke baad
-    page ko letter ke start ke
-    paas gently scroll karna.
-  */
-
-  setTimeout(()=>{
-
-    const page =
-    document.getElementById(
-      "letterPage"
-    );
-
-
-    page.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-
-  },400);
 
 
   createFloat(15);
@@ -1358,15 +1515,16 @@ function openLetter(el){
 
   button.disabled = false;
 
+
   button.innerHTML =
-    "SECRET GIFT UNLOCKED 🎁";
+  "SECRET GIFT UNLOCKED 🎁";
 
 }
 
 
-/* ==================================================
+/* =========================
    GIFT
-================================================== */
+========================= */
 
 let giftOpened = false;
 
@@ -1374,9 +1532,7 @@ let giftOpened = false;
 function openGift(el){
 
   if(giftOpened){
-
     return;
-
   }
 
 
@@ -1393,7 +1549,7 @@ function openGift(el){
 
 
   result.style.display =
-    "block";
+  "block";
 
 
   const button =
@@ -1404,8 +1560,9 @@ function openGift(el){
 
   button.disabled = false;
 
+
   button.innerHTML =
-    "LAST SCREEN ❤️";
+  "LAST SCREEN ❤️";
 
 
   celebrate();
@@ -1413,9 +1570,9 @@ function openGift(el){
 }
 
 
-/* ==================================================
+/* =========================
    FLOATING EMOJIS
-================================================== */
+========================= */
 
 function createFloat(number){
 
@@ -1430,7 +1587,7 @@ function createFloat(number){
 
 
     e.className =
-      "float";
+    "float";
 
 
     const emojis = [
@@ -1446,30 +1603,30 @@ function createFloat(number){
 
 
     e.innerHTML =
-      emojis[
-        Math.floor(
-          Math.random() *
-          emojis.length
-        )
-      ];
+    emojis[
+      Math.floor(
+        Math.random() *
+        emojis.length
+      )
+    ];
 
 
     e.style.left =
-      Math.random() * 100 + "vw";
+    Math.random() * 100 + "vw";
 
 
     e.style.fontSize =
-      (
-        18 +
-        Math.random() * 25
-      ) + "px";
+    (
+      18 +
+      Math.random() * 25
+    ) + "px";
 
 
     e.style.animationDuration =
-      (
-        4 +
-        Math.random() * 4
-      ) + "s";
+    (
+      4 +
+      Math.random() * 4
+    ) + "s";
 
 
     document.body.appendChild(e);
@@ -1501,9 +1658,9 @@ function celebrate(){
 }
 
 
-/* ==================================================
-   SWIPE
-================================================== */
+/* =========================
+   MOBILE SWIPE
+========================= */
 
 let touchStartX = 0;
 
@@ -1525,11 +1682,11 @@ document.addEventListener(
 
 
     touchStartX =
-      e.touches[0].clientX;
+    e.touches[0].clientX;
 
 
     touchStartY =
-      e.touches[0].clientY;
+    e.touches[0].clientY;
 
   },
 
@@ -1555,26 +1712,26 @@ document.addEventListener(
 
 
     const endX =
-      e.changedTouches[0].clientX;
+    e.changedTouches[0].clientX;
 
 
     const endY =
-      e.changedTouches[0].clientY;
+    e.changedTouches[0].clientY;
 
 
     const diffX =
-      endX - touchStartX;
+    endX - touchStartX;
 
 
     const diffY =
-      endY - touchStartY;
+    endY - touchStartY;
 
 
     /*
-      ONLY horizontal swipe
-      changes screen.
+      Horizontal swipe:
+      next / previous page.
 
-      Vertical swipe =
+      Vertical swipe:
       normal scrolling.
     */
 
@@ -1609,9 +1766,9 @@ document.addEventListener(
 );
 
 
-/* ==================================================
+/* =========================
    KEYBOARD
-================================================== */
+========================= */
 
 document.addEventListener(
 
@@ -1632,9 +1789,9 @@ document.addEventListener(
 );
 
 
-/* ==================================================
+/* =========================
    START
-================================================== */
+========================= */
 
 setTimeout(
   ()=>{
@@ -1643,5 +1800,7 @@ setTimeout(
   500
 );
 
-</script></body>
+</script>
+
+</body>
 </html>
