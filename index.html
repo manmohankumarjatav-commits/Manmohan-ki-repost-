@@ -7,7 +7,7 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>Neelam's Rakhi Mission 🎀</title>
+<title>Tanisha's Rakhi Mission 🎀</title>
 
 <style>
 
@@ -25,193 +25,111 @@ html{
 
 body{
   font-family:Poppins,sans-serif;
-
-  background:
-  linear-gradient(
-    135deg,
-    #fff1f5,
-    #ffe5ed,
-    #fff7df
-  );
-
+  background:linear-gradient(135deg,#fff1f5,#ffe5ed,#fff7df);
   color:#431522;
-
   min-height:100vh;
-
   overflow-x:hidden;
   overflow-y:auto;
-
   -webkit-overflow-scrolling:touch;
-
   touch-action:pan-y;
 }
-
-
-/* =========================
-   PROGRESS
-========================= */
 
 .progress{
   position:fixed;
   top:0;
   left:0;
-
   width:0;
   height:5px;
-
   background:#9b1948;
-
   z-index:9999;
-
   transition:width .4s ease;
 }
-
-
-/* =========================
-   PAGES
-========================= */
 
 .page{
   min-height:100vh;
   min-height:100svh;
-
   display:none;
-
   align-items:center;
   justify-content:center;
-
   padding:45px 18px 110px;
-
   text-align:center;
 }
 
 .page.active{
   display:flex;
-
   animation:enter .55s ease;
 }
 
 @keyframes enter{
-
   from{
     opacity:0;
     transform:translateY(25px) scale(.98);
   }
-
   to{
     opacity:1;
     transform:translateY(0) scale(1);
   }
-
 }
-
-
-/* =========================
-   MAIN BOX
-========================= */
 
 .box{
   width:min(650px,100%);
-
   padding:35px 22px;
-
   border-radius:32px;
-
   background:rgba(255,255,255,.84);
-
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
-
-  box-shadow:
-  0 20px 70px rgba(125,24,53,.14);
-
+  box-shadow:0 20px 70px rgba(125,24,53,.14);
   position:relative;
 }
 
-
-/* =========================
-   TEXT
-========================= */
-
 .emoji{
   font-size:75px;
-
   margin-bottom:10px;
-
   animation:bob 2s infinite ease-in-out;
 }
 
 @keyframes bob{
-
   50%{
     transform:translateY(-9px) rotate(4deg);
   }
-
 }
 
 h1{
   color:#9b1948;
-
-  font-size:
-  clamp(42px,11vw,75px);
-
+  font-size:clamp(42px,11vw,75px);
   line-height:1;
-
   margin:15px 0;
 }
 
 h2{
   color:#9b1948;
-
   font-size:30px;
-
   margin-bottom:15px;
 }
 
 p{
   font-size:17px;
-
   line-height:1.8;
 }
 
 .cursive{
   font-family:Caveat,cursive;
-
   font-size:32px;
-
   color:#8e2949;
-
   margin-top:18px;
 }
 
-
-/* =========================
-   BUTTON
-========================= */
-
 button{
-
   border:0;
-
   background:#9b1948;
-
   color:white;
-
   padding:15px 25px;
-
   border-radius:50px;
-
   margin-top:25px;
-
   font-size:16px;
-
   font-weight:700;
-
   cursor:pointer;
-
-  box-shadow:
-  0 10px 25px rgba(155,25,72,.27);
-
+  box-shadow:0 10px 25px rgba(155,25,72,.27);
   transition:.2s;
 }
 
@@ -221,36 +139,24 @@ button:active{
 
 button:disabled{
   opacity:.4;
-
   cursor:not-allowed;
 }
 
 
-/* =========================
-   MISSIONS
-========================= */
+/* MISSIONS */
 
 .mission{
   display:grid;
-
   gap:13px;
-
   margin-top:25px;
 }
 
 .task{
-
   background:white;
-
   padding:18px;
-
   border-radius:18px;
-
-  box-shadow:
-  0 8px 25px rgba(104,21,42,.11);
-
+  box-shadow:0 8px 25px rgba(104,21,42,.11);
   cursor:pointer;
-
   transition:.3s;
 }
 
@@ -264,7 +170,6 @@ button:disabled{
 
 .tick{
   float:right;
-
   display:none;
 }
 
@@ -273,58 +178,36 @@ button:disabled{
 }
 
 
-/* =========================
-   SECRET CARDS
-========================= */
+/* CARDS */
 
 .cards{
-
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
   gap:14px;
-
   margin-top:25px;
 }
 
 .secret{
-
   min-height:125px;
-
   background:#fff;
-
   border-radius:20px;
-
   display:flex;
-
   align-items:center;
-
   justify-content:center;
-
   padding:18px;
-
-  box-shadow:
-  0 8px 25px rgba(104,21,42,.11);
-
+  box-shadow:0 8px 25px rgba(104,21,42,.11);
   cursor:pointer;
-
   transition:.4s;
 }
 
 .secret .inside{
-
   display:none;
-
   color:#8d2346;
-
   font-weight:600;
 }
 
 .secret.open{
-
   transform:rotateY(360deg);
-
   background:#ffe4ed;
 }
 
@@ -337,390 +220,235 @@ button:disabled{
 }
 
 
-/* =================================================
-   ENVELOPE
-================================================= */
+/* ENVELOPE */
 
 .envelope{
-
   width:300px;
-
   height:185px;
-
   margin:45px auto 30px;
-
   position:relative;
-
   background:#d45172;
-
   border-radius:10px;
-
   cursor:pointer;
-
-  box-shadow:
-  0 20px 45px rgba(104,21,42,.20);
-
+  box-shadow:0 20px 45px rgba(104,21,42,.20);
   perspective:1000px;
-
-  transition:
-  height .7s ease;
-
+  transition:height .7s ease;
   touch-action:manipulation;
 }
 
 
-/* =========================
-   LETTER PAPER
-========================= */
+/* LETTER */
 
 .letter{
-
   position:absolute;
-
   left:7%;
   bottom:5px;
-
   width:86%;
-
   height:165px;
-
   background:#fffdf4;
-
   border-radius:8px;
-
   padding:12px 13px;
-
   color:#6d293d;
-
   font-family:Caveat,cursive;
-
   font-size:17px;
-
   line-height:1.18;
-
   text-align:left;
-
   overflow:hidden;
-
   z-index:2;
-
-  box-shadow:
-  0 5px 18px rgba(0,0,0,.10);
-
+  box-shadow:0 5px 18px rgba(0,0,0,.10);
   transition:
-  height .7s ease,
-  transform .7s ease;
+    height .7s ease,
+    transform .7s ease;
 }
 
 
-/* =========================
-   ENVELOPE FLAP
-========================= */
+/* FLAP */
 
 .flap{
-
   position:absolute;
-
   top:0;
   left:0;
-
   width:100%;
   height:100%;
-
   background:#bd3c60;
-
-  clip-path:
-  polygon(
-    0 0,
-    50% 55%,
-    100% 0
-  );
-
+  clip-path:polygon(0 0,50% 55%,100% 0);
   z-index:4;
-
   transform-origin:top center;
-
-  transition:
-  transform .7s ease;
-
+  transition:transform .7s ease;
   pointer-events:none;
 }
 
 
-/* =========================
-   ENVELOPE FRONT
-========================= */
+/* ENVELOPE FRONT */
 
 .envelope:after{
-
   content:"";
-
   position:absolute;
-
   left:0;
   bottom:0;
-
   width:100%;
   height:70%;
-
   background:#d45172;
-
-  clip-path:
-  polygon(
+  clip-path:polygon(
     0 0,
     50% 55%,
     100% 0,
     100% 100%,
     0 100%
   );
-
   z-index:3;
-
   pointer-events:none;
 }
 
 
-/* =========================
-   OPEN LETTER
-========================= */
+/* OPEN LETTER */
 
 .envelope.open{
-
   height:365px;
-
 }
 
 .envelope.open .letter{
-
   height:320px;
-
   transform:translateY(-2px);
-
   overflow:hidden;
-
 }
 
 .envelope.open .flap{
-
   transform:rotateX(180deg);
-
 }
 
 
-/* =========================
-   GIFT
-========================= */
+/* GIFT */
 
 .gift{
-
   width:170px;
-
   height:145px;
-
   margin:55px auto 35px;
-
   position:relative;
-
   cursor:pointer;
-
   touch-action:manipulation;
 }
 
 .giftbody{
-
   position:absolute;
-
   bottom:0;
-
   width:100%;
-
   height:105px;
-
   background:#9b1948;
-
   border-radius:8px;
 }
 
 .giftbody:after{
-
   content:"";
-
   position:absolute;
-
   left:68px;
-
   width:35px;
-
   height:100%;
-
   background:#f5c75d;
 }
 
 .lid{
-
   position:absolute;
-
   top:15px;
-
   left:-7px;
-
   width:184px;
-
   height:35px;
-
   background:#b52c5b;
-
   border-radius:7px;
-
   z-index:2;
-
   transition:.7s;
 }
 
 .lid:after{
-
   content:"";
-
   position:absolute;
-
   left:75px;
-
   width:35px;
-
   height:100%;
-
   background:#f5c75d;
 }
 
 .gift.open .lid{
-
-  transform:
-  translateY(-80px)
-  rotate(-8deg);
+  transform:translateY(-80px) rotate(-8deg);
 }
 
 .giftResult{
-
   display:none;
-
   animation:pop .7s ease;
 }
 
 @keyframes pop{
-
   from{
     opacity:0;
     transform:scale(.6);
   }
-
   to{
     opacity:1;
     transform:scale(1);
   }
-
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAVIGATION */
 
 .nav{
-
   position:fixed;
-
-  bottom:
-  calc(18px + env(safe-area-inset-bottom));
-
+  bottom:calc(18px + env(safe-area-inset-bottom));
   left:50%;
-
   transform:translateX(-50%);
-
   display:flex;
-
   gap:10px;
-
   z-index:9000;
 }
 
 .nav button{
-
   width:48px;
   height:48px;
-
   padding:0;
-
   margin:0;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   font-size:27px;
 }
 
 
-/* =========================
-   FLOATING EMOJIS
-========================= */
+/* FLOATING */
 
 .float{
-
   position:fixed;
-
   bottom:-40px;
-
   pointer-events:none;
-
   user-select:none;
-
-  animation:
-  floatUp linear forwards;
-
+  animation:floatUp linear forwards;
   z-index:5000;
 }
 
 @keyframes floatUp{
-
   to{
-
-    transform:
-    translateY(-110vh)
-    rotate(360deg);
-
+    transform:translateY(-110vh) rotate(360deg);
     opacity:0;
   }
-
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
   .page{
-
     align-items:flex-start;
-
     padding-top:50px;
-
     padding-bottom:110px;
   }
 
   .box{
-
     padding:30px 15px;
-
     border-radius:26px;
   }
 
   h1{
-
-    font-size:
-    clamp(40px,14vw,65px);
+    font-size:clamp(40px,14vw,65px);
   }
 
   h2{
@@ -743,97 +471,58 @@ button:disabled{
     min-height:105px;
   }
 
-
-  /* =========================
-     MOBILE LETTER
-  ========================= */
-
   .envelope{
-
     width:min(290px,90vw);
-
     height:180px;
-
     margin-top:40px;
   }
 
-
   .letter{
-
     width:88%;
-
     left:6%;
-
     height:160px;
-
     padding:11px 12px;
-
     font-size:15.5px;
-
     line-height:1.15;
   }
 
-
   .envelope.open{
-
     height:350px;
   }
 
-
   .envelope.open .letter{
-
     height:305px;
-
     transform:translateY(-2px);
-
     overflow:hidden;
   }
 
-
   #letterBtn{
-
     margin-top:30px;
   }
-
 }
 
 
-/* =========================
-   SMALL PHONES
-========================= */
+/* SMALL PHONES */
 
 @media(max-width:360px){
 
   .envelope{
-
     width:255px;
-
   }
 
-
   .letter{
-
     font-size:14.5px;
-
     line-height:1.12;
-
     padding:10px 11px;
   }
 
-
   .envelope.open{
-
     height:340px;
-
   }
-
 
   .envelope.open .letter{
-
     height:295px;
-
   }
-
 }
 
 </style>
@@ -844,31 +533,20 @@ button:disabled{
 <body>
 
 
-<div
-class="progress"
-id="progress">
-</div>
+<div class="progress" id="progress"></div>
 
 
-<!-- =================================================
-     PAGE 1
-================================================= -->
+<!-- PAGE 1 -->
 
 <section class="page active">
 
 <div class="box">
 
-<div class="emoji">
-🎀
-</div>
+<div class="emoji">🎀</div>
 
-<p>
-SECRET MISSION • 2026
-</p>
+<p>SECRET MISSION • 2026</p>
 
-<h1>
-Neelam ❤️
-</h1>
+<h1>Tanisha ❤️</h1>
 
 <p>
 
@@ -894,21 +572,15 @@ MISSION START 🚀
 </section>
 
 
-<!-- =================================================
-     PAGE 2
-================================================= -->
+<!-- PAGE 2 -->
 
 <section class="page">
 
 <div class="box">
 
-<div class="emoji">
-🪢
-</div>
+<div class="emoji">🪢</div>
 
-<h2>
-RAKHI MISSION
-</h2>
+<h2>RAKHI MISSION</h2>
 
 <p>
 
@@ -920,60 +592,38 @@ Tabhi secret unlock hoga. 👀
 
 </p>
 
-
 <div class="mission">
 
-
-<div
-class="task"
-onclick="completeTask(this)"
->
+<div class="task" onclick="completeTask(this)">
 
 ❤️ Mission 01 — Bhai ko smile dena
 
-<span class="tick">
-✅
-</span>
+<span class="tick">✅</span>
 
 </div>
 
 
-<div
-class="task"
-onclick="completeTask(this)"
->
+<div class="task" onclick="completeTask(this)">
 
 😂 Mission 02 — Bhai ki bakwaas tolerate karna
 
-<span class="tick">
-✅
-</span>
+<span class="tick">✅</span>
 
 </div>
 
 
-<div
-class="task"
-onclick="completeTask(this)"
->
+<div class="task" onclick="completeTask(this)">
 
 🫂 Mission 03 — Bhai ko ek virtual hug
 
-<span class="tick">
-✅
-</span>
+<span class="tick">✅</span>
+
+</div>
 
 </div>
 
 
-</div>
-
-
-<button
-id="missionBtn"
-disabled
-onclick="next()"
->
+<button id="missionBtn" disabled onclick="next()">
 
 ALL MISSIONS COMPLETE 🔒
 
@@ -984,21 +634,15 @@ ALL MISSIONS COMPLETE 🔒
 </section>
 
 
-<!-- =================================================
-     PAGE 3
-================================================= -->
+<!-- PAGE 3 -->
 
 <section class="page">
 
 <div class="box">
 
-<p>
-LEVEL 2
-</p>
+<p>LEVEL 2</p>
 
-<h1>
-Secret Cards ✨
-</h1>
+<h1>Secret Cards ✨</h1>
 
 <p>
 
@@ -1014,10 +658,7 @@ Tap karke dekho.
 <div class="cards">
 
 
-<div
-class="secret"
-onclick="flip(this)"
->
+<div class="secret" onclick="flip(this)">
 
 <div class="front">
 
@@ -1036,10 +677,7 @@ Tu important hai ❤️
 </div>
 
 
-<div
-class="secret"
-onclick="flip(this)"
->
+<div class="secret" onclick="flip(this)">
 
 <div class="front">
 
@@ -1058,10 +696,7 @@ Teri bakwaas bhi special hai 😂
 </div>
 
 
-<div
-class="secret"
-onclick="flip(this)"
->
+<div class="secret" onclick="flip(this)">
 
 <div class="front">
 
@@ -1080,10 +715,7 @@ Bhai hamesha tere side hai.
 </div>
 
 
-<div
-class="secret"
-onclick="flip(this)"
->
+<div class="secret" onclick="flip(this)">
 
 <div class="front">
 
@@ -1095,7 +727,7 @@ Tap Me
 
 <div class="inside">
 
-Happy Raksha Bandhan, Neelam!
+Happy Raksha Bandhan, Tanisha!
 
 </div>
 
@@ -1106,7 +738,9 @@ Happy Raksha Bandhan, Neelam!
 
 
 <button onclick="next()">
+
 NEXT SECRET 💌
+
 </button>
 
 </div>
@@ -1114,21 +748,15 @@ NEXT SECRET 💌
 </section>
 
 
-<!-- =================================================
-     PAGE 4 - LETTER
-================================================= -->
+<!-- PAGE 4 -->
 
 <section class="page">
 
 <div class="box">
 
-<p>
-PRIVATE MESSAGE
-</p>
+<p>PRIVATE MESSAGE</p>
 
-<h1>
-Bhai Ki Chitthi 💌
-</h1>
+<h1>Bhai Ki Chitthi 💌</h1>
 
 <p>
 Envelope par tap karo...
@@ -1144,7 +772,7 @@ onclick="openLetter(this)"
 
 <div class="letter">
 
-Dear Neelam ❤️
+Dear Tanisha ❤️
 
 <br>
 
@@ -1170,7 +798,7 @@ aur tum par kabhi koi takleef na aaye. ✨
 
 <br>
 
-Happy Raksha Bandhan, Neelam! 🎀❤️
+Happy Raksha Bandhan, Tanisha! 🎀❤️
 
 <br>
 
@@ -1179,9 +807,7 @@ Happy Raksha Bandhan, Neelam! 🎀❤️
 </div>
 
 
-<div class="flap">
-</div>
-
+<div class="flap"></div>
 
 </div>
 
@@ -1201,21 +827,15 @@ SECRET GIFT 🎁
 </section>
 
 
-<!-- =================================================
-     PAGE 5
-================================================= -->
+<!-- PAGE 5 -->
 
 <section class="page">
 
 <div class="box">
 
-<p>
-FINAL LEVEL
-</p>
+<p>FINAL LEVEL</p>
 
-<h1>
-Mystery Gift 🎁
-</h1>
+<h1>Mystery Gift 🎁</h1>
 
 <p>
 
@@ -1234,11 +854,9 @@ id="gift"
 onclick="openGift(this)"
 >
 
-<div class="lid">
-</div>
+<div class="lid"></div>
 
-<div class="giftbody">
-</div>
+<div class="giftbody"></div>
 
 </div>
 
@@ -1248,9 +866,7 @@ class="giftResult"
 id="giftResult"
 >
 
-<h2>
-🎉 SURPRISE! 🎉
-</h2>
+<h2>🎉 SURPRISE! 🎉</h2>
 
 <p>
 
@@ -1287,25 +903,17 @@ LAST SCREEN ❤️
 </section>
 
 
-<!-- =================================================
-     PAGE 6
-================================================= -->
+<!-- PAGE 6 -->
 
 <section class="page">
 
 <div class="box">
 
-<div class="emoji">
-🫂
-</div>
+<div class="emoji">🫂</div>
 
-<p>
-MISSION COMPLETE
-</p>
+<p>MISSION COMPLETE</p>
 
-<h1>
-Neelam ❤️
-</h1>
+<h1>Tanisha ❤️</h1>
 
 <p>
 
@@ -1322,7 +930,7 @@ hamesha special rahegi.
 
 Stay Happy.
 Stay Crazy.
-Stay Neelam. ✨
+Stay Tanisha. ✨
 
 </p>
 
@@ -1338,19 +946,13 @@ Stay Neelam. ✨
 </section>
 
 
-<!-- =================================================
-     NAV
-================================================= -->
+<!-- NAVIGATION -->
 
 <div class="nav">
 
-<button onclick="previous()">
-‹
-</button>
+<button onclick="previous()">‹</button>
 
-<button onclick="next()">
-›
-</button>
+<button onclick="next()">›</button>
 
 </div>
 
@@ -1358,9 +960,7 @@ Stay Neelam. ✨
 <script>
 
 
-/* =========================
-   PAGE SYSTEM
-========================= */
+/* PAGE SYSTEM */
 
 let current = 0;
 
@@ -1418,22 +1018,16 @@ function show(index){
 
 
 function next(){
-
   show(current + 1);
-
 }
 
 
 function previous(){
-
   show(current - 1);
-
 }
 
 
-/* =========================
-   MISSIONS
-========================= */
+/* MISSIONS */
 
 let completed = 0;
 
@@ -1473,9 +1067,7 @@ function completeTask(el){
 }
 
 
-/* =========================
-   CARDS
-========================= */
+/* CARDS */
 
 function flip(card){
 
@@ -1484,9 +1076,7 @@ function flip(card){
 }
 
 
-/* =========================
-   LETTER
-========================= */
+/* LETTER */
 
 let letterOpened = false;
 
@@ -1522,9 +1112,7 @@ function openLetter(el){
 }
 
 
-/* =========================
-   GIFT
-========================= */
+/* GIFT */
 
 let giftOpened = false;
 
@@ -1570,9 +1158,7 @@ function openGift(el){
 }
 
 
-/* =========================
-   FLOATING EMOJIS
-========================= */
+/* FLOATING EMOJIS */
 
 function createFloat(number){
 
@@ -1645,32 +1231,23 @@ function createFloat(number){
 
 
 function celebrateSmall(){
-
   createFloat(20);
-
 }
 
 
 function celebrate(){
-
   createFloat(70);
-
 }
 
 
-/* =========================
-   MOBILE SWIPE
-========================= */
+/* MOBILE SWIPE */
 
 let touchStartX = 0;
-
 let touchStartY = 0;
 
 
 document.addEventListener(
-
   "touchstart",
-
   function(e){
 
     if(
@@ -1689,18 +1266,14 @@ document.addEventListener(
     e.touches[0].clientY;
 
   },
-
   {
     passive:true
   }
-
 );
 
 
 document.addEventListener(
-
   "touchend",
-
   function(e){
 
     if(
@@ -1728,11 +1301,8 @@ document.addEventListener(
 
 
     /*
-      Horizontal swipe:
-      next / previous page.
-
-      Vertical swipe:
-      normal scrolling.
+      Left/right swipe = page change.
+      Up/down swipe = normal scrolling.
     */
 
     if(
@@ -1745,35 +1315,25 @@ document.addEventListener(
     ){
 
       if(diffX < 0){
-
         next();
-
       }
       else{
-
         previous();
-
       }
 
     }
 
   },
-
   {
     passive:true
   }
-
 );
 
 
-/* =========================
-   KEYBOARD
-========================= */
+/* KEYBOARD */
 
 document.addEventListener(
-
   "keydown",
-
   function(e){
 
     if(e.key === "ArrowRight"){
@@ -1785,13 +1345,10 @@ document.addEventListener(
     }
 
   }
-
 );
 
 
-/* =========================
-   START
-========================= */
+/* START */
 
 setTimeout(
   ()=>{
