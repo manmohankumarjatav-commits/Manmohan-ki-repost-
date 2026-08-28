@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Khushi ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:#fff5f7;
+    color:#4b1728;
+    overflow-x:hidden;
+}
+
+/* ---------- BACKGROUND ---------- */
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 10% 20%,#ffd9e5 0,transparent 25%),
+    radial-gradient(circle at 90% 80%,#ffe7b8 0,transparent 25%);
+    z-index:-2;
+}
+
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:20;
+}
+
+.particle{
+    position:absolute;
+    bottom:-30px;
+    animation:rise linear forwards;
+}
+
+@keyframes rise{
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ---------- SCREENS ---------- */
+
+.screen{
+    min-height:100vh;
+    width:100%;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:30px 18px;
+    position:relative;
+}
+
+.screen.active{
+    display:flex;
+    animation:screenIn .8s ease;
+}
+
+@keyframes screenIn{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.content{
+    width:100%;
+    max-width:850px;
+    text-align:center;
+}
+
+/* ---------- TEXT ---------- */
+
+.small{
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#a04661;
+}
+
+.title{
+    font-size:clamp(45px,11vw,95px);
+    color:#9d214c;
+    line-height:1;
+    margin:15px 0;
+}
+
+.subtitle{
+    font-size:clamp(17px,4vw,23px);
+    line-height:1.7;
+    color:#744354;
+}
+
+.hand{
+    font-family:Caveat,cursive;
+    font-size:clamp(28px,6vw,45px);
+}
+
+/* ---------- BUTTON ---------- */
+
+.btn{
+    margin-top:30px;
+    border:0;
+    padding:16px 30px;
+    border-radius:50px;
+    background:#9d214c;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 12px 30px #9d214c45;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.02);
+}
+
+.btn:active{
+    transform:scale(.95);
+}
+
+/* ---------- INTRO ---------- */
+
+.rakhi{
+    font-size:80px;
+    animation:swing 2s infinite ease-in-out;
+}
+
+@keyframes swing{
+    0%,100%{transform:rotate(-7deg)}
+    50%{transform:rotate(7deg)}
+}
+
+/* ---------- GLASS CARD ---------- */
+
+.glass{
+    background:#ffffffbd;
+    backdrop-filter:blur(18px);
+    border:1px solid #ffffff;
+    border-radius:35px;
+    padding:35px 22px;
+    box-shadow:0 25px 70px #8d27401c;
+}
+
+/* ---------- PHOTOS ---------- */
+
+.photo-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:30px;
+}
+
+.photo-card{
+    background:white;
+    padding:9px;
+    border-radius:20px;
+    box-shadow:0 15px 35px #64152b22;
+    transition:.4s;
+}
+
+.photo-card:nth-child(1){
+    transform:rotate(-3deg);
+}
+
+.photo-card:nth-child(2){
+    transform:rotate(2deg) translateY(15px);
+}
+
+.photo-card:nth-child(3){
+    transform:rotate(-2deg);
+}
+
+.photo-card:hover{
+    transform:translateY(-10px) rotate(0);
+}
+
+.photo-card img{
+    width:100%;
+    height:330px;
+    object-fit:cover;
+    border-radius:14px;
+}
+
+/* ---------- MEMORY ---------- */
+
+.memory{
+    margin-top:35px;
+    font-family:Caveat,cursive;
+    font-size:32px;
+    color:#8d2345;
+}
+
+/* ---------- PROMISES ---------- */
+
+.promise-list{
+    margin-top:30px;
+    display:grid;
+    gap:15px;
+}
+
+.promise{
+    padding:20px;
+    border-radius:20px;
+    background:#fff;
+    box-shadow:0 8px 25px #751b3520;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.promise:hover{
+    transform:translateX(7px);
+}
+
+.promise .hidden{
+    display:none;
+    margin-top:10px;
+    color:#8d4055;
+}
+
+.promise.open .hidden{
+    display:block;
+    animation:fade .4s;
+}
+
+@keyframes fade{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+/* ---------- ENVELOPE ---------- */
+
+.envelope-area{
+    margin-top:40px;
+    perspective:1000px;
+}
+
+.envelope{
+    width:min(330px,90vw);
+    height:220px;
+    margin:auto;
+    position:relative;
+    background:#d85b78;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 20px 45px #721b342c;
+}
+
+.envelope:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:#c94667;
+    clip-path:polygon(0 0,50% 55%,100% 0);
+    transition:.7s;
+    transform-origin:top;
+    z-index:3;
+}
+
+.envelope.open:before{
+    transform:rotateX(180deg);
+}
+
+.letter{
+    position:absolute;
+    width:85%;
+    height:180px;
+    background:#fffdf5;
+    left:7.5%;
+    bottom:0;
+    padding:20px;
+    border-radius:8px;
+    z-index:2;
+    transition:.8s;
+    box-shadow:0 5px 20px #42101b22;
+}
+
+.envelope.open .letter{
+    transform:translateY(-110px);
+}
+
+.letter-text{
+    font-family:Caveat,cursive;
+    font-size:22px;
+    line-height:1.4;
+}
+
+/* ---------- GIFT ---------- */
+
+.giftbox{
+    width:180px;
+    height:150px;
+    margin:35px auto;
+    position:relative;
+    cursor:pointer;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    50%{transform:translateY(-8px)}
+}
+
+.box{
+    position:absolute;
+    width:100%;
+    height:100px;
+    bottom:0;
+    background:#9d214c;
+    border-radius:8px;
+}
+
+.box:after{
+    content:"";
+    position:absolute;
+    left:70px;
+    width:40px;
+    height:100%;
+    background:#f6c75d;
+}
+
+.lid{
+    position:absolute;
+    width:110%;
+    height:35px;
+    left:-5%;
+    top:20px;
+    background:#b92c5b;
+    border-radius:7px;
+    z-index:2;
+    transition:.7s;
+}
+
+.lid:after{
+    content:"";
+    position:absolute;
+    left:76px;
+    width:40px;
+    height:100%;
+    background:#f6c75d;
+}
+
+.giftbox.open .lid{
+    transform:translateY(-80px) rotate(-10deg);
+}
+
+.gift-message{
+    display:none;
+    animation:pop .7s ease;
+}
+
+@keyframes pop{
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ---------- FINAL ---------- */
+
+.final-heart{
+    font-size:90px;
+    animation:pulse 1.4s infinite;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.15)}
+}
+
+/* ---------- NAV ---------- */
+
+.nav{
+    position:fixed;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:100;
+    display:flex;
+    gap:10px;
+}
+
+.nav button{
+    width:48px;
+    height:48px;
+    border:0;
+    border-radius:50%;
+    background:#9d214c;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 7px 20px #8b1c3d44;
+}
+
+.progress{
+    position:fixed;
+    top:0;
+    left:0;
+    height:4px;
+    background:#9d214c;
+    width:0;
+    z-index:200;
+    transition:.4s;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:650px){
+
+    .photo-grid{
+        grid-template-columns:1fr;
+    }
+
+    .photo-card:nth-child(1),
+    .photo-card:nth-child(2),
+    .photo-card:nth-child(3){
+        transform:none;
+    }
+
+    .photo-card img{
+        height:430px;
+    }
+
+    .glass{
+        padding:30px 16px;
+    }
+
+    .letter-text{
+        font-size:19px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="particles" id="particles"></div>
+
+
+<!-- SCREEN 1 -->
+
+<section class="screen active">
+
+<div class="content">
+
+<div class="rakhi">🎀</div>
+
+<div class="small">
+A little surprise
+</div>
+
+<h1 class="title">
+Khushi ❤️
+</h1>
+
+<p class="subtitle">
+Is Raksha Bandhan par<br>
+tumhare liye kuch special banaya hai...
+</p>
+
+<button class="btn" onclick="nextScreen()">
+Open My Surprise ✨
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 2 -->
+
+<section class="screen">
+
+<div class="content glass">
+
+<div class="rakhi">
+🪢
+</div>
+
+<h1 class="title">
+Happy Raksha Bandhan
+</h1>
+
+<p class="subtitle">
+Khushi, kuch relationships<br>
+blood se nahi, memories se special bante hain. ❤️
+</p>
+
+<p class="hand">
+Aur tu unhi special logon mein se hai.
+</p>
+
+<button class="btn" onclick="nextScreen()">
+Continue 💗
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 3 -->
+
+<section class="screen">
+
+<div class="content">
+
+<div class="small">
+Our Memories
+</div>
+
+<h1 class="title">
+Humari Yaadein 📸
+</h1>
+
+<div class="photo-grid">
+
+<div class="photo-card">
+<img src="photo1.jpg">
+</div>
+
+<div class="photo-card">
+<img src="photo2.jpg">
+</div>
+
+<div class="photo-card">
+<img src="photo3.jpg">
+</div>
+
+</div>
+
+<p class="memory">
+Photos purani ho sakti hain...<br>
+memories kabhi purani nahi hoti. ❤️
+</p>
+
+<button class="btn" onclick="nextScreen()">
+Next ✨
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 4 -->
+
+<section class="screen">
+
+<div class="content glass">
+
+<div class="small">
+Some promises
+</div>
+
+<h1 class="title">
+Bhai Ke Promises 🤞
+</h1>
+
+<p class="subtitle">
+Neeche wale cards par tap karna ❤️
+</p>
+
+<div class="promise-list">
+
+<div class="promise" onclick="togglePromise(this)">
+🫂 <b>Promise #1</b>
+<div class="hidden">
+Chahe kitni bhi nok-jhok ho,
+main hamesha tere side rahunga.
+</div>
+</div>
+
+<div class="promise" onclick="togglePromise(this)">
+😂 <b>Promise #2</b>
+<div class="hidden">
+Teri bakwaas sunne ke liye
+main available rahunga. 😂
+</div>
+</div>
+
+<div class="promise" onclick="togglePromise(this)">
+🛡️ <b>Promise #3</b>
+<div class="hidden">
+Jab bhi zarurat ho,
+tera bhai tere saath khada milega.
+</div>
+</div>
+
+<div class="promise" onclick="togglePromise(this)">
+❤️ <b>Promise #4</b>
+<div class="hidden">
+Ye bond hamesha special rahega.
+</div>
+</div>
+
+</div>
+
+<button class="btn" onclick="nextScreen()">
+Ek Aur Surprise 💌
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 5 -->
+
+<section class="screen">
+
+<div class="content">
+
+<div class="small">
+A letter for you
+</div>
+
+<h1 class="title">
+Bhai Ki Chitthi 💌
+</h1>
+
+<p class="subtitle">
+Envelope par tap karo...
+</p>
+
+<div class="envelope-area">
+
+<div class="envelope" onclick="openEnvelope(this)">
+
+<div class="letter">
+
+<div class="letter-text">
+
+Dear Khushi ❤️
+
+<br><br>
+
+Tu meri bua ki ladki zaroor hai,
+lekin mere liye ek proper sister jaisi hai.
+
+<br><br>
+
+Hamari masti aur memories
+hamesha special rahengi.
+
+<br><br>
+
+— Tera Bhai 🫂
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<button class="btn" onclick="nextScreen()">
+Next 🎁
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 6 -->
+
+<section class="screen">
+
+<div class="content glass">
+
+<div class="small">
+Your actual gift
+</div>
+
+<h1 class="title">
+🎁 Surprise
+</h1>
+
+<p class="subtitle">
+Gift box kholo...
+</p>
+
+<div class="giftbox" onclick="openGift(this)">
+
+<div class="lid"></div>
+
+<div class="box"></div>
+
+</div>
+
+<div class="gift-message" id="giftMessage">
+
+<h2>
+Surprise! 🎉❤️
+</h2>
+
+<p class="subtitle">
+
+Is baar expensive gift nahi de paaya...
+
+<br><br>
+
+Isliye socha kuch aisa doon
+jo paise se nahi milta.
+
+<br><br>
+
+<strong>
+Ye chhoti si website sirf tere liye. ❤️
+</strong>
+
+</p>
+
+</div>
+
+<button class="btn" onclick="nextScreen()">
+Last One ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- SCREEN 7 -->
+
+<section class="screen">
+
+<div class="content">
+
+<div class="final-heart">
+❤️
+</div>
+
+<h1 class="title">
+Khushi
+</h1>
+
+<p class="subtitle">
+Hamesha khush reh,<br>
+hamesha smile karti reh. 🫂
+</p>
+
+<br>
+
+<p class="hand">
+Happy Raksha Bandhan 🎀
+</p>
+
+<p class="subtitle">
+<strong>
+Best Sister Ever ❤️
+</strong>
+</p>
+
+<button class="btn" onclick="celebrate()">
+One Last Surprise 🎊
+</button>
+
+</div>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="nav">
+
+<button onclick="previousScreen()">
+‹
+</button>
+
+<button onclick="nextScreen()">
+›
+</button>
+
+</div>
+
+
+<script>
+
+let current=0;
+
+const screens=document.querySelectorAll(".screen");
+
+function showScreen(index){
+
+if(index<0) index=0;
+
+if(index>=screens.length)
+index=screens.length-1;
+
+screens.forEach((s,i)=>{
+s.classList.toggle("active",i===index);
+});
+
+current=index;
+
+document.getElementById("progress").style.width=
+((index)/(screens.length-1))*100+"%";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+function nextScreen(){
+
+showScreen(current+1);
+
+createParticles(8);
+
+}
+
+function previousScreen(){
+
+showScreen(current-1);
+
+}
+
+function togglePromise(element){
+
+element.classList.toggle("open");
+
+}
+
+function openEnvelope(el){
+
+el.classList.toggle("open");
+
+createParticles(15);
+
+}
+
+function openGift(el){
+
+el.classList.toggle("open");
+
+document.getElementById("giftMessage").style.display="block";
+
+celebrate();
+
+}
+
+function createParticles(number){
+
+const container=document.getElementById("particles");
+
+for(let i=0;i<number;i++){
+
+const p=document.createElement("div");
+
+p.className="particle";
+
+p.innerHTML=
+["❤️","💖","✨","🌸","🎀","🪢"][Math.floor(Math.random()*6)];
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.fontSize=
+(15+Math.random()*25)+"px";
+
+p.style.animationDuration=
+(4+Math.random()*4)+"s";
+
+container.appendChild(p);
+
+setTimeout(()=>{
+p.remove();
+},8000);
+
+}
+
+}
+
+function celebrate(){
+
+createParticles(60);
+
+}
+
+/* automatic floating hearts */
+
+setInterval(()=>{
+
+createParticles(1);
+
+},900);
+
+</script>
+
+</body>
+</html>
