@@ -1,2664 +1,754 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Khushi's Rakhi Mission 🎀</title>
 
-  <meta
-    name="description"
-    content="Ek chhoti si Raksha Bandhan surprise — specially for you."
-  />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@400;600;700&display=swap');
 
-  <title>Ek Rakhi, Hazaar Baatein</title>
+*{box-sizing:border-box;margin:0;padding:0}
 
-  <link rel="stylesheet" href="style.css" />
+body{
+  font-family:Poppins,sans-serif;
+  background:linear-gradient(135deg,#fff1f5,#ffe5ed,#fff7df);
+  color:#431522;
+  min-height:100vh;
+  overflow:hidden;
+}
+
+.page{
+  min-height:100vh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  text-align:center;
+}
+
+.page.active{
+  display:flex;
+  animation:enter .7s ease;
+}
+
+@keyframes enter{
+  from{opacity:0;transform:translateY(30px) scale(.97)}
+  to{opacity:1;transform:none}
+}
+
+.box{
+  width:min(650px,100%);
+  padding:35px 22px;
+  border-radius:32px;
+  background:#ffffffc9;
+  backdrop-filter:blur(18px);
+  box-shadow:0 20px 70px #7d183522;
+}
+
+.emoji{
+  font-size:75px;
+  margin-bottom:10px;
+  animation:bob 2s infinite;
+}
+
+@keyframes bob{
+  50%{transform:translateY(-9px) rotate(4deg)}
+}
+
+h1{
+  color:#9b1948;
+  font-size:clamp(42px,11vw,75px);
+  line-height:1;
+  margin:15px 0;
+}
+
+h2{
+  color:#9b1948;
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+p{
+  font-size:17px;
+  line-height:1.8;
+}
+
+.cursive{
+  font-family:Caveat,cursive;
+  font-size:32px;
+  color:#8e2949;
+  margin-top:18px;
+}
+
+button{
+  border:0;
+  background:#9b1948;
+  color:white;
+  padding:15px 25px;
+  border-radius:50px;
+  margin-top:25px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 25px #9b194844;
+  transition:.2s;
+}
+
+button:active{
+  transform:scale(.94);
+}
+
+button:disabled{
+  opacity:.4;
+}
+
+/* Mission */
+
+.mission{
+  display:grid;
+  gap:13px;
+  margin-top:25px;
+}
+
+.task{
+  background:white;
+  padding:18px;
+  border-radius:18px;
+  box-shadow:0 8px 25px #68152a1c;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.task:hover{
+  transform:translateY(-3px);
+}
+
+.task.done{
+  background:#ffe0ea;
+}
+
+.tick{
+  float:right;
+  display:none;
+}
+
+.task.done .tick{
+  display:block;
+}
+
+/* Cards */
+
+.cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:25px;
+}
+
+.secret{
+  min-height:125px;
+  background:#fff;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  box-shadow:0 8px 25px #68152a1c;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.secret .inside{
+  display:none;
+  color:#8d2346;
+  font-weight:600;
+}
+
+.secret.open{
+  transform:rotateY(360deg);
+  background:#ffe4ed;
+}
+
+.secret.open .front{
+  display:none;
+}
+
+.secret.open .inside{
+  display:block;
+}
+
+/* Envelope */
+
+.envelope{
+  width:300px;
+  height:190px;
+  background:#d45172;
+  margin:40px auto 20px;
+  position:relative;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 20px 45px #68152a33;
+}
+
+.flap{
+  position:absolute;
+  inset:0;
+  background:#bd3c60;
+  clip-path:polygon(0 0,50% 55%,100% 0);
+  z-index:3;
+  transition:.7s;
+  transform-origin:top;
+}
+
+.envelope.open .flap{
+  transform:rotateX(180deg);
+}
+
+.letter{
+  position:absolute;
+  background:#fffdf4;
+  width:86%;
+  height:160px;
+  left:7%;
+  bottom:5px;
+  border-radius:7px;
+  padding:15px;
+  z-index:2;
+  transition:.8s;
+  font-family:Caveat,cursive;
+  font-size:21px;
+  line-height:1.35;
+}
+
+.envelope.open .letter{
+  transform:translateY(-95px);
+}
+
+/* Gift */
+
+.gift{
+  width:170px;
+  height:145px;
+  margin:35px auto;
+  position:relative;
+  cursor:pointer;
+}
+
+.giftbody{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:105px;
+  background:#9b1948;
+  border-radius:8px;
+}
+
+.giftbody:after{
+  content:"";
+  position:absolute;
+  left:68px;
+  width:35px;
+  height:100%;
+  background:#f5c75d;
+}
+
+.lid{
+  position:absolute;
+  top:15px;
+  left:-7px;
+  width:184px;
+  height:35px;
+  background:#b52c5b;
+  border-radius:7px;
+  z-index:2;
+  transition:.7s;
+}
+
+.lid:after{
+  content:"";
+  position:absolute;
+  left:75px;
+  width:35px;
+  height:100%;
+  background:#f5c75d;
+}
+
+.gift.open .lid{
+  transform:translateY(-80px) rotate(-8deg);
+}
+
+.giftResult{
+  display:none;
+  animation:pop .7s ease;
+}
+
+@keyframes pop{
+  from{opacity:0;transform:scale(.6)}
+  to{opacity:1;transform:scale(1)}
+}
+
+/* Progress */
+
+.progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:5px;
+  background:#9b1948;
+  width:0;
+  z-index:100;
+  transition:.4s;
+}
+
+.nav{
+  position:fixed;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+  z-index:100;
+}
+
+.nav button{
+  width:48px;
+  height:48px;
+  padding:0;
+  margin:0;
+}
+
+/* Floating */
+
+.float{
+  position:fixed;
+  bottom:-40px;
+  pointer-events:none;
+  animation:floatUp linear forwards;
+  z-index:50;
+}
+
+@keyframes floatUp{
+  to{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:500px){
+  .box{padding:30px 15px}
+  .cards{grid-template-columns:1fr}
+  .envelope{width:270px}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Background -->
-  <div class="ambient-bg">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
+<div class="progress" id="progress"></div>
 
-  <div id="particles"></div>
 
-  <!-- Progress -->
-  <div class="progress-wrap">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
+<!-- PAGE 1 -->
 
-  <!-- Top controls -->
-  <div class="top-controls">
-    <button class="icon-btn" id="soundBtn" aria-label="Sound toggle">
-      <span id="soundIcon">♪</span>
-    </button>
+<section class="page active">
 
-    <button class="icon-btn" id="restartTop" aria-label="Restart">
-      ↻
-    </button>
-  </div>
+<div class="box">
 
-  <main id="app">
+<div class="emoji">🎀</div>
 
-    <!-- =========================================
-         SCREEN 1
-    ========================================== -->
-    <section class="screen active" id="screen-1">
+<p>SECRET MISSION • 2026</p>
 
-      <div class="intro-content">
+<h1>Khushi ❤️</h1>
 
-        <div class="tiny-label reveal">
-          RAKSHA BANDHAN · 2026
-        </div>
+<p>
+Aaj normal Raksha Bandhan nahi hai...
+<br>
+kyunki tumhare bhai ne tumhare liye
+ek secret mission banaya hai. 😎
+</p>
 
-        <h1 class="hero-title reveal delay-1">
-          Oye...
-          <span>ek minute.</span>
-        </h1>
+<p class="cursive">
+Ready ho?
+</p>
 
-        <p class="hero-subtitle reveal delay-2">
-          Is baar rakhi bas baandh ke<br />
-          khatam nahi karni.
-        </p>
+<button onclick="next()">
+MISSION START 🚀
+</button>
 
-        <button class="primary-btn reveal delay-3" data-next="2">
-          Accha, kya kiya?
-          <span>→</span>
-        </button>
+</div>
 
-        <div class="scroll-hint reveal delay-4">
-          <span></span>
-          thoda sa time dena
-        </div>
+</section>
 
-      </div>
 
-    </section>
+<!-- PAGE 2 -->
 
+<section class="page">
 
-    <!-- =========================================
-         SCREEN 2 — RAKHI
-    ========================================== -->
-    <section class="screen" id="screen-2">
+<div class="box">
 
-      <div class="section-content">
+<div class="emoji">🪢</div>
 
-        <div class="tiny-label">01 · HAR SAAL</div>
+<h2>RAKHI MISSION</h2>
 
-        <div class="rakhi-stage">
+<p>
+Neeche ke teen missions complete karo.
+<br>
+Tabhi secret unlock hoga. 👀
+</p>
 
-          <div class="thread thread-left"></div>
+<div class="mission">
 
-          <div class="rakhi">
-            <div class="rakhi-outer"></div>
-            <div class="rakhi-middle"></div>
-            <div class="rakhi-center">
-              <span>✦</span>
-            </div>
+<div class="task" onclick="completeTask(this)">
+❤️ Mission 01 — Bhai ko smile dena
+<span class="tick">✅</span>
+</div>
 
-            <div class="rakhi-bead bead-1"></div>
-            <div class="rakhi-bead bead-2"></div>
-            <div class="rakhi-bead bead-3"></div>
-            <div class="rakhi-bead bead-4"></div>
-          </div>
+<div class="task" onclick="completeTask(this)">
+😂 Mission 02 — Bhai ki bakwaas tolerate karna
+<span class="tick">✅</span>
+</div>
 
-          <div class="thread thread-right"></div>
+<div class="task" onclick="completeTask(this)">
+🫂 Mission 03 — Bhai ko ek virtual hug
+<span class="tick">✅</span>
+</div>
 
-        </div>
+</div>
 
-        <div class="story-copy">
+<button id="missionBtn" disabled onclick="next()">
+ALL MISSIONS COMPLETE 🔒
+</button>
 
-          <h2>
-            Har saal tu rakhi baandhti hai,
-          </h2>
+</div>
 
-          <p class="story-line">
-            main paise deta hoon,
-          </p>
+</section>
 
-          <p class="story-line">
-            phir dono apna-apna drama karte hain.
-          </p>
 
-          <div class="pause-line">
-            <span></span>
-          </div>
+<!-- PAGE 3 -->
 
-          <p class="story-soft">
-            Lekin kuch cheezein...
-            <strong>har saal same rehni chahiye.</strong>
-          </p>
+<section class="page">
 
-        </div>
+<div class="box">
 
-        <button class="text-btn next-btn" data-next="3">
-          Aage dekh
-          <span>↓</span>
-        </button>
+<p>LEVEL 2</p>
 
-      </div>
+<h1>Secret Cards ✨</h1>
 
-    </section>
+<p>
+Har card ke andar ek secret hai.
+<br>
+Tap karke dekho.
+</p>
 
+<div class="cards">
 
-    <!-- =========================================
-         SCREEN 3 — BANter
-    ========================================== -->
-    <section class="screen" id="screen-3">
+<div class="secret" onclick="flip(this)">
+<div class="front">💗<br>Tap Me</div>
+<div class="inside">Tu important hai ❤️</div>
+</div>
 
-      <div class="section-content">
+<div class="secret" onclick="flip(this)">
+<div class="front">😂<br>Tap Me</div>
+<div class="inside">Teri bakwaas bhi special hai 😂</div>
+</div>
 
-        <div class="tiny-label">02 · SACH BATA</div>
+<div class="secret" onclick="flip(this)">
+<div class="front">🫂<br>Tap Me</div>
+<div class="inside">Bhai hamesha tere side hai.</div>
+</div>
 
-        <h2 class="section-title">
-          Bachpan mein sabse zyada<br />
-          kis baat pe ladte the?
-        </h2>
+<div class="secret" onclick="flip(this)">
+<div class="front">🎀<br>Tap Me</div>
+<div class="inside">Happy Raksha Bandhan, Khushi!</div>
+</div>
 
-        <p class="section-description">
-          Aur please soch ke answer mat dena. 😑
-        </p>
+</div>
 
-        <div class="choice-grid">
+<button onclick="next()">
+NEXT SECRET 💌
+</button>
 
-          <button class="choice-card" data-choice="remote">
-            <span class="choice-icon">📺</span>
-            <span>Remote</span>
-            <small>“Mera serial chal raha hai!”</small>
-          </button>
+</div>
 
-          <button class="choice-card" data-choice="charger">
-            <span class="choice-icon">🔌</span>
-            <span>Charger</span>
-            <small>“Tune mera charger liya tha!”</small>
-          </button>
+</section>
 
-          <button class="choice-card" data-choice="things">
-            <span class="choice-icon">😑</span>
-            <span>Meri cheez</span>
-            <small>“Tu meri cheez kyun le gayi?”</small>
-          </button>
 
-        </div>
+<!-- PAGE 4 -->
 
-        <div class="response-box" id="responseBox">
+<section class="page">
 
-          <div class="response-icon">😂</div>
+<div class="box">
 
-          <p id="responseText"></p>
+<p>PRIVATE MESSAGE</p>
 
-          <button class="text-btn hidden" id="responseNext" data-next="4">
-            Haan, ab aage
-            <span>→</span>
-          </button>
+<h1>Bhai Ki Chitthi 💌</h1>
 
-        </div>
+<p>
+Envelope par tap karo...
+</p>
 
-      </div>
+<div class="envelope" onclick="openLetter(this)">
 
-    </section>
+<div class="flap"></div>
 
+<div class="letter">
 
-    <!-- =========================================
-         SCREEN 4 — UNSAID THINGS
-    ========================================== -->
-    <section class="screen" id="screen-4">
+Dear Khushi ❤️
 
-      <div class="section-content">
+<br>
 
-        <div class="tiny-label">03 · KUCH BAATEIN</div>
+Tu sirf meri bua ki ladki nahi,
+meri behen jaisi hai.
 
-        <h2 class="section-title">
-          Kuch baatein hain...
-        </h2>
+<br>
 
-        <p class="section-description">
-          jo bhai log normally bolte nahi hain.
-        </p>
+Hamesha khush reh,
+haste reh aur life mein
+bahut aage badh.
 
-        <div class="message-cards">
+<br>
 
-          <button class="message-card" data-message="1">
-            <div class="card-number">01</div>
-            <div class="card-title">Ek baat</div>
-            <div class="card-arrow">↗</div>
-          </button>
+— Tera Bhai 🫂
 
-          <button class="message-card" data-message="2">
-            <div class="card-number">02</div>
-            <div class="card-title">Dusri baat</div>
-            <div class="card-arrow">↗</div>
-          </button>
+</div>
 
-          <button class="message-card" data-message="3">
-            <div class="card-number">03</div>
-            <div class="card-title">Aur ek...</div>
-            <div class="card-arrow">↗</div>
-          </button>
+</div>
 
-        </div>
+<button onclick="next()">
+SECRET GIFT 🎁
+</button>
 
-        <div class="message-reveal" id="messageReveal">
+</div>
 
-          <button class="close-reveal" id="closeReveal">×</button>
+</section>
 
-          <div class="reveal-small" id="revealSmall"></div>
 
-          <div class="reveal-message" id="revealMessage"></div>
+<!-- PAGE 5 -->
 
-        </div>
+<section class="page">
 
-        <button
-          class="text-btn hidden"
-          id="messagesNext"
-          data-next="5"
-        >
-          Ek aur cheez
-          <span>→</span>
-        </button>
+<div class="box">
 
-      </div>
+<p>FINAL LEVEL</p>
 
-    </section>
+<h1>Mystery Gift 🎁</h1>
 
+<p>
+Box ko tap karo...
+<br>
+shayad kuch interesting mile. 👀
+</p>
 
-    <!-- =========================================
-         SCREEN 5 — PROMISE
-    ========================================== -->
-    <section class="screen" id="screen-5">
+<div class="gift" onclick="openGift(this)">
 
-      <div class="section-content promise-content">
+<div class="lid"></div>
+<div class="giftbody"></div>
 
-        <div class="tiny-label">04 · EK PROMISE</div>
+</div>
 
-        <h2 class="section-title">
-          Ek promise karun?
-        </h2>
+<div class="giftResult" id="giftResult">
 
-        <button class="primary-btn promise-btn" id="promiseBtn">
-          Kar.
-          <span>→</span>
-        </button>
+<h2>🎉 SURPRISE! 🎉</h2>
 
-        <div class="promise-reveal" id="promiseReveal">
+<p>
+Is baar expensive gift nahi de paaya...
+<br><br>
 
-          <div class="promise-line" id="promiseLine1">
-            Main har problem solve kar paunga,
-            <br />
-            ye guarantee nahi hai.
-          </div>
+Isliye ek aisa gift banaya
+jo paise se nahi milta. ❤️
+<br><br>
 
-          <div class="promise-line hidden" id="promiseLine2">
-            Par jab bhi tujhe lage ki
-            <br />
-            sab kuch thoda zyada ho gaya hai...
-          </div>
+<strong>
+Ye poori website sirf tumhare liye hai.
+</strong>
+</p>
 
-          <div class="promise-call hidden" id="promiseCall">
-            Call kar dena.
-          </div>
+</div>
 
-          <div class="promise-final hidden" id="promiseFinal">
-            Chahe raat ke 2 baje ho.
-            <br />
-            Pehle daantunga zaroor...
-            <br />
-            <strong>phir sununga bhi. ❤️</strong>
-          </div>
+<button onclick="next()">
+LAST SCREEN ❤️
+</button>
 
-          <button
-            class="text-btn hidden"
-            id="promiseNext"
-            data-next="6"
-          >
-            Last cheez
-            <span>→</span>
-          </button>
+</div>
 
-        </div>
+</section>
 
-      </div>
 
-    </section>
+<!-- PAGE 6 -->
 
+<section class="page">
 
-    <!-- =========================================
-         SCREEN 6 — DRAG RAKHI
-    ========================================== -->
-    <section class="screen" id="screen-6">
+<div class="box">
 
-      <div class="section-content drag-content">
+<div class="emoji">🫂</div>
 
-        <div class="tiny-label">05 · EK LAST CHEEZ</div>
+<p>MISSION COMPLETE</p>
 
-        <h2 class="section-title">
-          Bas ek last cheez hai.
-        </h2>
+<h1>Khushi ❤️</h1>
 
-        <p class="section-description">
-          Rakhi ko kheench ke yahan tak le aa.
-        </p>
+<p>
+Chahe life kitni bhi busy ho,
+<br>
+hamari ye bhai-behen wali bonding
+hamesha special rahegi.
+</p>
 
-        <div class="drag-area">
+<p class="cursive">
+Stay Happy. Stay Crazy. Stay Khushi. ✨
+</p>
 
-          <div class="drag-track">
+<button onclick="celebrate()">
+🎊 FINAL SURPRISE
+</button>
 
-            <div class="drag-line"></div>
+</div>
 
-            <div
-              class="drag-rakhi"
-              id="dragRakhi"
-              role="button"
-              tabindex="0"
-              aria-label="Drag rakhi"
-            >
-              <div class="mini-rakhi-outer"></div>
-              <div class="mini-rakhi-middle"></div>
-              <div class="mini-rakhi-center">✦</div>
-            </div>
+</section>
 
-            <div class="drop-target" id="dropTarget">
 
-              <div class="target-ring"></div>
+<div class="nav">
 
-              <span>YAHAN</span>
+<button onclick="previous()">‹</button>
+<button onclick="next()">›</button>
 
-            </div>
+</div>
 
-          </div>
 
-        </div>
+<script>
 
-        <p class="drag-status" id="dragStatus">
-          <span>↔</span>
-          Drag / swipe karo
-        </p>
+let current=0;
 
-      </div>
+const pages=document.querySelectorAll(".page");
 
-    </section>
+function show(index){
 
+if(index<0)index=0;
+if(index>=pages.length)index=pages.length-1;
 
-    <!-- =========================================
-         SCREEN 7 — FINAL
-    ========================================== -->
-    <section class="screen final-screen" id="screen-7">
+pages.forEach((page,i)=>{
+page.classList.toggle("active",i===index);
+});
 
-      <div class="final-glow"></div>
+current=index;
 
-      <div class="section-content final-content">
+document.getElementById("progress").style.width=
+(index/(pages.length-1)*100)+"%";
 
-        <div class="final-rakhi">
+window.scrollTo(0,0);
 
-          <div class="mini-rakhi-outer"></div>
-          <div class="mini-rakhi-middle"></div>
-          <div class="mini-rakhi-center">✦</div>
+createFloat(5);
+}
 
-        </div>
+function next(){
+show(current+1);
+}
 
-        <div class="tiny-label">FOR YOU · ALWAYS</div>
+function previous(){
+show(current-1);
+}
 
-        <h1 class="final-title">
-          Happy Raksha<br />
-          <span>Bandhan, Pagal.</span>
-        </h1>
 
-        <div class="final-message">
+/* Mission */
 
-          <p>
-            Life mein kitne bhi naye log aa jaayein,
-            kitni bhi busy ho jaaye...
-          </p>
+let completed=0;
 
-          <div class="final-divider"></div>
+function completeTask(el){
 
-          <p class="final-highlight">
-            Tu meri behen hai.
-          </p>
+if(el.classList.contains("done"))return;
 
-          <p class="final-last">
-            Aur haan...
-          </p>
+el.classList.add("done");
+completed++;
 
-          <p class="funny-ending">
-            Rakhi ke paise baad mein dekh lenge. 😌
-          </p>
+if(completed===3){
 
-        </div>
+const btn=document.getElementById("missionBtn");
 
-        <button class="restart-btn" id="restartBtn">
-          <span>↻</span>
-          Phir se shuru karein
-        </button>
+btn.disabled=false;
+btn.innerHTML="MISSION UNLOCKED 🔓";
 
-      </div>
+celebrateSmall();
 
-    </section>
+}
 
-  </main>
+}
 
-  <!-- Celebration particles -->
-  <div id="celebration"></div>
 
-  <script src="script.js"></script>
+/* Cards */
+
+function flip(card){
+card.classList.toggle("open");
+}
+
+
+/* Letter */
+
+function openLetter(el){
+
+el.classList.toggle("open");
+
+createFloat(15);
+
+}
+
+
+/* Gift */
+
+function openGift(el){
+
+el.classList.add("open");
+
+document.getElementById("giftResult")
+.style.display="block";
+
+celebrate();
+
+}
+
+
+/* Floating animation */
+
+function createFloat(number){
+
+for(let i=0;i<number;i++){
+
+const e=document.createElement("div");
+
+e.className="float";
+
+e.innerHTML=
+["❤️","💖","✨","🌸","🎀","🪢"][Math.floor(Math.random()*6)];
+
+e.style.left=Math.random()*100+"vw";
+
+e.style.fontSize=
+(18+Math.random()*25)+"px";
+
+e.style.animationDuration=
+(4+Math.random()*4)+"s";
+
+document.body.appendChild(e);
+
+setTimeout(()=>{
+e.remove();
+},8000);
+
+}
+
+}
+
+
+function celebrateSmall(){
+createFloat(20);
+}
+
+
+function celebrate(){
+
+createFloat(70);
+
+}
+
+</script>
 
 </body>
 </html>
-/* =====================================================
-   RESET
-===================================================== */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --bg: #08070b;
-  --bg-2: #100a11;
-  --text: #f8f1ea;
-  --muted: #aaa1a0;
-  --soft: #d4c4be;
-  --red: #c85c68;
-  --red-light: #e28a91;
-  --gold: #d7af70;
-  --gold-light: #f0d49c;
-  --line: rgba(255, 255, 255, 0.11);
-  --glass: rgba(255, 255, 255, 0.055);
-
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
-}
-
-html {
-  width: 100%;
-  min-height: 100%;
-  background: var(--bg);
-  scroll-behavior: smooth;
-}
-
-body {
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 20%, rgba(126, 44, 66, 0.16), transparent 35%),
-    linear-gradient(145deg, #07070a 0%, #0c080e 50%, #08070b 100%);
-  color: var(--text);
-  font-family: var(--sans);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  touch-action: manipulation;
-}
-
-button {
-  border: 0;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-button:focus-visible {
-  outline: 2px solid var(--gold-light);
-  outline-offset: 4px;
-}
-
-
-/* =====================================================
-   AMBIENT BACKGROUND
-===================================================== */
-
-.ambient-bg {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.orb {
-  position: absolute;
-  width: 42vw;
-  height: 42vw;
-  max-width: 550px;
-  max-height: 550px;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.11;
-  animation: orbFloat 15s ease-in-out infinite alternate;
-}
-
-.orb-1 {
-  top: -15%;
-  left: -12%;
-  background: #8b3349;
-}
-
-.orb-2 {
-  right: -18%;
-  top: 35%;
-  background: #ad7d45;
-  animation-delay: -5s;
-}
-
-.orb-3 {
-  bottom: -20%;
-  left: 30%;
-  background: #632746;
-  animation-delay: -9s;
-}
-
-@keyframes orbFloat {
-  from {
-    transform: translate3d(-10px, -15px, 0) scale(1);
-  }
-
-  to {
-    transform: translate3d(30px, 20px, 0) scale(1.12);
-  }
-}
-
-
-/* =====================================================
-   PARTICLES
-===================================================== */
-
-#particles {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: rgba(239, 210, 164, 0.6);
-  animation: particleFloat linear infinite;
-}
-
-@keyframes particleFloat {
-  from {
-    transform: translate3d(0, 105vh, 0);
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 0.65;
-  }
-
-  80% {
-    opacity: 0.25;
-  }
-
-  to {
-    transform: translate3d(40px, -10vh, 0);
-    opacity: 0;
-  }
-}
-
-
-/* =====================================================
-   PROGRESS
-===================================================== */
-
-.progress-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.05);
-  z-index: 100;
-}
-
-.progress-bar {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--red),
-    var(--gold-light)
-  );
-  box-shadow: 0 0 12px rgba(225, 172, 105, 0.5);
-  transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-
-/* =====================================================
-   TOP CONTROLS
-===================================================== */
-
-.top-controls {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 8px;
-  z-index: 100;
-}
-
-.icon-btn {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(12px);
-  color: rgba(255, 255, 255, 0.65);
-  display: grid;
-  place-items: center;
-  transition: 0.3s ease;
-}
-
-.icon-btn:hover {
-  border-color: rgba(215, 175, 112, 0.45);
-  color: var(--gold-light);
-  transform: translateY(-2px);
-}
-
-
-/* =====================================================
-   APP / SCREENS
-===================================================== */
-
-#app {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100svh;
-}
-
-.screen {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 100svh;
-  padding: 70px 24px 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(25px) scale(0.985);
-
-  transition:
-    opacity 0.65s ease,
-    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-    visibility 0.65s;
-
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.screen.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-}
-
-.section-content {
-  width: min(900px, 100%);
-  text-align: center;
-  position: relative;
-}
-
-
-/* =====================================================
-   TYPOGRAPHY
-===================================================== */
-
-.tiny-label {
-  font-size: 10px;
-  letter-spacing: 0.28em;
-  font-weight: 600;
-  color: rgba(239, 210, 164, 0.72);
-  margin-bottom: 26px;
-}
-
-.hero-title {
-  font-family: var(--serif);
-  font-size: clamp(62px, 12vw, 120px);
-  font-weight: 400;
-  line-height: 0.88;
-  letter-spacing: -0.05em;
-}
-
-.hero-title span {
-  display: block;
-  color: var(--gold-light);
-  font-style: italic;
-  font-size: 0.82em;
-  margin-top: 8px;
-}
-
-.hero-subtitle {
-  margin-top: 32px;
-  color: var(--soft);
-  font-size: clamp(16px, 3vw, 21px);
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-.section-title {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(34px, 7vw, 62px);
-  line-height: 1.08;
-  letter-spacing: -0.035em;
-}
-
-.section-description {
-  margin-top: 18px;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.story-copy {
-  margin-top: 36px;
-}
-
-.story-copy h2 {
-  font-family: var(--serif);
-  font-size: clamp(25px, 5vw, 43px);
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-.story-line {
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 17px;
-}
-
-.story-soft {
-  margin: 26px auto 0;
-  max-width: 480px;
-  color: var(--soft);
-  font-size: 16px;
-  line-height: 1.7;
-}
-
-.story-soft strong {
-  color: var(--gold-light);
-  font-weight: 500;
-}
-
-
-/* =====================================================
-   REVEAL ANIMATIONS
-===================================================== */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  animation: revealUp 0.9s forwards;
-}
-
-.delay-1 {
-  animation-delay: 0.12s;
-}
-
-.delay-2 {
-  animation-delay: 0.24s;
-}
-
-.delay-3 {
-  animation-delay: 0.36s;
-}
-
-.delay-4 {
-  animation-delay: 0.55s;
-}
-
-@keyframes revealUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* =====================================================
-   BUTTONS
-===================================================== */
-
-.primary-btn {
-  margin-top: 38px;
-  min-height: 54px;
-  padding: 0 23px 0 26px;
-  border: 1px solid rgba(215, 175, 112, 0.35);
-  border-radius: 100px;
-  background: rgba(255, 255, 255, 0.055);
-  backdrop-filter: blur(12px);
-  color: var(--text);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  font-size: 14px;
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.primary-btn span {
-  color: var(--gold-light);
-  font-size: 19px;
-  transition: transform 0.3s ease;
-}
-
-.primary-btn:hover {
-  transform: translateY(-3px);
-  border-color: rgba(215, 175, 112, 0.7);
-  background: rgba(215, 175, 112, 0.08);
-  box-shadow: 0 10px 40px rgba(215, 175, 112, 0.1);
-}
-
-.primary-btn:hover span {
-  transform: translateX(4px);
-}
-
-.text-btn {
-  margin-top: 30px;
-  background: transparent;
-  color: rgba(248, 241, 234, 0.7);
-  font-size: 13px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: 0.3s ease;
-}
-
-.text-btn span {
-  color: var(--gold);
-  transition: 0.3s ease;
-}
-
-.text-btn:hover {
-  color: white;
-}
-
-.text-btn:hover span {
-  transform: translateX(5px);
-}
-
-.scroll-hint {
-  position: absolute;
-  top: calc(100vh - 88px);
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.28);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  white-space: nowrap;
-}
-
-.scroll-hint span {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  margin-right: 7px;
-  border-radius: 50%;
-  background: var(--gold);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  50% {
-    opacity: 0.25;
-    transform: scale(0.6);
-  }
-}
-
-
-/* =====================================================
-   RAKHI
-===================================================== */
-
-.rakhi-stage {
-  position: relative;
-  width: min(600px, 90vw);
-  height: 160px;
-  margin: 10px auto 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.thread {
-  position: absolute;
-  top: 50%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(201, 92, 104, 0.8),
-    rgba(215, 175, 112, 0.8)
-  );
-  width: 42%;
-  transform: translateY(-50%);
-  animation: threadReveal 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.thread-left {
-  right: 50%;
-  transform-origin: right center;
-}
-
-.thread-right {
-  left: 50%;
-  transform: translateY(-50%) rotate(180deg);
-  transform-origin: left center;
-}
-
-@keyframes threadReveal {
-  from {
-    transform: translateY(-50%) scaleX(0);
-  }
-
-  to {
-    transform: translateY(-50%) scaleX(1);
-  }
-}
-
-.rakhi {
-  position: relative;
-  width: 105px;
-  height: 105px;
-  z-index: 3;
-  animation: rakhiFloat 4s ease-in-out infinite;
-}
-
-@keyframes rakhiFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-
-  50% {
-    transform: translateY(-7px) rotate(2deg);
-  }
-}
-
-.rakhi-outer {
-  position: absolute;
-  inset: 5px;
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  background:
-    radial-gradient(
-      circle,
-      rgba(215, 175, 112, 0.08),
-      rgba(120, 38, 55, 0.22)
-    );
-  box-shadow:
-    0 0 30px rgba(215, 175, 112, 0.15),
-    inset 0 0 20px rgba(215, 175, 112, 0.08);
-}
-
-.rakhi-middle {
-  position: absolute;
-  inset: 22px;
-  border: 2px solid var(--red-light);
-  border-radius: 50%;
-  transform: rotate(45deg);
-}
-
-.rakhi-center {
-  position: absolute;
-  inset: 34px;
-  border-radius: 50%;
-  background:
-    radial-gradient(
-      circle at 35% 30%,
-      #f3dcae,
-      #bd8b50 50%,
-      #6e3e34
-    );
-  display: grid;
-  place-items: center;
-  box-shadow: 0 0 20px rgba(235, 190, 112, 0.35);
-}
-
-.rakhi-center span {
-  color: #5d3040;
-  font-size: 16px;
-}
-
-.rakhi-bead {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 8px rgba(215, 175, 112, 0.5);
-}
-
-.bead-1 {
-  top: 3px;
-  left: 48px;
-}
-
-.bead-2 {
-  right: 3px;
-  top: 48px;
-}
-
-.bead-3 {
-  bottom: 3px;
-  left: 48px;
-}
-
-.bead-4 {
-  left: 3px;
-  top: 48px;
-}
-
-.pause-line {
-  width: 50px;
-  height: 1px;
-  margin: 25px auto 0;
-  background: var(--line);
-}
-
-
-/* =====================================================
-   CHOICES
-===================================================== */
-
-.choice-grid {
-  width: min(700px, 100%);
-  margin: 35px auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.choice-card {
-  min-height: 150px;
-  padding: 22px 14px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--glass);
-  backdrop-filter: blur(15px);
-  text-align: left;
-  transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.choice-card:hover,
-.choice-card.selected {
-  transform: translateY(-6px);
-  border-color: rgba(215, 175, 112, 0.4);
-  background: rgba(215, 175, 112, 0.07);
-}
-
-.choice-icon {
-  display: block;
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.choice-card > span:nth-child(2) {
-  display: block;
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.choice-card small {
-  display: block;
-  margin-top: 7px;
-  color: #8e8887;
-  font-size: 11px;
-  line-height: 1.5;
-}
-
-.response-box {
-  width: min(560px, 100%);
-  margin: 22px auto 0;
-  padding: 23px;
-  min-height: 100px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid transparent;
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: 0.5s ease;
-}
-
-.response-box.show {
-  opacity: 1;
-  transform: translateY(0);
-  border-color: var(--line);
-  pointer-events: auto;
-}
-
-.response-icon {
-  margin-bottom: 9px;
-}
-
-#responseText {
-  color: var(--soft);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-
-/* =====================================================
-   MESSAGE CARDS
-===================================================== */
-
-.message-cards {
-  width: min(720px, 100%);
-  margin: 38px auto 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 13px;
-}
-
-.message-card {
-  position: relative;
-  min-height: 145px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: linear-gradient(
-    145deg,
-    rgba(255,255,255,0.055),
-    rgba(255,255,255,0.015)
-  );
-  text-align: left;
-  overflow: hidden;
-  transition: 0.35s ease;
-}
-
-.message-card::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  right: -30px;
-  bottom: -35px;
-  border-radius: 50%;
-  background: rgba(215, 175, 112, 0.08);
-}
-
-.message-card:hover,
-.message-card.opened {
-  transform: translateY(-5px);
-  border-color: rgba(215, 175, 112, 0.4);
-}
-
-.card-number {
-  color: rgba(215, 175, 112, 0.6);
-  font-size: 10px;
-  letter-spacing: 0.15em;
-}
-
-.card-title {
-  margin-top: 45px;
-  font-family: var(--serif);
-  font-size: 22px;
-}
-
-.card-arrow {
-  position: absolute;
-  right: 18px;
-  top: 18px;
-  color: var(--gold);
-}
-
-.message-reveal {
-  position: relative;
-  width: min(620px, 100%);
-  margin: 25px auto 0;
-  padding: 28px 35px;
-  border: 1px solid rgba(215, 175, 112, 0.2);
-  border-radius: 20px;
-  background: rgba(30, 20, 25, 0.65);
-  backdrop-filter: blur(20px);
-  opacity: 0;
-  transform: translateY(15px);
-  visibility: hidden;
-  transition: 0.45s ease;
-}
-
-.message-reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-}
-
-.close-reveal {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  color: rgba(255,255,255,.4);
-  font-size: 23px;
-}
-
-.reveal-small {
-  color: var(--gold);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.reveal-message {
-  margin-top: 15px;
-  color: var(--soft);
-  font-family: var(--serif);
-  font-size: clamp(19px, 4vw, 25px);
-  line-height: 1.55;
-}
-
-
-/* =====================================================
-   PROMISE
-===================================================== */
-
-.promise-content {
-  max-width: 760px;
-}
-
-.promise-btn {
-  margin-top: 35px;
-}
-
-.promise-reveal {
-  margin-top: 30px;
-}
-
-.promise-line,
-.promise-call,
-.promise-final {
-  animation: softReveal 0.8s forwards;
-}
-
-.promise-line {
-  color: var(--soft);
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-.promise-call {
-  margin-top: 25px;
-  color: var(--gold-light);
-  font-family: var(--serif);
-  font-size: clamp(42px, 8vw, 72px);
-  font-style: italic;
-}
-
-.promise-final {
-  margin-top: 22px;
-  color: var(--soft);
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.promise-final strong {
-  color: var(--text);
-  font-weight: 500;
-}
-
-@keyframes softReveal {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* =====================================================
-   DRAG RAKHI
-===================================================== */
-
-.drag-content {
-  max-width: 800px;
-}
-
-.drag-area {
-  width: min(650px, 100%);
-  margin: 55px auto 0;
-}
-
-.drag-track {
-  position: relative;
-  height: 130px;
-  display: flex;
-  align-items: center;
-}
-
-.drag-line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 2px;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(200, 92, 104, 0.55) 0 8px,
-      transparent 8px 16px
-    );
-  transform: translateY(-50%);
-}
-
-.drag-rakhi {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 78px;
-  height: 78px;
-  transform: translateY(-50%);
-  z-index: 5;
-  cursor: grab;
-  touch-action: none;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,.3));
-}
-
-.drag-rakhi.dragging {
-  cursor: grabbing;
-  transform: translateY(-50%) scale(1.12);
-}
-
-.mini-rakhi-outer {
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  border: 2px solid var(--gold);
-  background: rgba(130, 60, 65, 0.4);
-}
-
-.mini-rakhi-middle {
-  position: absolute;
-  inset: 17px;
-  border-radius: 50%;
-  border: 2px solid var(--red-light);
-  transform: rotate(45deg);
-}
-
-.mini-rakhi-center {
-  position: absolute;
-  inset: 27px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: radial-gradient(
-    circle at 35% 30%,
-    #f2dba7,
-    #b78047
-  );
-  color: #633744;
-  font-size: 12px;
-}
-
-.drop-target {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 96px;
-  height: 96px;
-  border: 1px dashed rgba(215, 175, 112, 0.5);
-  border-radius: 50%;
-  transform: translateY(-50%);
-  display: grid;
-  place-items: center;
-  color: rgba(215, 175, 112, 0.7);
-  font-size: 9px;
-  letter-spacing: 0.15em;
-}
-
-.target-ring {
-  position: absolute;
-  inset: -8px;
-  border: 1px solid rgba(215, 175, 112, 0.12);
-  border-radius: 50%;
-  animation: targetPulse 2s ease-in-out infinite;
-}
-
-@keyframes targetPulse {
-  50% {
-    transform: scale(1.12);
-    opacity: 0.3;
-  }
-}
-
-.drag-status {
-  margin-top: 20px;
-  color: rgba(255,255,255,.35);
-  font-size: 11px;
-  letter-spacing: .05em;
-}
-
-.drag-status span {
-  color: var(--gold);
-  margin-right: 6px;
-}
-
-
-/* =====================================================
-   FINAL
-===================================================== */
-
-.final-screen {
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(151, 57, 70, 0.15),
-      transparent 35%
-    );
-}
-
-.final-glow {
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: rgba(215, 175, 112, 0.08);
-  filter: blur(70px);
-  pointer-events: none;
-}
-
-.final-content {
-  max-width: 750px;
-}
-
-.final-rakhi {
-  position: relative;
-  width: 74px;
-  height: 74px;
-  margin: 0 auto 25px;
-  animation: finalRakhi 4s ease-in-out infinite;
-}
-
-@keyframes finalRakhi {
-  0%, 100% {
-    transform: rotate(-4deg);
-  }
-
-  50% {
-    transform: rotate(4deg) translateY(-5px);
-  }
-}
-
-.final-title {
-  margin-top: 12px;
-  font-family: var(--serif);
-  font-size: clamp(43px, 9vw, 82px);
-  line-height: .96;
-  font-weight: 400;
-  letter-spacing: -.045em;
-}
-
-.final-title span {
-  color: var(--gold-light);
-  font-style: italic;
-}
-
-.final-message {
-  margin: 38px auto 0;
-  max-width: 540px;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.final-divider {
-  width: 35px;
-  height: 1px;
-  margin: 23px auto;
-  background: var(--gold);
-  opacity: .6;
-}
-
-.final-highlight {
-  color: var(--text);
-  font-family: var(--serif);
-  font-size: clamp(28px, 6vw, 40px);
-}
-
-.final-last {
-  margin-top: 27px;
-  color: rgba(255,255,255,.4);
-}
-
-.funny-ending {
-  margin-top: 5px;
-  color: var(--gold-light);
-}
-
-.restart-btn {
-  margin-top: 42px;
-  padding: 13px 20px;
-  border-radius: 100px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.1);
-  color: rgba(255,255,255,.6);
-  font-size: 12px;
-  transition: .3s ease;
-}
-
-.restart-btn span {
-  margin-right: 7px;
-}
-
-.restart-btn:hover {
-  color: white;
-  border-color: rgba(215,175,112,.4);
-  transform: translateY(-2px);
-}
-
-
-/* =====================================================
-   UTILITY
-===================================================== */
-
-.hidden {
-  display: none !important;
-}
-
-
-/* =====================================================
-   CELEBRATION
-===================================================== */
-
-#celebration {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.confetti {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  width: 7px;
-  height: 12px;
-  opacity: 1;
-  animation: confettiFly 1.8s cubic-bezier(.15,.75,.25,1) forwards;
-}
-
-@keyframes confettiFly {
-  to {
-    transform:
-      translate3d(
-        var(--x),
-        var(--y),
-        0
-      )
-      rotate(var(--r));
-    opacity: 0;
-  }
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 700px) {
-
-  .screen {
-    padding: 65px 18px 35px;
-    align-items: center;
-  }
-
-  .choice-grid,
-  .message-cards {
-    grid-template-columns: 1fr;
-    gap: 9px;
-  }
-
-  .choice-card {
-    min-height: auto;
-    padding: 16px 17px;
-    display: grid;
-    grid-template-columns: 42px 1fr;
-    grid-template-rows: auto auto;
-    column-gap: 8px;
-    text-align: left;
-  }
-
-  .choice-icon {
-    grid-row: 1 / 3;
-    margin: 0;
-    align-self: center;
-    font-size: 25px;
-  }
-
-  .choice-card > span:nth-child(2) {
-    align-self: end;
-  }
-
-  .choice-card small {
-    margin-top: 3px;
-  }
-
-  .message-card {
-    min-height: 75px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .message-card .card-title {
-    margin: 0;
-  }
-
-  .message-card .card-number {
-    width: 30px;
-  }
-
-  .message-card .card-arrow {
-    right: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .message-reveal {
-    padding: 27px 25px;
-  }
-
-  .drag-area {
-    margin-top: 42px;
-  }
-
-}
-
-
-/* =====================================================
-   SMALL PHONES
-===================================================== */
-
-@media (max-width: 420px) {
-
-  .screen {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .top-controls {
-    top: 13px;
-    right: 13px;
-  }
-
-  .icon-btn {
-    width: 34px;
-    height: 34px;
-  }
-
-  .hero-title {
-    font-size: 63px;
-  }
-
-  .hero-subtitle {
-    margin-top: 25px;
-    font-size: 15px;
-  }
-
-  .primary-btn {
-    min-height: 50px;
-  }
-
-  .rakhi-stage {
-    height: 130px;
-  }
-
-  .rakhi {
-    width: 88px;
-    height: 88px;
-  }
-
-  .rakhi-center {
-    inset: 29px;
-  }
-
-  .story-copy {
-    margin-top: 25px;
-  }
-
-  .story-copy h2 {
-    font-size: 25px;
-  }
-
-  .story-line {
-    font-size: 15px;
-  }
-
-  .section-title {
-    font-size: 34px;
-  }
-
-  .section-description {
-    font-size: 13px;
-  }
-
-  .promise-line {
-    font-size: 15px;
-  }
-
-  .promise-call {
-    font-size: 48px;
-  }
-
-  .promise-final {
-    font-size: 14px;
-  }
-
-  .drag-track {
-    height: 115px;
-  }
-
-  .drag-rakhi {
-    width: 67px;
-    height: 67px;
-  }
-
-  .drop-target {
-    width: 82px;
-    height: 82px;
-  }
-
-  .final-title {
-    font-size: 46px;
-  }
-
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.001ms !important;
-  }
-
-}
-/* =====================================================
-   RAKSHA BANDHAN — INTERACTIVE EXPERIENCE
-===================================================== */
-
-(() => {
-
-  "use strict";
-
-
-  /* =====================================================
-     STATE
-  ===================================================== */
-
-  let currentScreen = 1;
-  let selectedChoice = false;
-  let openedMessages = new Set();
-
-  let promiseStarted = false;
-  let promiseStep = 0;
-
-  let dragging = false;
-  let dragCompleted = false;
-
-  let dragOffsetX = 0;
-
-
-  /* =====================================================
-     DOM
-  ===================================================== */
-
-  const screens = document.querySelectorAll(".screen");
-  const progressBar = document.getElementById("progressBar");
-
-  const restartBtn = document.getElementById("restartBtn");
-  const restartTop = document.getElementById("restartTop");
-
-  const responseBox = document.getElementById("responseBox");
-  const responseText = document.getElementById("responseText");
-  const responseNext = document.getElementById("responseNext");
-
-  const messageReveal = document.getElementById("messageReveal");
-  const revealSmall = document.getElementById("revealSmall");
-  const revealMessage = document.getElementById("revealMessage");
-  const closeReveal = document.getElementById("closeReveal");
-  const messagesNext = document.getElementById("messagesNext");
-
-  const promiseBtn = document.getElementById("promiseBtn");
-  const promiseReveal = document.getElementById("promiseReveal");
-  const promiseLine1 = document.getElementById("promiseLine1");
-  const promiseLine2 = document.getElementById("promiseLine2");
-  const promiseCall = document.getElementById("promiseCall");
-  const promiseFinal = document.getElementById("promiseFinal");
-  const promiseNext = document.getElementById("promiseNext");
-
-  const dragRakhi = document.getElementById("dragRakhi");
-  const dropTarget = document.getElementById("dropTarget");
-  const dragTrack = document.querySelector(".drag-track");
-  const dragStatus = document.getElementById("dragStatus");
-
-  const celebration = document.getElementById("celebration");
-
-  const soundBtn = document.getElementById("soundBtn");
-  const soundIcon = document.getElementById("soundIcon");
-
-
-  /* =====================================================
-     PARTICLES
-  ===================================================== */
-
-  function createParticles() {
-
-    const container = document.getElementById("particles");
-
-    if (!container) return;
-
-    for (let i = 0; i < 28; i++) {
-
-      const particle = document.createElement("span");
-
-      particle.className = "particle";
-
-      particle.style.left = `${Math.random() * 100}%`;
-
-      particle.style.animationDuration =
-        `${8 + Math.random() * 14}s`;
-
-      particle.style.animationDelay =
-        `${Math.random() * -15}s`;
-
-      const size = 1 + Math.random() * 2;
-
-      particle.style.width = `${size}px`;
-      particle.style.height = `${size}px`;
-
-      container.appendChild(particle);
-    }
-  }
-
-
-  /* =====================================================
-     SCREEN NAVIGATION
-  ===================================================== */
-
-  function goToScreen(number) {
-
-    if (number < 1 || number > screens.length) {
-      return;
-    }
-
-    currentScreen = number;
-
-    screens.forEach((screen, index) => {
-
-      screen.classList.toggle(
-        "active",
-        index + 1 === number
-      );
-
-    });
-
-    updateProgress();
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-
-    if (number === 7) {
-      launchCelebration();
-    }
-  }
-
-
-  function updateProgress() {
-
-    const percentage =
-      ((currentScreen - 1) /
-      (screens.length - 1)) * 100;
-
-    progressBar.style.width = `${percentage}%`;
-  }
-
-
-  /* =====================================================
-     NEXT BUTTONS
-  ===================================================== */
-
-  document.querySelectorAll("[data-next]").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-      const next = Number(button.dataset.next);
-
-      if (!Number.isNaN(next)) {
-        goToScreen(next);
-      }
-
-    });
-
-  });
-
-
-  /* =====================================================
-     CHOICE INTERACTION
-  ===================================================== */
-
-  const choiceResponses = {
-
-    remote: `
-      Haan haan... remote hi tha. 😂<br><br>
-      Aur obviously, galti hamesha meri hoti thi.
-      <br>
-      <span style="color:#d7af70">
-        “Bas 5 minute aur” bolke tu poora episode dekh leti thi.
-      </span>
-    `,
-
-    charger: `
-      Charger! Ye toh expected tha. 😂<br><br>
-      Ek charger ke liye aise ladte the jaise
-      ghar ki property ka matter ho.
-      <br>
-      <span style="color:#d7af70">
-        “Tune mera charger liya tha!” — legendary dialogue.
-      </span>
-    `,
-
-    things: `
-      “Tu meri cheez kyun le gayi?” 😑<br><br>
-      Aur jawab bhi kya hota tha?
-      <br>
-      <span style="color:#d7af70">
-        “Bas le li.”
-      </span>
-      <br><br>
-      Bas. Case closed.
-    `
-  };
-
-
-  document.querySelectorAll(".choice-card").forEach(card => {
-
-    card.addEventListener("click", () => {
-
-      const choice = card.dataset.choice;
-
-      document.querySelectorAll(".choice-card")
-        .forEach(item => item.classList.remove("selected"));
-
-      card.classList.add("selected");
-
-      responseText.innerHTML = choiceResponses[choice];
-
-      responseBox.classList.remove("show");
-
-      requestAnimationFrame(() => {
-        responseBox.classList.add("show");
-      });
-
-      responseNext.classList.remove("hidden");
-
-      selectedChoice = true;
-
-    });
-
-  });
-
-
-  /* =====================================================
-     MESSAGE REVEALS
-  ===================================================== */
-
-  const messages = {
-
-    1: {
-      small: "EK BAAT",
-      text: `
-        Tu irritate bahut karti hai.<br><br>
-        Lekin sach bolun...
-        ghar mein tu na ho na,
-        toh ghar thoda zyada hi shaant lagta hai.
-      `
-    },
-
-    2: {
-      small: "DUSRI BAAT",
-      text: `
-        Main har baar bolta nahi hoon...
-        <br><br>
-        par haan,
-        <strong style="color:#f0d49c">
-          tu important hai mere liye.
-        </strong>
-      `
-    },
-
-    3: {
-      small: "AUR EK...",
-      text: `
-        Please ye message padh ke
-        emotional hone ka natak mat karna. 😑
-        <br><br>
-        Main bhi nahi ho raha.
-        Bilkul nahi.
-      `
-    }
-
-  };
-
-
-  document.querySelectorAll(".message-card").forEach(card => {
-
-    card.addEventListener("click", () => {
-
-      const id = card.dataset.message;
-      const data = messages[id];
-
-      if (!data) return;
-
-      openedMessages.add(id);
-
-      document.querySelectorAll(".message-card")
-        .forEach(item => item.classList.remove("opened"));
-
-      card.classList.add("opened");
-
-      revealSmall.textContent = data.small;
-
-      revealMessage.innerHTML = data.text;
-
-      messageReveal.classList.remove("show");
-
-      requestAnimationFrame(() => {
-        messageReveal.classList.add("show");
-      });
-
-      if (openedMessages.size >= 2) {
-        messagesNext.classList.remove("hidden");
-      }
-
-    });
-
-  });
-
-
-  closeReveal.addEventListener("click", () => {
-
-    messageReveal.classList.remove("show");
-
-  });
-
-
-  /* =====================================================
-     PROMISE REVEAL
-  ===================================================== */
-
-  promiseBtn.addEventListener("click", () => {
-
-    if (promiseStarted) return;
-
-    promiseStarted = true;
-
-    promiseBtn.classList.add("hidden");
-
-    promiseReveal.classList.remove("hidden");
-
-    setTimeout(() => {
-
-      promiseLine2.classList.remove("hidden");
-
-    }, 1800);
-
-    setTimeout(() => {
-
-      promiseCall.classList.remove("hidden");
-
-    }, 3800);
-
-    setTimeout(() => {
-
-      promiseFinal.classList.remove("hidden");
-
-    }, 5300);
-
-    setTimeout(() => {
-
-      promiseNext.classList.remove("hidden");
-
-    }, 7000);
-
-  });
-
-
-  /* =====================================================
-     DRAG RAKHI
-  ===================================================== */
-
-  function getPointerX(event) {
-
-    if (event.touches && event.touches.length) {
-      return event.touches[0].clientX;
-    }
-
-    if (event.changedTouches && event.changedTouches.length) {
-      return event.changedTouches[0].clientX;
-    }
-
-    return event.clientX;
-  }
-
-
-  function startDrag(event) {
-
-    if (dragCompleted) return;
-
-    event.preventDefault();
-
-    dragging = true;
-
-    dragRakhi.classList.add("dragging");
-
-    const rect = dragRakhi.getBoundingClientRect();
-
-    dragOffsetX =
-      getPointerX(event) -
-      (rect.left + rect.width / 2);
-
-    if (event.pointerId !== undefined) {
-
-      try {
-        dragRakhi.setPointerCapture(event.pointerId);
-      } catch (error) {
-        // Safe fallback for browsers without pointer capture.
-      }
-
-    }
-
-  }
-
-
-  function moveDrag(event) {
-
-    if (!dragging || dragCompleted) return;
-
-    event.preventDefault();
-
-    const trackRect =
-      dragTrack.getBoundingClientRect();
-
-    const rakhiRect =
-      dragRakhi.getBoundingClientRect();
-
-    let x =
-      getPointerX(event) -
-      trackRect.left -
-      dragOffsetX -
-      rakhiRect.width / 2;
-
-    const minX = 0;
-
-    const maxX =
-      trackRect.width -
-      rakhiRect.width;
-
-    x = Math.max(
-      minX,
-      Math.min(maxX, x)
-    );
-
-    dragRakhi.style.left = `${x}px`;
-
-    checkDropPosition();
-
-  }
-
-
-  function endDrag(event) {
-
-    if (!dragging) return;
-
-    dragging = false;
-
-    dragRakhi.classList.remove("dragging");
-
-    if (event.pointerId !== undefined) {
-
-      try {
-        dragRakhi.releasePointerCapture(event.pointerId);
-      } catch (error) {
-        // Nothing needed.
-      }
-
-    }
-
-    if (checkDropPosition()) {
-      completeDrag();
-    }
-
-  }
-
-
-  function checkDropPosition() {
-
-    if (dragCompleted) return true;
-
-    const rakhiRect =
-      dragRakhi.getBoundingClientRect();
-
-    const targetRect =
-      dropTarget.getBoundingClientRect();
-
-    const rakhiCenter =
-      rakhiRect.left +
-      rakhiRect.width / 2;
-
-    const targetCenter =
-      targetRect.left +
-      targetRect.width / 2;
-
-    const distance =
-      Math.abs(rakhiCenter - targetCenter);
-
-    return distance < 55;
-
-  }
-
-
-  function completeDrag() {
-
-    if (dragCompleted) return;
-
-    dragCompleted = true;
-
-    const trackRect =
-      dragTrack.getBoundingClientRect();
-
-    const targetRect =
-      dropTarget.getBoundingClientRect();
-
-    const finalLeft =
-      targetRect.left -
-      trackRect.left +
-      targetRect.width / 2 -
-      dragRakhi.offsetWidth / 2;
-
-    dragRakhi.style.left = `${finalLeft}px`;
-
-    dropTarget.style.borderColor =
-      "rgba(240, 212, 156, .9)";
-
-    dropTarget.style.boxShadow =
-      "0 0 35px rgba(215,175,112,.22)";
-
-    dragStatus.innerHTML =
-      `<span>✓</span> Ho gaya.`;
-
-    setTimeout(() => {
-
-      launchCelebration();
-
-      setTimeout(() => {
-
-        goToScreen(7);
-
-      }, 1000);
-
-    }, 450);
-
-  }
-
-
-  /* Pointer Events */
-
-  dragRakhi.addEventListener(
-    "pointerdown",
-    startDrag
-  );
-
-  window.addEventListener(
-    "pointermove",
-    moveDrag,
-    { passive: false }
-  );
-
-  window.addEventListener(
-    "pointerup",
-    endDrag
-  );
-
-  window.addEventListener(
-    "pointercancel",
-    endDrag
-  );
-
-
-  /* =====================================================
-     KEYBOARD ACCESSIBILITY FOR DRAG
-  ===================================================== */
-
-  dragRakhi.addEventListener("keydown", event => {
-
-    if (
-      event.key === "Enter" ||
-      event.key === " "
-    ) {
-
-      event.preventDefault();
-
-      completeDrag();
-
-    }
-
-  });
-
-
-  /* =====================================================
-     CELEBRATION
-  ===================================================== */
-
-  function launchCelebration() {
-
-    if (!celebration) return;
-
-    celebration.innerHTML = "";
-
-    const count = 55;
-
-    for (let i = 0; i < count; i++) {
-
-      const piece =
-        document.createElement("span");
-
-      piece.className = "confetti";
-
-      const angle =
-        Math.random() * Math.PI * 2;
-
-      const distance =
-        100 + Math.random() * 280;
-
-      const x =
-        Math.cos(angle) * distance;
-
-      const y =
-        Math.sin(angle) * distance;
-
-      const rotation =
-        Math.random() * 720 - 360;
-
-      piece.style.setProperty(
-        "--x",
-        `${x}px`
-      );
-
-      piece.style.setProperty(
-        "--y",
-        `${y}px`
-      );
-
-      piece.style.setProperty(
-        "--r",
-        `${rotation}deg`
-      );
-
-      piece.style.background =
-        Math.random() > 0.5
-          ? "rgba(215,175,112,.85)"
-          : "rgba(200,92,104,.85)";
-
-      piece.style.borderRadius =
-        Math.random() > 0.5
-          ? "50%"
-          : "2px";
-
-      piece.style.animationDelay =
-        `${Math.random() * .18}s`;
-
-      celebration.appendChild(piece);
-
-    }
-
-    setTimeout(() => {
-
-      celebration.innerHTML = "";
-
-    }, 2500);
-
-  }
-
-
-  /* =====================================================
-     RESTART
-  ===================================================== */
-
-  function resetExperience() {
-
-    currentScreen = 1;
-
-    selectedChoice = false;
-
-    openedMessages.clear();
-
-    promiseStarted = false;
-    promiseStep = 0;
-
-    dragging = false;
-    dragCompleted = false;
-
-    /* Choices */
-
-    document.querySelectorAll(".choice-card")
-      .forEach(card => {
-        card.classList.remove("selected");
-      });
-
-    responseBox.classList.remove("show");
-
-    responseText.innerHTML = "";
-
-    responseNext.classList.add("hidden");
-
-
-    /* Messages */
-
-    document.querySelectorAll(".message-card")
-      .forEach(card => {
-        card.classList.remove("opened");
-      });
-
-    messageReveal.classList.remove("show");
-
-    messagesNext.classList.add("hidden");
-
-
-    /* Promise */
-
-    promiseBtn.classList.remove("hidden");
-
-    promiseReveal.classList.remove("hidden");
-
-    promiseLine2.classList.add("hidden");
-    promiseCall.classList.add("hidden");
-    promiseFinal.classList.add("hidden");
-    promiseNext.classList.add("hidden");
-
-    /*
-      Keep the promise reveal container available,
-      but reset its child animation state.
-    */
-
-
-    /* Drag */
-
-    dragRakhi.style.left = "0px";
-
-    dragRakhi.classList.remove("dragging");
-
-    dropTarget.style.borderColor =
-      "rgba(215, 175, 112, 0.5)";
-
-    dropTarget.style.boxShadow = "none";
-
-    dragStatus.innerHTML =
-      `<span>↔</span> Drag / swipe karo`;
-
-
-    /* Celebration */
-
-    celebration.innerHTML = "";
-
-
-    /* Go home */
-
-    goToScreen(1);
-
-  }
-
-
-  restartBtn.addEventListener(
-    "click",
-    resetExperience
-  );
-
-  restartTop.addEventListener(
-    "click",
-    resetExperience
-  );
-
-
-  /* =====================================================
-     OPTIONAL SOUND TOGGLE
-  ===================================================== */
-
-  /*
-    We deliberately don't autoplay music because browsers
-    block autoplay and unwanted sound can ruin the experience.
-
-    This button is kept as a polished UI element and can
-    be connected to a local audio file later if desired.
-  */
-
-  let soundOn = false;
-
-  soundBtn.addEventListener("click", () => {
-
-    soundOn = !soundOn;
-
-    soundIcon.textContent =
-      soundOn ? "♫" : "♪";
-
-    soundBtn.setAttribute(
-      "aria-label",
-      soundOn
-        ? "Sound on"
-        : "Sound off"
-    );
-
-  });
-
-
-  /* =====================================================
-     SWIPE NAVIGATION
-  ===================================================== */
-
-  let touchStartY = 0;
-  let touchEndY = 0;
-
-  document.addEventListener(
-    "touchstart",
-    event => {
-
-      if (dragging) return;
-
-      touchStartY =
-        event.changedTouches[0].clientY;
-
-    },
-    { passive: true }
-  );
-
-
-  document.addEventListener(
-    "touchend",
-    event => {
-
-      if (dragging) return;
-
-      touchEndY =
-        event.changedTouches[0].clientY;
-
-      const difference =
-        touchStartY - touchEndY;
-
-      /*
-        Only allow upward swipe to continue.
-        This prevents accidental navigation while
-        scrolling/interacting with cards.
-      */
-
-      if (
-        difference > 80 &&
-        currentScreen < screens.length
-      ) {
-
-        const activeScreen =
-          document.querySelector(".screen.active");
-
-        const canSwipe =
-          activeScreen &&
-          activeScreen.scrollHeight <=
-          activeScreen.clientHeight + 30;
-
-        if (canSwipe) {
-          goToScreen(currentScreen + 1);
-        }
-
-      }
-
-    },
-    { passive: true }
-  );
-
-
-  /* =====================================================
-     INITIALIZE
-  ===================================================== */
-
-  createParticles();
-
-  updateProgress();
-
-})();
