@@ -1,71 +1,136 @@
-<!DOCTYPE html>
-<html lang="hi">
+<!DOCTYPE html><html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Khushi's Rakhi Mission 🎀</title>
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><title>Neelam's Rakhi Mission 🎀</title><style>
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@400;600;700&display=swap');
 
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   font-family:Poppins,sans-serif;
   background:linear-gradient(135deg,#fff1f5,#ffe5ed,#fff7df);
   color:#431522;
   min-height:100vh;
-  overflow:hidden;
+
+  /* IMPORTANT: mobile vertical swipe/scroll */
+  overflow-x:hidden;
+  overflow-y:auto;
+
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
 }
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:5px;
+  width:0;
+  background:#9b1948;
+  z-index:9999;
+  transition:width .4s ease;
+}
+
+/* =========================
+   PAGE
+========================= */
 
 .page{
   min-height:100vh;
+  min-height:100svh;
+
   display:none;
   align-items:center;
   justify-content:center;
-  padding:25px;
+
+  padding:45px 18px 100px;
+
   text-align:center;
 }
 
 .page.active{
   display:flex;
-  animation:enter .7s ease;
+  animation:enter .55s ease;
 }
 
 @keyframes enter{
-  from{opacity:0;transform:translateY(30px) scale(.97)}
-  to{opacity:1;transform:none}
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.98);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
 }
+
+/* =========================
+   BOX
+========================= */
 
 .box{
   width:min(650px,100%);
+
   padding:35px 22px;
+
   border-radius:32px;
-  background:#ffffffc9;
+
+  background:rgba(255,255,255,.80);
+
   backdrop-filter:blur(18px);
-  box-shadow:0 20px 70px #7d183522;
+  -webkit-backdrop-filter:blur(18px);
+
+  box-shadow:
+    0 20px 70px rgba(125,24,53,.14);
+
+  position:relative;
 }
+
+/* =========================
+   TEXT
+========================= */
 
 .emoji{
   font-size:75px;
   margin-bottom:10px;
-  animation:bob 2s infinite;
+
+  animation:bob 2s infinite ease-in-out;
 }
 
 @keyframes bob{
-  50%{transform:translateY(-9px) rotate(4deg)}
+  50%{
+    transform:translateY(-9px) rotate(4deg);
+  }
 }
 
 h1{
   color:#9b1948;
+
   font-size:clamp(42px,11vw,75px);
+
   line-height:1;
+
   margin:15px 0;
 }
 
 h2{
   color:#9b1948;
+
   font-size:30px;
+
   margin-bottom:15px;
 }
 
@@ -76,23 +141,48 @@ p{
 
 .cursive{
   font-family:Caveat,cursive;
+
   font-size:32px;
+
   color:#8e2949;
+
   margin-top:18px;
 }
 
+/* =========================
+   BUTTON
+========================= */
+
 button{
   border:0;
+
   background:#9b1948;
   color:white;
+
   padding:15px 25px;
+
   border-radius:50px;
+
   margin-top:25px;
+
   font-size:16px;
   font-weight:700;
+
   cursor:pointer;
-  box-shadow:0 10px 25px #9b194844;
-  transition:.2s;
+
+  box-shadow:0 10px 25px rgba(155,25,72,.27);
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease,
+    box-shadow .2s ease;
+}
+
+button:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 13px 30px rgba(155,25,72,.30);
 }
 
 button:active{
@@ -101,27 +191,45 @@ button:active{
 
 button:disabled{
   opacity:.4;
+  cursor:not-allowed;
+  transform:none;
 }
 
-/* Mission */
+/* =========================
+   MISSION
+========================= */
 
 .mission{
   display:grid;
+
   gap:13px;
+
   margin-top:25px;
 }
 
 .task{
   background:white;
+
   padding:18px;
+
   border-radius:18px;
-  box-shadow:0 8px 25px #68152a1c;
+
+  box-shadow:
+    0 8px 25px rgba(104,21,42,.11);
+
   cursor:pointer;
-  transition:.3s;
+
+  transition:
+    transform .3s ease,
+    background .3s ease;
 }
 
 .task:hover{
   transform:translateY(-3px);
+}
+
+.task:active{
+  transform:scale(.98);
 }
 
 .task.done{
@@ -137,36 +245,59 @@ button:disabled{
   display:block;
 }
 
-/* Cards */
+/* =========================
+   SECRET CARDS
+========================= */
 
 .cards{
   display:grid;
+
   grid-template-columns:1fr 1fr;
+
   gap:14px;
+
   margin-top:25px;
 }
 
 .secret{
   min-height:125px;
+
   background:#fff;
+
   border-radius:20px;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
+
   padding:18px;
-  box-shadow:0 8px 25px #68152a1c;
+
+  box-shadow:
+    0 8px 25px rgba(104,21,42,.11);
+
   cursor:pointer;
-  transition:.4s;
+
+  transition:
+    transform .4s ease,
+    background .4s ease;
+}
+
+.secret:hover{
+  transform:translateY(-3px);
 }
 
 .secret .inside{
   display:none;
+
   color:#8d2346;
+
   font-weight:600;
 }
 
 .secret.open{
   transform:rotateY(360deg);
+
   background:#ffe4ed;
 }
 
@@ -178,577 +309,1023 @@ button:disabled{
   display:block;
 }
 
-/* Envelope */
+/* =========================
+   ENVELOPE
+========================= */
 
 .envelope{
   width:300px;
   height:190px;
+
   background:#d45172;
-  margin:40px auto 20px;
+
+  margin:45px auto 35px;
+
   position:relative;
+
   border-radius:10px;
+
   cursor:pointer;
-  box-shadow:0 20px 45px #68152a33;
+
+  box-shadow:
+    0 20px 45px rgba(104,21,42,.20);
+
+  perspective:1000px;
+
+  /* Fix touch behavior */
+  touch-action:manipulation;
 }
+
+/* Letter */
+
+.letter{
+  position:absolute;
+
+  background:#fffdf4;
+
+  width:86%;
+  height:160px;
+
+  left:7%;
+  bottom:5px;
+
+  border-radius:7px;
+
+  padding:15px;
+
+  z-index:2;
+
+  font-family:Caveat,cursive;
+
+  font-size:21px;
+
+  line-height:1.35;
+
+  color:#6d293d;
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+  transition:
+    transform .8s cubic-bezier(.2,.8,.2,1);
+
+  /* prevents weird text rendering during animation */
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+
+/* Flap */
 
 .flap{
   position:absolute;
-  inset:0;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
   background:#bd3c60;
-  clip-path:polygon(0 0,50% 55%,100% 0);
-  z-index:3;
-  transition:.7s;
-  transform-origin:top;
+
+  clip-path:polygon(
+    0 0,
+    50% 55%,
+    100% 0
+  );
+
+  z-index:4;
+
+  transform-origin:top center;
+
+  transition:
+    transform .7s cubic-bezier(.2,.8,.2,1);
+
+  pointer-events:none;
+
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
 }
+
+/* Envelope front pocket */
+
+.envelope:after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:0;
+
+  width:100%;
+  height:70%;
+
+  background:#d45172;
+
+  clip-path:polygon(
+    0 0,
+    50% 55%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  z-index:3;
+
+  pointer-events:none;
+}
+
+/* Open */
 
 .envelope.open .flap{
   transform:rotateX(180deg);
 }
 
-.letter{
-  position:absolute;
-  background:#fffdf4;
-  width:86%;
-  height:160px;
-  left:7%;
-  bottom:5px;
-  border-radius:7px;
-  padding:15px;
-  z-index:2;
-  transition:.8s;
-  font-family:Caveat,cursive;
-  font-size:21px;
-  line-height:1.35;
-}
-
 .envelope.open .letter{
-  transform:translateY(-95px);
+  transform:translateY(-105px);
 }
 
-/* Gift */
+/* =========================
+   GIFT
+========================= */
 
 .gift{
   width:170px;
   height:145px;
-  margin:35px auto;
+
+  margin:55px auto 35px;
+
   position:relative;
+
   cursor:pointer;
+
+  touch-action:manipulation;
 }
 
 .giftbody{
   position:absolute;
+
   bottom:0;
+
   width:100%;
   height:105px;
+
   background:#9b1948;
+
   border-radius:8px;
+
+  box-shadow:
+    0 10px 20px rgba(104,21,42,.15);
 }
 
 .giftbody:after{
   content:"";
+
   position:absolute;
+
   left:68px;
+
   width:35px;
   height:100%;
+
   background:#f5c75d;
 }
 
 .lid{
   position:absolute;
+
   top:15px;
   left:-7px;
+
   width:184px;
   height:35px;
+
   background:#b52c5b;
+
   border-radius:7px;
+
   z-index:2;
-  transition:.7s;
+
+  transition:
+    transform .7s cubic-bezier(.2,.8,.2,1);
 }
 
 .lid:after{
   content:"";
+
   position:absolute;
+
   left:75px;
+
   width:35px;
   height:100%;
+
   background:#f5c75d;
 }
 
 .gift.open .lid{
-  transform:translateY(-80px) rotate(-8deg);
+  transform:
+    translateY(-80px)
+    rotate(-8deg);
 }
 
 .giftResult{
   display:none;
+
   animation:pop .7s ease;
 }
 
 @keyframes pop{
-  from{opacity:0;transform:scale(.6)}
-  to{opacity:1;transform:scale(1)}
+  from{
+    opacity:0;
+    transform:scale(.6);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
 }
 
-/* Progress */
-
-.progress{
-  position:fixed;
-  top:0;
-  left:0;
-  height:5px;
-  background:#9b1948;
-  width:0;
-  z-index:100;
-  transition:.4s;
-}
+/* =========================
+   NAVIGATION
+========================= */
 
 .nav{
   position:fixed;
-  bottom:18px;
+
+  bottom:
+    calc(18px + env(safe-area-inset-bottom));
+
   left:50%;
+
   transform:translateX(-50%);
+
   display:flex;
+
   gap:10px;
-  z-index:100;
+
+  z-index:9000;
 }
 
 .nav button{
   width:48px;
   height:48px;
+
   padding:0;
+
   margin:0;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:27px;
 }
 
-/* Floating */
+/* =========================
+   FLOATING EMOJIS
+========================= */
 
 .float{
   position:fixed;
+
   bottom:-40px;
+
   pointer-events:none;
+
+  user-select:none;
+
   animation:floatUp linear forwards;
-  z-index:50;
+
+  z-index:5000;
 }
 
 @keyframes floatUp{
   to{
-    transform:translateY(-110vh) rotate(360deg);
+    transform:
+      translateY(-110vh)
+      rotate(360deg);
+
     opacity:0;
   }
 }
 
-@media(max-width:500px){
-  .box{padding:30px 15px}
-  .cards{grid-template-columns:1fr}
-  .envelope{width:270px}
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+  .page{
+    align-items:flex-start;
+
+    padding-top:55px;
+    padding-bottom:105px;
+  }
+
+  .box{
+    padding:30px 15px;
+
+    border-radius:26px;
+  }
+
+  h1{
+    font-size:clamp(40px,14vw,65px);
+  }
+
+  h2{
+    font-size:27px;
+  }
+
+  p{
+    font-size:15.5px;
+  }
+
+  .emoji{
+    font-size:65px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .secret{
+    min-height:105px;
+  }
+
+  .envelope{
+    width:min(290px,90vw);
+    height:180px;
+  }
+
+  .letter{
+    height:150px;
+
+    font-size:19px;
+
+    padding:13px;
+  }
+
+  .envelope.open .letter{
+    transform:translateY(-95px);
+  }
+
+  .gift{
+    transform:scale(.92);
+  }
+
+  button{
+    max-width:100%;
+  }
 }
-</style>
-</head>
 
-<body>
+/* Very small phones */
 
-<div class="progress" id="progress"></div>
+@media(max-width:360px){
 
+  .box{
+    padding:25px 12px;
+  }
 
-<!-- PAGE 1 -->
+  .envelope{
+    width:255px;
+  }
 
-<section class="page active">
-
-<div class="box">
-
-<div class="emoji">🎀</div>
+  .letter{
+    font-size:17px;
+  }
+}
+</style></head><body><div class="progress" id="progress"></div><!-- =========================
+     PAGE 1
+========================= --><section class="page active">  <div class="box"><div class="emoji">🎀</div>
 
 <p>SECRET MISSION • 2026</p>
 
-<h1>Khushi ❤️</h1>
+<h1>Neelam ❤️</h1>
 
 <p>
-Aaj normal Raksha Bandhan nahi hai...
-<br>
-kyunki tumhare bhai ne tumhare liye
-ek secret mission banaya hai. 😎
+  Aaj normal Raksha Bandhan nahi hai...
+  <br>
+  kyunki tumhare bhai ne tumhare liye
+  ek secret mission banaya hai. 😎
 </p>
 
 <p class="cursive">
-Ready ho?
+  Ready ho?
 </p>
 
 <button onclick="next()">
-MISSION START 🚀
+  MISSION START 🚀
 </button>
 
-</div>
-
-</section>
-
-
-<!-- PAGE 2 -->
-
-<section class="page">
-
-<div class="box">
-
-<div class="emoji">🪢</div>
+  </div></section><!-- =========================
+     PAGE 2
+========================= --><section class="page">  <div class="box"><div class="emoji">🪢</div>
 
 <h2>RAKHI MISSION</h2>
 
 <p>
-Neeche ke teen missions complete karo.
-<br>
-Tabhi secret unlock hoga. 👀
+  Neeche ke teen missions complete karo.
+  <br>
+  Tabhi secret unlock hoga. 👀
 </p>
 
 <div class="mission">
 
-<div class="task" onclick="completeTask(this)">
-❤️ Mission 01 — Bhai ko smile dena
-<span class="tick">✅</span>
-</div>
+  <div class="task" onclick="completeTask(this)">
+    ❤️ Mission 01 — Bhai ko smile dena
+    <span class="tick">✅</span>
+  </div>
 
-<div class="task" onclick="completeTask(this)">
-😂 Mission 02 — Bhai ki bakwaas tolerate karna
-<span class="tick">✅</span>
-</div>
+  <div class="task" onclick="completeTask(this)">
+    😂 Mission 02 — Bhai ki bakwaas tolerate karna
+    <span class="tick">✅</span>
+  </div>
 
-<div class="task" onclick="completeTask(this)">
-🫂 Mission 03 — Bhai ko ek virtual hug
-<span class="tick">✅</span>
-</div>
+  <div class="task" onclick="completeTask(this)">
+    🫂 Mission 03 — Bhai ko ek virtual hug
+    <span class="tick">✅</span>
+  </div>
 
 </div>
 
 <button id="missionBtn" disabled onclick="next()">
-ALL MISSIONS COMPLETE 🔒
+  ALL MISSIONS COMPLETE 🔒
 </button>
 
-</div>
-
-</section>
-
-
-<!-- PAGE 3 -->
-
-<section class="page">
-
-<div class="box">
-
-<p>LEVEL 2</p>
+  </div></section><!-- =========================
+     PAGE 3
+========================= --><section class="page">  <div class="box"><p>LEVEL 2</p>
 
 <h1>Secret Cards ✨</h1>
 
 <p>
-Har card ke andar ek secret hai.
-<br>
-Tap karke dekho.
+  Har card ke andar ek secret hai.
+  <br>
+  Tap karke dekho.
 </p>
 
 <div class="cards">
 
-<div class="secret" onclick="flip(this)">
-<div class="front">💗<br>Tap Me</div>
-<div class="inside">Tu important hai ❤️</div>
-</div>
+  <div class="secret" onclick="flip(this)">
+    <div class="front">
+      💗<br>
+      Tap Me
+    </div>
 
-<div class="secret" onclick="flip(this)">
-<div class="front">😂<br>Tap Me</div>
-<div class="inside">Teri bakwaas bhi special hai 😂</div>
-</div>
+    <div class="inside">
+      Tu important hai ❤️
+    </div>
+  </div>
 
-<div class="secret" onclick="flip(this)">
-<div class="front">🫂<br>Tap Me</div>
-<div class="inside">Bhai hamesha tere side hai.</div>
-</div>
 
-<div class="secret" onclick="flip(this)">
-<div class="front">🎀<br>Tap Me</div>
-<div class="inside">Happy Raksha Bandhan, Khushi!</div>
-</div>
+  <div class="secret" onclick="flip(this)">
+    <div class="front">
+      😂<br>
+      Tap Me
+    </div>
+
+    <div class="inside">
+      Teri bakwaas bhi special hai 😂
+    </div>
+  </div>
+
+
+  <div class="secret" onclick="flip(this)">
+    <div class="front">
+      🫂<br>
+      Tap Me
+    </div>
+
+    <div class="inside">
+      Bhai hamesha tere side hai.
+    </div>
+  </div>
+
+
+  <div class="secret" onclick="flip(this)">
+    <div class="front">
+      🎀<br>
+      Tap Me
+    </div>
+
+    <div class="inside">
+      Happy Raksha Bandhan, Neelam!
+    </div>
+  </div>
 
 </div>
 
 <button onclick="next()">
-NEXT SECRET 💌
+  NEXT SECRET 💌
 </button>
 
-</div>
-
-</section>
-
-
-<!-- PAGE 4 -->
-
-<section class="page">
-
-<div class="box">
-
-<p>PRIVATE MESSAGE</p>
+  </div></section><!-- =========================
+     PAGE 4
+========================= --><section class="page">  <div class="box"><p>PRIVATE MESSAGE</p>
 
 <h1>Bhai Ki Chitthi 💌</h1>
 
 <p>
-Envelope par tap karo...
+  Envelope par tap karo...
 </p>
 
-<div class="envelope" onclick="openLetter(this)">
+<div
+  class="envelope"
+  id="envelope"
+  onclick="openLetter(this)"
+>
 
-<div class="flap"></div>
+  <div class="letter">
 
-<div class="letter">
+    Dear Neelam ❤️
 
-Dear Khushi ❤️
+    <br><br>
 
-<br>
+    Tu meri asli behen nahi hai,
+    lekin college mein saath padhte-padhte
+    tu mere liye behen jaisi ban gayi hai.
 
-Tu sirf meri bua ki ladki nahi,
-meri behen jaisi hai.
+    <br><br>
 
-<br>
+    Hamesha khush reh,
+    haste reh aur life mein
+    bahut aage badh.
 
-Hamesha khush reh,
-haste reh aur life mein
-bahut aage badh.
+    <br><br>
 
-<br>
+    — Tera Bhai 🫂
 
-— Tera Bhai 🫂
+  </div>
+
+  <div class="flap"></div>
 
 </div>
 
-</div>
 
-<button onclick="next()">
-SECRET GIFT 🎁
+<button
+  id="letterBtn"
+  disabled
+  onclick="next()"
+>
+  SECRET GIFT 🎁
 </button>
 
-</div>
-
-</section>
-
-
-<!-- PAGE 5 -->
-
-<section class="page">
-
-<div class="box">
-
-<p>FINAL LEVEL</p>
+  </div></section><!-- =========================
+     PAGE 5
+========================= --><section class="page">  <div class="box"><p>FINAL LEVEL</p>
 
 <h1>Mystery Gift 🎁</h1>
 
 <p>
-Box ko tap karo...
-<br>
-shayad kuch interesting mile. 👀
+  Box ko tap karo...
+  <br>
+  shayad kuch interesting mile. 👀
 </p>
 
-<div class="gift" onclick="openGift(this)">
 
-<div class="lid"></div>
-<div class="giftbody"></div>
+<div
+  class="gift"
+  id="gift"
+  onclick="openGift(this)"
+>
+
+  <div class="lid"></div>
+
+  <div class="giftbody"></div>
 
 </div>
 
-<div class="giftResult" id="giftResult">
 
-<h2>🎉 SURPRISE! 🎉</h2>
+<div
+  class="giftResult"
+  id="giftResult"
+>
 
-<p>
-Is baar expensive gift nahi de paaya...
-<br><br>
+  <h2>🎉 SURPRISE! 🎉</h2>
 
-Isliye ek aisa gift banaya
-jo paise se nahi milta. ❤️
-<br><br>
+  <p>
 
-<strong>
-Ye poori website sirf tumhare liye hai.
-</strong>
-</p>
+    Is baar expensive gift nahi de paaya...
+    <br><br>
+
+    Isliye ek aisa gift banaya
+    jo paise se nahi milta. ❤️
+
+    <br><br>
+
+    <strong>
+      Ye poori website sirf tumhare liye hai.
+    </strong>
+
+  </p>
 
 </div>
 
-<button onclick="next()">
-LAST SCREEN ❤️
+
+<button
+  id="giftBtn"
+  disabled
+  onclick="next()"
+>
+  LAST SCREEN ❤️
 </button>
 
-</div>
-
-</section>
-
-
-<!-- PAGE 6 -->
-
-<section class="page">
-
-<div class="box">
-
-<div class="emoji">🫂</div>
+  </div></section><!-- =========================
+     PAGE 6
+========================= --><section class="page">  <div class="box"><div class="emoji">🫂</div>
 
 <p>MISSION COMPLETE</p>
 
-<h1>Khushi ❤️</h1>
+<h1>Neelam ❤️</h1>
 
 <p>
-Chahe life kitni bhi busy ho,
-<br>
-hamari ye bhai-behen wali bonding
-hamesha special rahegi.
+  Chahe college khatam ho jaaye
+  ya life kitni bhi busy ho,
+  <br><br>
+
+  hamari ye bhai-behen wali bonding
+  hamesha special rahegi.
 </p>
 
 <p class="cursive">
-Stay Happy. Stay Crazy. Stay Khushi. ✨
+  Stay Happy. Stay Crazy. Stay Neelam. ✨
 </p>
 
 <button onclick="celebrate()">
-🎊 FINAL SURPRISE
+  🎊 FINAL SURPRISE
 </button>
 
-</div>
+  </div></section><!-- NAV --><div class="nav"><button
+aria-label="Previous"
+onclick="previous()"
 
-</section>
+«»
 
+‹
 
-<div class="nav">
+  </button><button
+aria-label="Next"
+onclick="next()"
 
-<button onclick="previous()">‹</button>
-<button onclick="next()">›</button>
+«»
 
-</div>
+›
 
+  </button></div><script>
 
-<script>
+/* =========================
+   PAGE SYSTEM
+========================= */
 
-let current=0;
+let current = 0;
 
-const pages=document.querySelectorAll(".page");
+const pages =
+  document.querySelectorAll(".page");
+
 
 function show(index){
 
-if(index<0)index=0;
-if(index>=pages.length)index=pages.length-1;
+  if(index < 0){
+    index = 0;
+  }
 
-pages.forEach((page,i)=>{
-page.classList.toggle("active",i===index);
-});
+  if(index >= pages.length){
+    index = pages.length - 1;
+  }
 
-current=index;
+  pages.forEach((page,i)=>{
 
-document.getElementById("progress").style.width=
-(index/(pages.length-1)*100)+"%";
+    page.classList.toggle(
+      "active",
+      i === index
+    );
 
-window.scrollTo(0,0);
+  });
 
-createFloat(5);
+  current = index;
+
+  const progress =
+    document.getElementById("progress");
+
+  const percentage =
+    (index / (pages.length - 1)) * 100;
+
+  progress.style.width =
+    percentage + "%";
+
+  /*
+    Scroll to top of new screen.
+    Smooth mobile behavior.
+  */
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+  createFloat(5);
 }
+
 
 function next(){
-show(current+1);
+
+  show(current + 1);
+
 }
+
 
 function previous(){
-show(current-1);
+
+  show(current - 1);
+
 }
 
 
-/* Mission */
+/* =========================
+   MISSION
+========================= */
 
-let completed=0;
+let completed = 0;
+
 
 function completeTask(el){
 
-if(el.classList.contains("done"))return;
+  if(el.classList.contains("done")){
+    return;
+  }
 
-el.classList.add("done");
-completed++;
+  el.classList.add("done");
 
-if(completed===3){
+  completed++;
 
-const btn=document.getElementById("missionBtn");
+  if(completed === 3){
 
-btn.disabled=false;
-btn.innerHTML="MISSION UNLOCKED 🔓";
+    const btn =
+      document.getElementById("missionBtn");
 
-celebrateSmall();
+    btn.disabled = false;
+
+    btn.innerHTML =
+      "MISSION UNLOCKED 🔓";
+
+    celebrateSmall();
+
+  }
 
 }
 
-}
 
-
-/* Cards */
+/* =========================
+   SECRET CARDS
+========================= */
 
 function flip(card){
-card.classList.toggle("open");
+
+  card.classList.toggle("open");
+
 }
 
 
-/* Letter */
+/* =========================
+   LETTER
+========================= */
+
+let letterOpened = false;
+
 
 function openLetter(el){
 
-el.classList.toggle("open");
+  if(letterOpened){
+    return;
+  }
 
-createFloat(15);
+  letterOpened = true;
+
+  el.classList.add("open");
+
+  createFloat(15);
+
+  const button =
+    document.getElementById("letterBtn");
+
+  button.disabled = false;
+
+  button.innerHTML =
+    "SECRET GIFT UNLOCKED 🎁";
 
 }
 
 
-/* Gift */
+/* =========================
+   GIFT
+========================= */
+
+let giftOpened = false;
+
 
 function openGift(el){
 
-el.classList.add("open");
+  if(giftOpened){
+    return;
+  }
 
-document.getElementById("giftResult")
-.style.display="block";
+  giftOpened = true;
 
-celebrate();
+  el.classList.add("open");
+
+  const result =
+    document.getElementById("giftResult");
+
+  result.style.display = "block";
+
+  const button =
+    document.getElementById("giftBtn");
+
+  button.disabled = false;
+
+  button.innerHTML =
+    "LAST SCREEN ❤️";
+
+  celebrate();
 
 }
 
 
-/* Floating animation */
+/* =========================
+   FLOATING EMOJIS
+========================= */
 
 function createFloat(number){
 
-for(let i=0;i<number;i++){
+  for(let i = 0; i < number; i++){
 
-const e=document.createElement("div");
+    const e =
+      document.createElement("div");
 
-e.className="float";
+    e.className = "float";
 
-e.innerHTML=
-["❤️","💖","✨","🌸","🎀","🪢"][Math.floor(Math.random()*6)];
+    const emojis = [
+      "❤️",
+      "💖",
+      "✨",
+      "🌸",
+      "🎀",
+      "🪢"
+    ];
 
-e.style.left=Math.random()*100+"vw";
+    e.innerHTML =
+      emojis[
+        Math.floor(
+          Math.random() * emojis.length
+        )
+      ];
 
-e.style.fontSize=
-(18+Math.random()*25)+"px";
+    e.style.left =
+      Math.random() * 100 + "vw";
 
-e.style.animationDuration=
-(4+Math.random()*4)+"s";
+    e.style.fontSize =
+      (18 + Math.random() * 25) + "px";
 
-document.body.appendChild(e);
+    e.style.animationDuration =
+      (4 + Math.random() * 4) + "s";
 
-setTimeout(()=>{
-e.remove();
-},8000);
+    document.body.appendChild(e);
 
-}
+    setTimeout(()=>{
+
+      e.remove();
+
+    },8000);
+
+  }
 
 }
 
 
 function celebrateSmall(){
-createFloat(20);
+
+  createFloat(20);
+
 }
 
 
 function celebrate(){
 
-createFloat(70);
+  createFloat(70);
 
 }
 
-</script>
 
-</body>
+/* =========================
+   MOBILE SWIPE SUPPORT
+   Vertical swipe = page scroll
+   Horizontal swipe = page change
+========================= */
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+
+document.addEventListener(
+  "touchstart",
+  function(e){
+
+    if(!e.touches || !e.touches[0]){
+      return;
+    }
+
+    touchStartX =
+      e.touches[0].clientX;
+
+    touchStartY =
+      e.touches[0].clientY;
+
+  },
+  {passive:true}
+);
+
+
+document.addEventListener(
+  "touchend",
+  function(e){
+
+    if(!e.changedTouches || !e.changedTouches[0]){
+      return;
+    }
+
+    const endX =
+      e.changedTouches[0].clientX;
+
+    const endY =
+      e.changedTouches[0].clientY;
+
+    const diffX =
+      endX - touchStartX;
+
+    const diffY =
+      endY - touchStartY;
+
+    /*
+      Only horizontal swipes
+      change the page.
+
+      Vertical swipes are left
+      completely free for scrolling.
+    */
+
+    if(
+      Math.abs(diffX) > 80 &&
+      Math.abs(diffX) > Math.abs(diffY) * 1.4
+    ){
+
+      if(diffX < 0){
+
+        next();
+
+      }else{
+
+        previous();
+
+      }
+
+    }
+
+  },
+  {passive:true}
+);
+
+
+/* =========================
+   KEYBOARD SUPPORT
+========================= */
+
+document.addEventListener(
+  "keydown",
+  function(e){
+
+    if(e.key === "ArrowRight"){
+      next();
+    }
+
+    if(e.key === "ArrowLeft"){
+      previous();
+    }
+
+  }
+);
+
+
+/* =========================
+   START FLOAT
+========================= */
+
+setTimeout(()=>{
+
+  createFloat(8);
+
+},500);
+
+</script></body>
 </html>
