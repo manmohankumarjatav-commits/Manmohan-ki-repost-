@@ -1,7 +1,9 @@
 <!DOCTYPE html><html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><title>Neelam's Rakhi Mission 🎀</title><style>
+<head><meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Neelam's Rakhi Mission 🎀</title><style>
+
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@400;600;700&display=swap');
 
 *{
@@ -16,17 +18,27 @@ html{
 
 body{
   font-family:Poppins,sans-serif;
-  background:linear-gradient(135deg,#fff1f5,#ffe5ed,#fff7df);
+
+  background:
+  linear-gradient(
+    135deg,
+    #fff1f5,
+    #ffe5ed,
+    #fff7df
+  );
+
   color:#431522;
+
   min-height:100vh;
 
-  /* IMPORTANT: mobile vertical swipe/scroll */
   overflow-x:hidden;
   overflow-y:auto;
 
   -webkit-overflow-scrolling:touch;
+
   touch-action:pan-y;
 }
+
 
 /* =========================
    PROGRESS
@@ -36,36 +48,56 @@ body{
   position:fixed;
   top:0;
   left:0;
-  height:5px;
+
   width:0;
+  height:5px;
+
   background:#9b1948;
+
   z-index:9999;
+
   transition:width .4s ease;
 }
+
 
 /* =========================
    PAGE
 ========================= */
 
 .page{
+
   min-height:100vh;
   min-height:100svh;
 
   display:none;
+
   align-items:center;
   justify-content:center;
 
-  padding:45px 18px 100px;
+  padding:45px 18px 115px;
 
   text-align:center;
 }
 
 .page.active{
   display:flex;
+
   animation:enter .55s ease;
 }
 
+
+/* IMPORTANT:
+   Page 4 ko content ke according
+   height lene dena.
+*/
+
+.page.letterPage{
+  align-items:flex-start;
+}
+
+
 @keyframes enter{
+
   from{
     opacity:0;
     transform:translateY(25px) scale(.98);
@@ -75,29 +107,33 @@ body{
     opacity:1;
     transform:translateY(0) scale(1);
   }
+
 }
+
 
 /* =========================
    BOX
 ========================= */
 
 .box{
+
   width:min(650px,100%);
 
   padding:35px 22px;
 
   border-radius:32px;
 
-  background:rgba(255,255,255,.80);
+  background:rgba(255,255,255,.84);
 
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
 
   box-shadow:
-    0 20px 70px rgba(125,24,53,.14);
+  0 20px 70px rgba(125,24,53,.14);
 
   position:relative;
 }
+
 
 /* =========================
    TEXT
@@ -111,15 +147,19 @@ body{
 }
 
 @keyframes bob{
+
   50%{
     transform:translateY(-9px) rotate(4deg);
   }
+
 }
 
 h1{
+
   color:#9b1948;
 
-  font-size:clamp(42px,11vw,75px);
+  font-size:
+  clamp(42px,11vw,75px);
 
   line-height:1;
 
@@ -127,6 +167,7 @@ h1{
 }
 
 h2{
+
   color:#9b1948;
 
   font-size:30px;
@@ -135,11 +176,14 @@ h2{
 }
 
 p{
+
   font-size:17px;
+
   line-height:1.8;
 }
 
 .cursive{
+
   font-family:Caveat,cursive;
 
   font-size:32px;
@@ -149,14 +193,17 @@ p{
   margin-top:18px;
 }
 
+
 /* =========================
    BUTTON
 ========================= */
 
 button{
+
   border:0;
 
   background:#9b1948;
+
   color:white;
 
   padding:15px 25px;
@@ -166,23 +213,15 @@ button{
   margin-top:25px;
 
   font-size:16px;
+
   font-weight:700;
 
   cursor:pointer;
 
-  box-shadow:0 10px 25px rgba(155,25,72,.27);
-
-  transition:
-    transform .2s ease,
-    opacity .2s ease,
-    box-shadow .2s ease;
-}
-
-button:hover{
-  transform:translateY(-2px);
-
   box-shadow:
-    0 13px 30px rgba(155,25,72,.30);
+  0 10px 25px rgba(155,25,72,.27);
+
+  transition:.2s;
 }
 
 button:active{
@@ -192,14 +231,15 @@ button:active{
 button:disabled{
   opacity:.4;
   cursor:not-allowed;
-  transform:none;
 }
+
 
 /* =========================
    MISSION
 ========================= */
 
 .mission{
+
   display:grid;
 
   gap:13px;
@@ -208,6 +248,7 @@ button:disabled{
 }
 
 .task{
+
   background:white;
 
   padding:18px;
@@ -215,17 +256,11 @@ button:disabled{
   border-radius:18px;
 
   box-shadow:
-    0 8px 25px rgba(104,21,42,.11);
+  0 8px 25px rgba(104,21,42,.11);
 
   cursor:pointer;
 
-  transition:
-    transform .3s ease,
-    background .3s ease;
-}
-
-.task:hover{
-  transform:translateY(-3px);
+  transition:.3s;
 }
 
 .task:active{
@@ -245,11 +280,13 @@ button:disabled{
   display:block;
 }
 
+
 /* =========================
-   SECRET CARDS
+   CARDS
 ========================= */
 
 .cards{
+
   display:grid;
 
   grid-template-columns:1fr 1fr;
@@ -260,6 +297,7 @@ button:disabled{
 }
 
 .secret{
+
   min-height:125px;
 
   background:#fff;
@@ -274,20 +312,15 @@ button:disabled{
   padding:18px;
 
   box-shadow:
-    0 8px 25px rgba(104,21,42,.11);
+  0 8px 25px rgba(104,21,42,.11);
 
   cursor:pointer;
 
-  transition:
-    transform .4s ease,
-    background .4s ease;
-}
-
-.secret:hover{
-  transform:translateY(-3px);
+  transition:.4s;
 }
 
 .secret .inside{
+
   display:none;
 
   color:#8d2346;
@@ -296,6 +329,7 @@ button:disabled{
 }
 
 .secret.open{
+
   transform:rotateY(360deg);
 
   background:#ffe4ed;
@@ -309,51 +343,69 @@ button:disabled{
   display:block;
 }
 
-/* =========================
-   ENVELOPE
-========================= */
+
+/* ==================================================
+   LETTER PAGE
+================================================== */
+
+/*
+   Closed envelope
+*/
 
 .envelope{
+
   width:300px;
-  height:190px;
 
-  background:#d45172;
+  height:195px;
 
-  margin:45px auto 35px;
+  margin:45px auto 30px;
 
   position:relative;
+
+  background:#d45172;
 
   border-radius:10px;
 
   cursor:pointer;
 
   box-shadow:
-    0 20px 45px rgba(104,21,42,.20);
+  0 20px 45px rgba(104,21,42,.20);
 
   perspective:1000px;
 
-  /* Fix touch behavior */
+  transition:
+  height .8s ease;
+
   touch-action:manipulation;
 }
 
-/* Letter */
+
+/*
+   LETTER PAPER
+*/
 
 .letter{
+
   position:absolute;
-
-  background:#fffdf4;
-
-  width:86%;
-  height:160px;
 
   left:7%;
   bottom:5px;
 
-  border-radius:7px;
+  width:86%;
 
-  padding:15px;
+  /*
+     Closed state
+  */
 
-  z-index:2;
+  height:180px;
+
+  background:#fffdf4;
+
+  border-radius:8px;
+
+  padding:20px 17px;
+
+  color:#6d293d;
 
   font-family:Caveat,cursive;
 
@@ -361,22 +413,28 @@ button:disabled{
 
   line-height:1.35;
 
-  color:#6d293d;
+  text-align:left;
+
+  overflow:hidden;
+
+  z-index:2;
 
   box-shadow:
-    0 5px 15px rgba(0,0,0,.08);
+  0 5px 18px rgba(0,0,0,.10);
 
   transition:
-    transform .8s cubic-bezier(.2,.8,.2,1);
+  height .8s ease,
+  transform .8s ease;
 
-  /* prevents weird text rendering during animation */
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
 }
 
-/* Flap */
+
+/*
+   FLAP
+*/
 
 .flap{
+
   position:absolute;
 
   top:0;
@@ -387,7 +445,8 @@ button:disabled{
 
   background:#bd3c60;
 
-  clip-path:polygon(
+  clip-path:
+  polygon(
     0 0,
     50% 55%,
     100% 0
@@ -398,17 +457,19 @@ button:disabled{
   transform-origin:top center;
 
   transition:
-    transform .7s cubic-bezier(.2,.8,.2,1);
+  transform .7s ease;
 
   pointer-events:none;
 
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
 }
 
-/* Envelope front pocket */
+
+/*
+   FRONT OF ENVELOPE
+*/
 
 .envelope:after{
+
   content:"";
 
   position:absolute;
@@ -421,7 +482,8 @@ button:disabled{
 
   background:#d45172;
 
-  clip-path:polygon(
+  clip-path:
+  polygon(
     0 0,
     50% 55%,
     100% 0,
@@ -434,22 +496,70 @@ button:disabled{
   pointer-events:none;
 }
 
-/* Open */
 
-.envelope.open .flap{
-  transform:rotateX(180deg);
+/* ==================================================
+   OPEN LETTER
+================================================== */
+
+/*
+   THIS IS THE MAIN FIX.
+
+   Open hote hi envelope/page
+   content ke according bada hoga.
+*/
+
+.envelope.open{
+
+  height:540px;
+
 }
+
+
+/*
+   Letter becomes full readable paper.
+*/
 
 .envelope.open .letter{
-  transform:translateY(-105px);
+
+  height:480px;
+
+  transform:translateY(0);
+
+  overflow:visible;
+
 }
 
-/* =========================
+
+/*
+   Flap opens.
+*/
+
+.envelope.open .flap{
+
+  transform:rotateX(180deg);
+
+}
+
+
+/*
+   Letter button spacing
+*/
+
+#letterBtn{
+
+  margin-top:35px;
+
+}
+
+
+/* ==================================================
    GIFT
-========================= */
+================================================== */
 
 .gift{
+
   width:170px;
+
   height:145px;
 
   margin:55px auto 35px;
@@ -462,6 +572,7 @@ button:disabled{
 }
 
 .giftbody{
+
   position:absolute;
 
   bottom:0;
@@ -472,12 +583,10 @@ button:disabled{
   background:#9b1948;
 
   border-radius:8px;
-
-  box-shadow:
-    0 10px 20px rgba(104,21,42,.15);
 }
 
 .giftbody:after{
+
   content:"";
 
   position:absolute;
@@ -491,6 +600,7 @@ button:disabled{
 }
 
 .lid{
+
   position:absolute;
 
   top:15px;
@@ -505,11 +615,11 @@ button:disabled{
 
   z-index:2;
 
-  transition:
-    transform .7s cubic-bezier(.2,.8,.2,1);
+  transition:.7s;
 }
 
 .lid:after{
+
   content:"";
 
   position:absolute;
@@ -523,18 +633,21 @@ button:disabled{
 }
 
 .gift.open .lid{
+
   transform:
-    translateY(-80px)
-    rotate(-8deg);
+  translateY(-80px)
+  rotate(-8deg);
 }
 
 .giftResult{
+
   display:none;
 
   animation:pop .7s ease;
 }
 
 @keyframes pop{
+
   from{
     opacity:0;
     transform:scale(.6);
@@ -544,17 +657,20 @@ button:disabled{
     opacity:1;
     transform:scale(1);
   }
+
 }
+
 
 /* =========================
    NAVIGATION
 ========================= */
 
 .nav{
+
   position:fixed;
 
   bottom:
-    calc(18px + env(safe-area-inset-bottom));
+  calc(18px + env(safe-area-inset-bottom));
 
   left:50%;
 
@@ -568,6 +684,7 @@ button:disabled{
 }
 
 .nav button{
+
   width:48px;
   height:48px;
 
@@ -583,11 +700,13 @@ button:disabled{
   font-size:27px;
 }
 
+
 /* =========================
-   FLOATING EMOJIS
+   FLOATING
 ========================= */
 
 .float{
+
   position:fixed;
 
   bottom:-40px;
@@ -596,20 +715,25 @@ button:disabled{
 
   user-select:none;
 
-  animation:floatUp linear forwards;
+  animation:
+  floatUp linear forwards;
 
   z-index:5000;
 }
 
 @keyframes floatUp{
+
   to{
+
     transform:
-      translateY(-110vh)
-      rotate(360deg);
+    translateY(-110vh)
+    rotate(360deg);
 
     opacity:0;
   }
+
 }
+
 
 /* =========================
    MOBILE
@@ -618,69 +742,140 @@ button:disabled{
 @media(max-width:600px){
 
   .page{
+
     align-items:flex-start;
 
-    padding-top:55px;
-    padding-bottom:105px;
+    padding-top:50px;
+
+    padding-bottom:115px;
   }
 
+
+  .page.letterPage{
+
+    /*
+       Letter page full content
+       ke according scroll hogi.
+    */
+
+    display:none;
+
+  }
+
+
+  .page.letterPage.active{
+
+    display:flex;
+
+  }
+
+
   .box{
+
     padding:30px 15px;
 
     border-radius:26px;
   }
 
+
   h1{
-    font-size:clamp(40px,14vw,65px);
+
+    font-size:
+    clamp(40px,14vw,65px);
+
   }
+
 
   h2{
     font-size:27px;
   }
 
+
   p{
     font-size:15.5px;
   }
+
 
   .emoji{
     font-size:65px;
   }
 
+
   .cards{
     grid-template-columns:1fr;
   }
+
 
   .secret{
     min-height:105px;
   }
 
+
+  /* MOBILE LETTER */
+
   .envelope{
+
     width:min(290px,90vw);
-    height:180px;
+
+    height:190px;
+
+    margin-top:40px;
+
   }
+
+
+  /*
+     Mobile open state.
+     Big enough for entire message.
+  */
+
+  .envelope.open{
+
+    height:620px;
+
+  }
+
 
   .letter{
-    height:150px;
 
-    font-size:19px;
+    width:88%;
 
-    padding:13px;
+    left:6%;
+
+    height:175px;
+
+    padding:22px 17px;
+
+    font-size:20px;
+
+    line-height:1.35;
+
   }
+
 
   .envelope.open .letter{
-    transform:translateY(-95px);
+
+    height:555px;
+
+    transform:translateY(0);
+
+    overflow:visible;
+
   }
 
-  .gift{
-    transform:scale(.92);
+
+  #letterBtn{
+
+    margin-top:35px;
+
   }
 
-  button{
-    max-width:100%;
-  }
 }
 
-/* Very small phones */
+
+/* =========================
+   VERY SMALL PHONE
+========================= */
 
 @media(max-width:360px){
 
@@ -688,301 +883,294 @@ button:disabled{
     padding:25px 12px;
   }
 
+
   .envelope{
+
     width:255px;
+
   }
+
+
+  .envelope.open{
+
+    height:650px;
+
+  }
+
 
   .letter{
-    font-size:17px;
+
+    font-size:18px;
+
+    line-height:1.32;
+
+    padding:20px 14px;
+
   }
+
+
+  .envelope.open .letter{
+
+    height:585px;
+
+  }
+
 }
-</style></head><body><div class="progress" id="progress"></div><!-- =========================
+
+</style></head><body><div
+class="progress"
+id="progress">
+</div><!-- ==================================================
      PAGE 1
-========================= --><section class="page active">  <div class="box"><div class="emoji">🎀</div>
+================================================== --><section class="page active"><div class="box"><div class="emoji">
+🎀
+</div><p>
+SECRET MISSION • 2026
+</p><h1>
+Neelam ❤️
+</h1><p>Aaj normal Raksha Bandhan nahi hai...
 
-<p>SECRET MISSION • 2026</p>
+<br>kyunki tumhare bhai ne tumhare liye
+ek secret mission banaya hai. 😎
 
-<h1>Neelam ❤️</h1>
-
-<p>
-  Aaj normal Raksha Bandhan nahi hai...
-  <br>
-  kyunki tumhare bhai ne tumhare liye
-  ek secret mission banaya hai. 😎
-</p>
-
-<p class="cursive">
-  Ready ho?
-</p>
-
-<button onclick="next()">
-  MISSION START 🚀
-</button>
-
-  </div></section><!-- =========================
+</p><p class="cursive">
+Ready ho?
+</p><button onclick="next()">
+MISSION START 🚀
+</button></div></section><!-- ==================================================
      PAGE 2
-========================= --><section class="page">  <div class="box"><div class="emoji">🪢</div>
-
-<h2>RAKHI MISSION</h2>
-
-<p>
-  Neeche ke teen missions complete karo.
-  <br>
-  Tabhi secret unlock hoga. 👀
-</p>
-
-<div class="mission">
-
-  <div class="task" onclick="completeTask(this)">
-    ❤️ Mission 01 — Bhai ko smile dena
-    <span class="tick">✅</span>
-  </div>
-
-  <div class="task" onclick="completeTask(this)">
-    😂 Mission 02 — Bhai ki bakwaas tolerate karna
-    <span class="tick">✅</span>
-  </div>
-
-  <div class="task" onclick="completeTask(this)">
-    🫂 Mission 03 — Bhai ko ek virtual hug
-    <span class="tick">✅</span>
-  </div>
-
-</div>
-
-<button id="missionBtn" disabled onclick="next()">
-  ALL MISSIONS COMPLETE 🔒
-</button>
-
-  </div></section><!-- =========================
-     PAGE 3
-========================= --><section class="page">  <div class="box"><p>LEVEL 2</p>
-
-<h1>Secret Cards ✨</h1>
-
-<p>
-  Har card ke andar ek secret hai.
-  <br>
-  Tap karke dekho.
-</p>
-
-<div class="cards">
-
-  <div class="secret" onclick="flip(this)">
-    <div class="front">
-      💗<br>
-      Tap Me
-    </div>
-
-    <div class="inside">
-      Tu important hai ❤️
-    </div>
-  </div>
-
-
-  <div class="secret" onclick="flip(this)">
-    <div class="front">
-      😂<br>
-      Tap Me
-    </div>
-
-    <div class="inside">
-      Teri bakwaas bhi special hai 😂
-    </div>
-  </div>
-
-
-  <div class="secret" onclick="flip(this)">
-    <div class="front">
-      🫂<br>
-      Tap Me
-    </div>
-
-    <div class="inside">
-      Bhai hamesha tere side hai.
-    </div>
-  </div>
-
-
-  <div class="secret" onclick="flip(this)">
-    <div class="front">
-      🎀<br>
-      Tap Me
-    </div>
-
-    <div class="inside">
-      Happy Raksha Bandhan, Neelam!
-    </div>
-  </div>
-
-</div>
-
-<button onclick="next()">
-  NEXT SECRET 💌
-</button>
-
-  </div></section><!-- =========================
-     PAGE 4
-========================= --><section class="page">  <div class="box"><p>PRIVATE MESSAGE</p>
-
-<h1>Bhai Ki Chitthi 💌</h1>
-
-<p>
-  Envelope par tap karo...
-</p>
-
-<div
-  class="envelope"
-  id="envelope"
-  onclick="openLetter(this)"
->
-
-  <div class="letter">
-
-    Dear Neelam ❤️
-
-    <br><br>
-
-    Tu meri asli behen nahi hai,
-    lekin college mein saath padhte-padhte
-    tu mere liye behen jaisi ban gayi hai.
-
-    <br><br>
-
-    Hamesha khush reh,
-    haste reh aur life mein
-    bahut aage badh.
-
-    <br><br>
-
-    — Tera Bhai 🫂
-
-  </div>
-
-  <div class="flap"></div>
-
-</div>
-
-
-<button
-  id="letterBtn"
-  disabled
-  onclick="next()"
->
-  SECRET GIFT 🎁
-</button>
-
-  </div></section><!-- =========================
-     PAGE 5
-========================= --><section class="page">  <div class="box"><p>FINAL LEVEL</p>
-
-<h1>Mystery Gift 🎁</h1>
-
-<p>
-  Box ko tap karo...
-  <br>
-  shayad kuch interesting mile. 👀
-</p>
-
-
-<div
-  class="gift"
-  id="gift"
-  onclick="openGift(this)"
->
-
-  <div class="lid"></div>
-
-  <div class="giftbody"></div>
-
-</div>
-
-
-<div
-  class="giftResult"
-  id="giftResult"
->
-
-  <h2>🎉 SURPRISE! 🎉</h2>
-
-  <p>
-
-    Is baar expensive gift nahi de paaya...
-    <br><br>
-
-    Isliye ek aisa gift banaya
-    jo paise se nahi milta. ❤️
-
-    <br><br>
-
-    <strong>
-      Ye poori website sirf tumhare liye hai.
-    </strong>
-
-  </p>
-
-</div>
-
-
-<button
-  id="giftBtn"
-  disabled
-  onclick="next()"
->
-  LAST SCREEN ❤️
-</button>
-
-  </div></section><!-- =========================
-     PAGE 6
-========================= --><section class="page">  <div class="box"><div class="emoji">🫂</div>
-
-<p>MISSION COMPLETE</p>
-
-<h1>Neelam ❤️</h1>
-
-<p>
-  Chahe college khatam ho jaaye
-  ya life kitni bhi busy ho,
-  <br><br>
-
-  hamari ye bhai-behen wali bonding
-  hamesha special rahegi.
-</p>
-
-<p class="cursive">
-  Stay Happy. Stay Crazy. Stay Neelam. ✨
-</p>
-
-<button onclick="celebrate()">
-  🎊 FINAL SURPRISE
-</button>
-
-  </div></section><!-- NAV --><div class="nav"><button
-aria-label="Previous"
-onclick="previous()"
-
-«»
-
-‹
-
-  </button><button
-aria-label="Next"
+================================================== --><section class="page"><div class="box"><div class="emoji">
+🪢
+</div><h2>
+RAKHI MISSION
+</h2><p>Neeche ke teen missions complete karo.
+
+<br>Tabhi secret unlock hoga. 👀
+
+</p><div class="mission"><div
+class="task"
+onclick="completeTask(this)"
+>❤️ Mission 01 — Bhai ko smile dena
+
+<span class="tick">
+✅
+</span></div><div
+class="task"
+onclick="completeTask(this)"
+>😂 Mission 02 — Bhai ki bakwaas tolerate karna
+
+<span class="tick">
+✅
+</span></div><div
+class="task"
+onclick="completeTask(this)"
+>🫂 Mission 03 — Bhai ko ek virtual hug
+
+<span class="tick">
+✅
+</span></div></div><button
+id="missionBtn"
+disabled
 onclick="next()"
 
 «»
 
+ALL MISSIONS COMPLETE 🔒
+
+</button></div></section><!-- ==================================================
+     PAGE 3
+================================================== --><section class="page"><div class="box"><p>
+LEVEL 2
+</p><h1>
+Secret Cards ✨
+</h1><p>Har card ke andar ek secret hai.
+
+<br>Tap karke dekho.
+
+</p><div class="cards"><div
+class="secret"
+onclick="flip(this)"
+><div class="front">💗
+<br>
+Tap Me
+
+</div><div class="inside">Tu important hai ❤️
+
+</div></div><div
+class="secret"
+onclick="flip(this)"
+><div class="front">😂
+<br>
+Tap Me
+
+</div><div class="inside">Teri bakwaas bhi special hai 😂
+
+</div></div><div
+class="secret"
+onclick="flip(this)"
+><div class="front">🫂
+<br>
+Tap Me
+
+</div><div class="inside">Bhai hamesha tere side hai.
+
+</div></div><div
+class="secret"
+onclick="flip(this)"
+><div class="front">🎀
+<br>
+Tap Me
+
+</div><div class="inside">Happy Raksha Bandhan, Neelam!
+
+</div></div></div><button onclick="next()">
+NEXT SECRET 💌
+</button></div></section><!-- ==================================================
+     PAGE 4
+================================================== --><section
+class="page letterPage"
+id="letterPage"
+><div class="box"><p>
+PRIVATE MESSAGE
+</p><h1>
+Bhai Ki Chitthi 💌
+</h1><p>
+Envelope par tap karo...
+</p><div
+class="envelope"
+id="envelope"
+onclick="openLetter(this)"
+><!-- LETTER --><div class="letter">Dear Neelam ❤️
+
+<br><br>
+
+Tum mujhe apna bhai maano ya na maano,
+lekin main tumhe apni behen maanta hoon. 🫂
+
+<br><br>
+
+Tumne mujhe kaha tha na ki
+tum mere liye special ho...
+
+toh bas itna yaad rakhna,
+tum bhi mere liye bahut special ho. ❤️
+
+<br><br>
+
+Tumhari har problem mein
+main hamesha tumhare saath khada rahunga.
+
+<br>Chahe situation kaisi bhi ho,
+tumhe kabhi akela feel nahi hone dunga.
+
+<br><br>
+
+Meri bas yahi dua hai ki
+tum hamesha khush raho,
+hamesha haste raho,
+
+aur tum par kabhi koi takleef na aaye. ✨
+
+<br><br>
+
+Life mein tumhe woh saari khushiyan mile
+jinki tum deserve karti ho.
+
+<br><br>
+
+Happy Raksha Bandhan, Neelam! 🎀❤️
+
+<br><br>
+
+— Tumhara Bhai 🫂
+
+</div><!-- FLAP --><div class="flap">
+</div></div><button
+id="letterBtn"
+disabled
+onclick="next()"
+
+«»
+
+SECRET GIFT 🎁
+
+</button></div></section><!-- ==================================================
+     PAGE 5
+================================================== --><section class="page"><div class="box"><p>
+FINAL LEVEL
+</p><h1>
+Mystery Gift 🎁
+</h1><p>Box ko tap karo...
+
+<br>shayad kuch interesting mile. 👀
+
+</p><div
+class="gift"
+id="gift"
+onclick="openGift(this)"
+><div class="lid">
+</div><div class="giftbody">
+</div></div><div
+class="giftResult"
+id="giftResult"
+><h2>
+🎉 SURPRISE! 🎉
+</h2><p>Is baar expensive gift nahi de paaya...
+
+<br><br>
+
+Isliye ek aisa gift banaya
+jo paise se nahi milta. ❤️
+
+<br><br>
+
+<strong>
+Ye poori website sirf tumhare liye hai.
+</strong></p></div><button
+id="giftBtn"
+disabled
+onclick="next()"
+
+«»
+
+LAST SCREEN ❤️
+
+</button></div></section><!-- ==================================================
+     PAGE 6
+================================================== --><section class="page"><div class="box"><div class="emoji">
+🫂
+</div><p>
+MISSION COMPLETE
+</p><h1>
+Neelam ❤️
+</h1><p>Chahe life kitni bhi busy ho,
+
+<br>hamari ye bhai-behen wali bonding
+hamesha special rahegi.
+
+</p><p class="cursive">Stay Happy.
+Stay Crazy.
+Stay Neelam. ✨
+
+</p><button onclick="celebrate()">🎊 FINAL SURPRISE
+
+</button></div></section><!-- ==================================================
+     NAVIGATION
+================================================== --><div class="nav"><button onclick="previous()">
+‹
+</button><button onclick="next()">
 ›
+</button></div><script>
 
-  </button></div><script>
 
-/* =========================
+/* ==================================================
    PAGE SYSTEM
-========================= */
+================================================== */
 
 let current = 0;
 
 const pages =
-  document.querySelectorAll(".page");
+document.querySelectorAll(".page");
 
 
 function show(index){
@@ -995,29 +1183,36 @@ function show(index){
     index = pages.length - 1;
   }
 
-  pages.forEach((page,i)=>{
 
-    page.classList.toggle(
-      "active",
-      i === index
-    );
+  pages.forEach(
+    (page,i)=>{
 
-  });
+      page.classList.toggle(
+        "active",
+        i === index
+      );
+
+    }
+  );
+
 
   current = index;
 
+
   const progress =
-    document.getElementById("progress");
+  document.getElementById("progress");
+
 
   const percentage =
-    (index / (pages.length - 1)) * 100;
+  (index / (pages.length - 1)) * 100;
+
 
   progress.style.width =
-    percentage + "%";
+  percentage + "%";
+
 
   /*
-    Scroll to top of new screen.
-    Smooth mobile behavior.
+    New page ko top se start karo.
   */
 
   window.scrollTo({
@@ -1025,9 +1220,15 @@ function show(index){
     behavior:"smooth"
   });
 
+
   createFloat(5);
+
 }
 
+
+/* =========================
+   NEXT
+========================= */
 
 function next(){
 
@@ -1036,6 +1237,10 @@ function next(){
 }
 
 
+/* =========================
+   PREVIOUS
+========================= */
+
 function previous(){
 
   show(current - 1);
@@ -1043,32 +1248,42 @@ function previous(){
 }
 
 
-/* =========================
+/* ==================================================
    MISSION
-========================= */
+================================================== */
 
 let completed = 0;
 
 
 function completeTask(el){
 
-  if(el.classList.contains("done")){
+  if(
+    el.classList.contains("done")
+  ){
+
     return;
+
   }
+
 
   el.classList.add("done");
 
   completed++;
 
+
   if(completed === 3){
 
     const btn =
-      document.getElementById("missionBtn");
+    document.getElementById(
+      "missionBtn"
+    );
+
 
     btn.disabled = false;
 
     btn.innerHTML =
       "MISSION UNLOCKED 🔓";
+
 
     celebrateSmall();
 
@@ -1077,9 +1292,9 @@ function completeTask(el){
 }
 
 
-/* =========================
-   SECRET CARDS
-========================= */
+/* ==================================================
+   CARDS
+================================================== */
 
 function flip(card){
 
@@ -1088,9 +1303,9 @@ function flip(card){
 }
 
 
-/* =========================
+/* ==================================================
    LETTER
-========================= */
+================================================== */
 
 let letterOpened = false;
 
@@ -1098,17 +1313,48 @@ let letterOpened = false;
 function openLetter(el){
 
   if(letterOpened){
+
     return;
+
   }
+
 
   letterOpened = true;
 
+
   el.classList.add("open");
+
+
+  /*
+    Letter open hone ke baad
+    page ko letter ke start ke
+    paas gently scroll karna.
+  */
+
+  setTimeout(()=>{
+
+    const page =
+    document.getElementById(
+      "letterPage"
+    );
+
+
+    page.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  },400);
+
 
   createFloat(15);
 
+
   const button =
-    document.getElementById("letterBtn");
+  document.getElementById(
+    "letterBtn"
+  );
+
 
   button.disabled = false;
 
@@ -1118,9 +1364,9 @@ function openLetter(el){
 }
 
 
-/* =========================
+/* ==================================================
    GIFT
-========================= */
+================================================== */
 
 let giftOpened = false;
 
@@ -1128,76 +1374,113 @@ let giftOpened = false;
 function openGift(el){
 
   if(giftOpened){
+
     return;
+
   }
+
 
   giftOpened = true;
 
+
   el.classList.add("open");
 
-  const result =
-    document.getElementById("giftResult");
 
-  result.style.display = "block";
+  const result =
+  document.getElementById(
+    "giftResult"
+  );
+
+
+  result.style.display =
+    "block";
+
 
   const button =
-    document.getElementById("giftBtn");
+  document.getElementById(
+    "giftBtn"
+  );
+
 
   button.disabled = false;
 
   button.innerHTML =
     "LAST SCREEN ❤️";
 
+
   celebrate();
 
 }
 
 
-/* =========================
+/* ==================================================
    FLOATING EMOJIS
-========================= */
+================================================== */
 
 function createFloat(number){
 
-  for(let i = 0; i < number; i++){
+  for(
+    let i=0;
+    i<number;
+    i++
+  ){
 
     const e =
-      document.createElement("div");
+    document.createElement("div");
 
-    e.className = "float";
+
+    e.className =
+      "float";
+
 
     const emojis = [
+
       "❤️",
       "💖",
       "✨",
       "🌸",
       "🎀",
       "🪢"
+
     ];
+
 
     e.innerHTML =
       emojis[
         Math.floor(
-          Math.random() * emojis.length
+          Math.random() *
+          emojis.length
         )
       ];
+
 
     e.style.left =
       Math.random() * 100 + "vw";
 
+
     e.style.fontSize =
-      (18 + Math.random() * 25) + "px";
+      (
+        18 +
+        Math.random() * 25
+      ) + "px";
+
 
     e.style.animationDuration =
-      (4 + Math.random() * 4) + "s";
+      (
+        4 +
+        Math.random() * 4
+      ) + "s";
+
 
     document.body.appendChild(e);
 
-    setTimeout(()=>{
 
-      e.remove();
-
-    },8000);
+    setTimeout(
+      ()=>{
+        e.remove();
+      },
+      8000
+    );
 
   }
 
@@ -1218,73 +1501,98 @@ function celebrate(){
 }
 
 
-/* =========================
-   MOBILE SWIPE SUPPORT
-   Vertical swipe = page scroll
-   Horizontal swipe = page change
-========================= */
+/* ==================================================
+   SWIPE
+================================================== */
 
 let touchStartX = 0;
+
 let touchStartY = 0;
 
 
 document.addEventListener(
+
   "touchstart",
+
   function(e){
 
-    if(!e.touches || !e.touches[0]){
+    if(
+      !e.touches ||
+      !e.touches[0]
+    ){
       return;
     }
 
+
     touchStartX =
       e.touches[0].clientX;
+
 
     touchStartY =
       e.touches[0].clientY;
 
   },
-  {passive:true}
+
+  {
+    passive:true
+  }
+
 );
 
 
 document.addEventListener(
+
   "touchend",
+
   function(e){
 
-    if(!e.changedTouches || !e.changedTouches[0]){
+    if(
+      !e.changedTouches ||
+      !e.changedTouches[0]
+    ){
       return;
     }
+
 
     const endX =
       e.changedTouches[0].clientX;
 
+
     const endY =
       e.changedTouches[0].clientY;
+
 
     const diffX =
       endX - touchStartX;
 
+
     const diffY =
       endY - touchStartY;
 
-    /*
-      Only horizontal swipes
-      change the page.
 
-      Vertical swipes are left
-      completely free for scrolling.
+    /*
+      ONLY horizontal swipe
+      changes screen.
+
+      Vertical swipe =
+      normal scrolling.
     */
 
     if(
+
       Math.abs(diffX) > 80 &&
-      Math.abs(diffX) > Math.abs(diffY) * 1.4
+
+      Math.abs(diffX) >
+      Math.abs(diffY) * 1.4
+
     ){
 
       if(diffX < 0){
 
         next();
 
-      }else{
+      }
+      else{
 
         previous();
 
@@ -1293,16 +1601,22 @@ document.addEventListener(
     }
 
   },
-  {passive:true}
+
+  {
+    passive:true
+  }
+
 );
 
 
-/* =========================
-   KEYBOARD SUPPORT
-========================= */
+/* ==================================================
+   KEYBOARD
+================================================== */
 
 document.addEventListener(
+
   "keydown",
+
   function(e){
 
     if(e.key === "ArrowRight"){
@@ -1314,18 +1628,20 @@ document.addEventListener(
     }
 
   }
+
 );
 
 
-/* =========================
-   START FLOAT
-========================= */
+/* ==================================================
+   START
+================================================== */
 
-setTimeout(()=>{
-
-  createFloat(8);
-
-},500);
+setTimeout(
+  ()=>{
+    createFloat(8);
+  },
+  500
+);
 
 </script></body>
 </html>
