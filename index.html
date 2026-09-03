@@ -1,1361 +1,1580 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="pa">
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>For Noor ❤️</title>
 
-<title>Tanisha's Rakhi Mission 🎀</title>
+<!-- PREMIUM FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@400;600;700&display=swap');
-
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:Poppins,sans-serif;
-  background:linear-gradient(135deg,#fff1f5,#ffe5ed,#fff7df);
-  color:#431522;
-  min-height:100vh;
-  overflow-x:hidden;
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-  touch-action:pan-y;
+    background:#08070a;
+    color:#fff;
+    font-family:'Manrope',sans-serif;
+    overflow-x:hidden;
 }
+
+/* =========================
+   FONTS
+========================= */
+
+.serif{
+    font-family:'Cormorant Garamond',serif;
+}
+
+.script{
+    font-family:'Parisienne',cursive;
+}
+
+.body-font{
+    font-family:'Manrope',sans-serif;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+#stars{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+}
+
+.glow{
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:#e783a720;
+    filter:blur(110px);
+    top:-200px;
+    left:-150px;
+    z-index:-4;
+}
+
+.glow2{
+    position:fixed;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:#8c4d7020;
+    filter:blur(110px);
+    bottom:-200px;
+    right:-150px;
+    z-index:-4;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music{
+    position:fixed;
+    right:20px;
+    top:20px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:#ffffff10;
+    border:1px solid #ffffff28;
+    color:white;
+    z-index:100;
+    cursor:pointer;
+    backdrop-filter:blur(15px);
+    font-size:17px;
+}
+
+/* =========================
+   PROGRESS
+========================= */
 
 .progress{
-  position:fixed;
-  top:0;
-  left:0;
-  width:0;
-  height:5px;
-  background:#9b1948;
-  z-index:9999;
-  transition:width .4s ease;
+    position:fixed;
+    top:0;
+    left:0;
+    height:2px;
+    width:0;
+    background:#f4a6be;
+    z-index:200;
 }
 
-.page{
-  min-height:100vh;
-  min-height:100svh;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:45px 18px 110px;
-  text-align:center;
+/* =========================
+   SECTION
+========================= */
+
+.screen{
+    min-height:100svh;
+    padding:90px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
 }
 
-.page.active{
-  display:flex;
-  animation:enter .55s ease;
+.container{
+    width:min(1050px,100%);
+    margin:auto;
 }
 
-@keyframes enter{
-  from{
+.center{
+    text-align:center;
+}
+
+/* =========================
+   SMALL LABEL
+========================= */
+
+.kicker{
+    font-size:10px;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    color:#d99db1;
+    font-weight:800;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(95px,22vw,210px);
+    line-height:.60;
+    letter-spacing:-.07em;
+    margin:35px 0;
+    font-weight:500;
+}
+
+.hero-title span{
+    display:block;
+    color:#ffe0e9;
+    font-style:italic;
+}
+
+.hero-script{
+    font-family:'Parisienne',cursive;
+    font-size:clamp(30px,6vw,55px);
+    color:#e9a6ba;
+    margin-bottom:10px;
+}
+
+.lead{
+    max-width:620px;
+    margin:30px auto;
+    color:#cbbac2;
+    font-size:13px;
+    line-height:2;
+}
+
+.heart{
+    font-size:42px;
+    color:#f3a5bd;
+    animation:heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat{
+
+    50%{
+        transform:scale(1.2);
+    }
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+    border:1px solid #ffffff35;
+    background:#ffffff0c;
+    color:#fff;
+    padding:14px 25px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:.35s;
+    backdrop-filter:blur(15px);
+    font-family:'Manrope',sans-serif;
+    font-size:12px;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    background:#ffffff15;
+    border-color:#f0a6bc66;
+    box-shadow:0 15px 40px #0008;
+}
+
+/* =========================
+   SCROLL
+========================= */
+
+.scroll{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#89747e;
+    font-size:9px;
+    letter-spacing:.3em;
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(55px,10vw,100px);
+    line-height:.78;
+    font-weight:500;
+    margin:25px 0;
+    letter-spacing:-.035em;
+}
+
+.desc{
+    max-width:620px;
+    margin:auto;
+    color:#cbbac2;
+    font-size:13px;
+    line-height:2;
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
     opacity:0;
-    transform:translateY(25px) scale(.98);
-  }
-  to{
+    transform:translateY(45px);
+    transition:1s ease;
+}
+
+.reveal.show{
     opacity:1;
-    transform:translateY(0) scale(1);
-  }
+    transform:none;
 }
 
-.box{
-  width:min(650px,100%);
-  padding:35px 22px;
-  border-radius:32px;
-  background:rgba(255,255,255,.84);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  box-shadow:0 20px 70px rgba(125,24,53,.14);
-  position:relative;
-}
-
-.emoji{
-  font-size:75px;
-  margin-bottom:10px;
-  animation:bob 2s infinite ease-in-out;
-}
-
-@keyframes bob{
-  50%{
-    transform:translateY(-9px) rotate(4deg);
-  }
-}
-
-h1{
-  color:#9b1948;
-  font-size:clamp(42px,11vw,75px);
-  line-height:1;
-  margin:15px 0;
-}
-
-h2{
-  color:#9b1948;
-  font-size:30px;
-  margin-bottom:15px;
-}
-
-p{
-  font-size:17px;
-  line-height:1.8;
-}
-
-.cursive{
-  font-family:Caveat,cursive;
-  font-size:32px;
-  color:#8e2949;
-  margin-top:18px;
-}
-
-button{
-  border:0;
-  background:#9b1948;
-  color:white;
-  padding:15px 25px;
-  border-radius:50px;
-  margin-top:25px;
-  font-size:16px;
-  font-weight:700;
-  cursor:pointer;
-  box-shadow:0 10px 25px rgba(155,25,72,.27);
-  transition:.2s;
-}
-
-button:active{
-  transform:scale(.94);
-}
-
-button:disabled{
-  opacity:.4;
-  cursor:not-allowed;
-}
-
-
-/* MISSIONS */
-
-.mission{
-  display:grid;
-  gap:13px;
-  margin-top:25px;
-}
-
-.task{
-  background:white;
-  padding:18px;
-  border-radius:18px;
-  box-shadow:0 8px 25px rgba(104,21,42,.11);
-  cursor:pointer;
-  transition:.3s;
-}
-
-.task:active{
-  transform:scale(.98);
-}
-
-.task.done{
-  background:#ffe0ea;
-}
-
-.tick{
-  float:right;
-  display:none;
-}
-
-.task.done .tick{
-  display:block;
-}
-
-
-/* CARDS */
-
-.cards{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:25px;
-}
-
-.secret{
-  min-height:125px;
-  background:#fff;
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-  box-shadow:0 8px 25px rgba(104,21,42,.11);
-  cursor:pointer;
-  transition:.4s;
-}
-
-.secret .inside{
-  display:none;
-  color:#8d2346;
-  font-weight:600;
-}
-
-.secret.open{
-  transform:rotateY(360deg);
-  background:#ffe4ed;
-}
-
-.secret.open .front{
-  display:none;
-}
-
-.secret.open .inside{
-  display:block;
-}
-
-
-/* ENVELOPE */
+/* =========================
+   ENVELOPE
+========================= */
 
 .envelope{
-  width:300px;
-  height:185px;
-  margin:45px auto 30px;
-  position:relative;
-  background:#d45172;
-  border-radius:10px;
-  cursor:pointer;
-  box-shadow:0 20px 45px rgba(104,21,42,.20);
-  perspective:1000px;
-  transition:height .7s ease;
-  touch-action:manipulation;
+    width:min(430px,90vw);
+    height:270px;
+    margin:60px auto 45px;
+    position:relative;
+    cursor:pointer;
+    perspective:1000px;
 }
 
-
-/* LETTER */
-
-.letter{
-  position:absolute;
-  left:7%;
-  bottom:5px;
-  width:86%;
-  height:165px;
-  background:#fffdf4;
-  border-radius:8px;
-  padding:12px 13px;
-  color:#6d293d;
-  font-family:Caveat,cursive;
-  font-size:17px;
-  line-height:1.18;
-  text-align:left;
-  overflow:hidden;
-  z-index:2;
-  box-shadow:0 5px 18px rgba(0,0,0,.10);
-  transition:
-    height .7s ease,
-    transform .7s ease;
+.env-back{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        145deg,
+        #d98aa4,
+        #904a65
+    );
+    border-radius:20px;
+    box-shadow:0 35px 80px #0009;
 }
 
+.paper{
+    position:absolute;
+    width:88%;
+    height:88%;
+    left:6%;
+    top:5%;
+    background:#fffafc;
+    color:#492832;
+    border-radius:13px;
+    padding:27px;
+    text-align:left;
+    z-index:2;
+    transition:1s;
+}
 
-/* FLAP */
+.paper h3{
+    font-family:'Parisienne',cursive;
+    font-size:42px;
+    font-weight:400;
+}
+
+.paper p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:16px;
+    line-height:1.6;
+    color:#765c66;
+    margin-top:10px;
+}
 
 .flap{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:#bd3c60;
-  clip-path:polygon(0 0,50% 55%,100% 0);
-  z-index:4;
-  transform-origin:top center;
-  transition:transform .7s ease;
-  pointer-events:none;
-}
-
-
-/* ENVELOPE FRONT */
-
-.envelope:after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:100%;
-  height:70%;
-  background:#d45172;
-  clip-path:polygon(
-    0 0,
-    50% 55%,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
-  z-index:3;
-  pointer-events:none;
-}
-
-
-/* OPEN LETTER */
-
-.envelope.open{
-  height:365px;
-}
-
-.envelope.open .letter{
-  height:320px;
-  transform:translateY(-2px);
-  overflow:hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:160px;
+    background:#edabc0;
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        50% 90%
+    );
+    transform-origin:top;
+    transition:1s;
+    z-index:3;
 }
 
 .envelope.open .flap{
-  transform:rotateX(180deg);
+    transform:rotateX(180deg);
 }
 
+.envelope.open .paper{
+    transform:translateY(-155px);
+    z-index:5;
+}
 
-/* GIFT */
+/* =========================
+   STORY CARDS
+========================= */
+
+.story{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:50px;
+}
+
+.story-card{
+    min-height:220px;
+    padding:27px;
+    border:1px solid #ffffff18;
+    background:linear-gradient(
+        145deg,
+        #ffffff0d,
+        #ffffff04
+    );
+    border-radius:28px;
+    backdrop-filter:blur(20px);
+    transition:.4s;
+}
+
+.story-card:hover{
+    transform:translateY(-8px);
+    border-color:#f2aec355;
+}
+
+.num{
+    font-size:9px;
+    letter-spacing:.22em;
+    color:#d99bae;
+}
+
+.story-card h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:36px;
+    font-weight:600;
+    margin:17px 0 10px;
+}
+
+.story-card p{
+    color:#cbbac2;
+    font-size:11px;
+    line-height:1.9;
+}
+
+/* =========================
+   CHAT
+========================= */
+
+.phone{
+    width:min(390px,100%);
+    margin:45px auto 0;
+    background:#151015;
+    border:1px solid #ffffff18;
+    border-radius:35px;
+    padding:18px;
+    box-shadow:0 35px 90px #0009;
+}
+
+.phone-top{
+    color:#9f8992;
+    font-size:11px;
+    padding:8px;
+}
+
+.chat{
+    min-height:390px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+}
+
+.bubble{
+    padding:11px 15px;
+    border-radius:18px;
+    max-width:78%;
+    font-size:12px;
+    animation:chat .6s both;
+}
+
+.me{
+    align-self:flex-end;
+    background:#e99ab3;
+    color:#381e28;
+}
+
+.her{
+    align-self:flex-start;
+    background:#29212a;
+}
+
+@keyframes chat{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+/* =========================
+   REASON CARDS
+========================= */
+
+.reasons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-top:45px;
+}
+
+.reason{
+    height:220px;
+    border-radius:28px;
+    border:1px solid #ffffff18;
+    background:#ffffff08;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    cursor:pointer;
+    backdrop-filter:blur(20px);
+    transition:.4s;
+}
+
+.reason:hover{
+    transform:translateY(-7px);
+    border-color:#f2aec355;
+}
+
+.front{
+    font-family:'Cormorant Garamond',serif;
+    font-size:50px;
+    color:#f3abc1;
+}
+
+.back{
+    display:none;
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px;
+    line-height:1.6;
+    color:#ead8df;
+}
+
+.reason.open .front{
+    display:none;
+}
+
+.reason.open .back{
+    display:block;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(65px,14vw,145px);
+    line-height:.65;
+    color:#ffe0e9;
+    font-weight:500;
+}
+
+.final-name{
+    font-family:'Parisienne',cursive;
+    font-size:clamp(70px,15vw,155px);
+    line-height:.8;
+    margin:35px 0;
+    color:#f6bfd0;
+    font-weight:400;
+}
+
+.final-sub{
+    font-family:'Cormorant Garamond',serif;
+    font-size:34px;
+    color:#f5c5d3;
+}
+
+.final-box{
+    max-width:700px;
+    padding:32px;
+    margin:45px auto;
+    border-radius:30px;
+    border:1px solid #ffffff18;
+    background:#ffffff08;
+    backdrop-filter:blur(20px);
+}
+
+.final-box p{
+    font-family:'Cormorant Garamond',serif;
+    color:#dfcbd3;
+    font-size:18px;
+    line-height:1.9;
+}
+
+/* =========================
+   GIFT
+========================= */
 
 .gift{
-  width:170px;
-  height:145px;
-  margin:55px auto 35px;
-  position:relative;
-  cursor:pointer;
-  touch-action:manipulation;
+    font-size:110px;
+    cursor:pointer;
+    display:inline-block;
+    margin:35px;
+    animation:gift 1.7s infinite;
 }
 
-.giftbody{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:105px;
-  background:#9b1948;
-  border-radius:8px;
+@keyframes gift{
+
+    50%{
+        transform:
+        translateY(-12px)
+        rotate(4deg);
+    }
+
 }
 
-.giftbody:after{
-  content:"";
-  position:absolute;
-  left:68px;
-  width:35px;
-  height:100%;
-  background:#f5c75d;
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    z-index:500;
+    pointer-events:none;
+    animation:fall 4s linear forwards;
 }
 
-.lid{
-  position:absolute;
-  top:15px;
-  left:-7px;
-  width:184px;
-  height:35px;
-  background:#b52c5b;
-  border-radius:7px;
-  z-index:2;
-  transition:.7s;
+@keyframes fall{
+
+    to{
+        transform:
+        translate(var(--x),110vh)
+        rotate(800deg);
+
+        opacity:0;
+    }
+
 }
 
-.lid:after{
-  content:"";
-  position:absolute;
-  left:75px;
-  width:35px;
-  height:100%;
-  background:#f5c75d;
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:750px){
+
+    .story{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .reasons{
+        grid-template-columns:1fr 1fr;
+    }
+
 }
 
-.gift.open .lid{
-  transform:translateY(-80px) rotate(-8deg);
-}
+@media(max-width:450px){
 
-.giftResult{
-  display:none;
-  animation:pop .7s ease;
-}
+    .story{
+        grid-template-columns:1fr;
+    }
 
-@keyframes pop{
-  from{
-    opacity:0;
-    transform:scale(.6);
-  }
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
-}
+    .envelope{
+        height:225px;
+    }
 
+    .paper{
+        padding:18px;
+    }
 
-/* NAVIGATION */
+    .paper h3{
+        font-size:34px;
+    }
 
-.nav{
-  position:fixed;
-  bottom:calc(18px + env(safe-area-inset-bottom));
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:10px;
-  z-index:9000;
-}
+    .paper p{
+        font-size:14px;
+    }
 
-.nav button{
-  width:48px;
-  height:48px;
-  padding:0;
-  margin:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:27px;
-}
+    .reason{
+        height:155px;
+    }
 
+    .back{
+        font-size:15px;
+    }
 
-/* FLOATING */
-
-.float{
-  position:fixed;
-  bottom:-40px;
-  pointer-events:none;
-  user-select:none;
-  animation:floatUp linear forwards;
-  z-index:5000;
-}
-
-@keyframes floatUp{
-  to{
-    transform:translateY(-110vh) rotate(360deg);
-    opacity:0;
-  }
-}
-
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-  .page{
-    align-items:flex-start;
-    padding-top:50px;
-    padding-bottom:110px;
-  }
-
-  .box{
-    padding:30px 15px;
-    border-radius:26px;
-  }
-
-  h1{
-    font-size:clamp(40px,14vw,65px);
-  }
-
-  h2{
-    font-size:27px;
-  }
-
-  p{
-    font-size:15.5px;
-  }
-
-  .emoji{
-    font-size:65px;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .secret{
-    min-height:105px;
-  }
-
-  .envelope{
-    width:min(290px,90vw);
-    height:180px;
-    margin-top:40px;
-  }
-
-  .letter{
-    width:88%;
-    left:6%;
-    height:160px;
-    padding:11px 12px;
-    font-size:15.5px;
-    line-height:1.15;
-  }
-
-  .envelope.open{
-    height:350px;
-  }
-
-  .envelope.open .letter{
-    height:305px;
-    transform:translateY(-2px);
-    overflow:hidden;
-  }
-
-  #letterBtn{
-    margin-top:30px;
-  }
-}
-
-
-/* SMALL PHONES */
-
-@media(max-width:360px){
-
-  .envelope{
-    width:255px;
-  }
-
-  .letter{
-    font-size:14.5px;
-    line-height:1.12;
-    padding:10px 11px;
-  }
-
-  .envelope.open{
-    height:340px;
-  }
-
-  .envelope.open .letter{
-    height:295px;
-  }
 }
 
 </style>
-
 </head>
 
 
 <body>
 
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<canvas id="stars"></canvas>
 
 <div class="progress" id="progress"></div>
 
-
-<!-- PAGE 1 -->
-
-<section class="page active">
-
-<div class="box">
-
-<div class="emoji">🎀</div>
-
-<p>SECRET MISSION • 2026</p>
-
-<h1>Tanisha ❤️</h1>
-
-<p>
-
-Aaj normal Raksha Bandhan nahi hai...
-
-<br>
-
-kyunki tumhare bhai ne tumhare liye
-ek secret mission banaya hai. 😎
-
-</p>
-
-<p class="cursive">
-Ready ho?
-</p>
-
-<button onclick="next()">
-MISSION START 🚀
+<button class="music" id="musicBtn">
+    ♪
 </button>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- =================================
+     01 — INTRO
+================================= -->
+
+<section class="screen" id="intro">
+
+<div class="container center reveal">
+
+    <div class="kicker">
+        03 · 09 · A special day
+    </div>
+
+    <div class="heart">
+        ♡
+    </div>
+
+    <div class="hero-script">
+        For someone special
+    </div>
+
+    <h1 class="hero-title">
+        For
+        <span>Noor</span>
+    </h1>
+
+    <p class="lead">
+        Kujh kahaniyan likhiyan nahi jandiyan…
+        oh bas dheere-dheere ban jandiyan ne.
+        Sadi vi kujh aisi hi ae. ❤️
+    </p>
+
+    <button class="btn"
+            onclick="next('letter')">
+
+        Tap to begin ✦
+
+    </button>
+
+</div>
+
+<div class="scroll">
+    TAP TO BEGIN
+</div>
+
+</section>
+
+
+<!-- =================================
+     02 — LETTER
+================================= -->
+
+<section class="screen" id="letter">
+
+<div class="container center reveal">
+
+    <div class="kicker">
+        01 · A letter
+    </div>
+
+    <h2 class="title">
+        Ik chhithi,<br>
+        sirf tere layi.
+    </h2>
+
+    <p class="desc">
+        Envelope nu tap karo ❤️
+    </p>
+
+
+    <div class="envelope"
+         id="envelope">
+
+        <div class="env-back"></div>
+
+        <div class="paper">
+
+            <h3>
+                Meri Noor,
+            </h3>
+
+            <p>
+                Ajj tera birthday ae,
+                te main bas eh chaunda haan
+                ke tu hamesha khush rave.
+            </p>
+
+            <p>
+                Teri smile bani rave,
+                tere dreams pure hon,
+                te zindagi tenu bohot
+                sohṇe moments deve. ❤️
+            </p>
+
+        </div>
+
+        <div class="flap"></div>
+
+    </div>
+
+
+    <button class="btn"
+            onclick="next('story')">
+
+        Continue our story →
+
+    </button>
 
 </div>
 
 </section>
 
 
-<!-- PAGE 2 -->
+<!-- =================================
+     03 — STORY
+================================= -->
 
-<section class="page">
+<section class="screen" id="story">
 
-<div class="box">
+<div class="container">
 
-<div class="emoji">🪢</div>
+<div class="center reveal">
 
-<h2>RAKHI MISSION</h2>
+    <div class="kicker">
+        02 · How it started
+    </div>
 
-<p>
+    <h2 class="title">
+        Sadi kahani.
+    </h2>
 
-Neeche ke teen missions complete karo.
-
-<br>
-
-Tabhi secret unlock hoga. 👀
-
-</p>
-
-<div class="mission">
-
-<div class="task" onclick="completeTask(this)">
-
-❤️ Mission 01 — Bhai ko smile dena
-
-<span class="tick">✅</span>
+    <p class="desc">
+        School ton shuru hoi,
+        ik story view ton,
+        te fer ik message ton…
+    </p>
 
 </div>
 
 
-<div class="task" onclick="completeTask(this)">
+<div class="story">
 
-😂 Mission 02 — Bhai ki bakwaas tolerate karna
+<div class="story-card reveal">
 
-<span class="tick">✅</span>
+    <div class="num">
+        CHAPTER 01
+    </div>
+
+    <h3>
+        School 🏫
+    </h3>
+
+    <p>
+        Sadi gall school ton shuru hoi si.
+        Odon pata nahi si ke eh beginning
+        inni yaadgaar ban ju.
+    </p>
 
 </div>
 
 
-<div class="task" onclick="completeTask(this)">
+<div class="story-card reveal">
 
-🫂 Mission 03 — Bhai ko ek virtual hug
+    <div class="num">
+        CHAPTER 02
+    </div>
 
-<span class="tick">✅</span>
+    <h3>
+        Stories 👀
+    </h3>
+
+    <p>
+        Tu meri story dekhdi si…
+        te main tenu notice karna
+        shuru kar ditta.
+    </p>
+
+</div>
+
+
+<div class="story-card reveal">
+
+    <div class="num">
+        CHAPTER 03
+    </div>
+
+    <h3>
+        Message 💬
+    </h3>
+
+    <p>
+        Fer main tenu message kita.
+        Ik simple jeha message,
+        par othon saadi gall shuru hoi.
+    </p>
+
+</div>
+
+
+<div class="story-card reveal">
+
+    <div class="num">
+        CHAPTER 04
+    </div>
+
+    <h3>
+        Noor ✨
+    </h3>
+
+    <p>
+        Pata hi nahi lagga kadon
+        normal gallan special ho gayian…
+        te Manseerat, “Noor” ban gayi.
+    </p>
 
 </div>
 
 </div>
 
 
-<button id="missionBtn" disabled onclick="next()">
+<div class="center">
 
-ALL MISSIONS COMPLETE 🔒
+<button class="btn"
+        onclick="next('chat')"
+        style="margin-top:40px">
+
+    See that beginning →
 
 </button>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- PAGE 3 -->
+<!-- =================================
+     04 — CHAT
+================================= -->
 
-<section class="page">
+<section class="screen" id="chat">
 
-<div class="box">
+<div class="container center reveal">
 
-<p>LEVEL 2</p>
+    <div class="kicker">
+        03 · The beginning
+    </div>
 
-<h1>Secret Cards ✨</h1>
+    <h2 class="title">
+        Ik message.
+    </h2>
 
-<p>
-
-Har card ke andar ek secret hai.
-
-<br>
-
-Tap karke dekho.
-
-</p>
-
-
-<div class="cards">
-
-
-<div class="secret" onclick="flip(this)">
-
-<div class="front">
-
-💗
-<br>
-Tap Me
-
-</div>
-
-<div class="inside">
-
-Tu important hai ❤️
-
-</div>
-
-</div>
+    <p class="desc">
+        Kayi vaar ik chhota message
+        poori kahani da pehla page
+        ban janda ae.
+    </p>
 
 
-<div class="secret" onclick="flip(this)">
+    <div class="phone">
 
-<div class="front">
+        <div class="phone-top">
+            ♡ Noor · Memories
+        </div>
 
-😂
-<br>
-Tap Me
+        <div class="chat">
 
-</div>
+            <div class="bubble me"
+                 style="animation-delay:.3s">
+                Hey… 👀
+            </div>
 
-<div class="inside">
+            <div class="bubble her"
+                 style="animation-delay:.9s">
+                Hii :)
+            </div>
 
-Teri bakwaas bhi special hai 😂
+            <div class="bubble me"
+                 style="animation-delay:1.5s">
+                Ki haal aa?
+            </div>
 
-</div>
+            <div class="bubble her"
+                 style="animation-delay:2.1s">
+                Vadiya 😄
+            </div>
 
-</div>
+            <div class="bubble me"
+                 style="animation-delay:2.7s">
+                Te bas… othon gallan shuru.
+            </div>
 
+            <div class="bubble her"
+                 style="animation-delay:3.3s">
+                ✨
+            </div>
 
-<div class="secret" onclick="flip(this)">
+        </div>
 
-<div class="front">
-
-🫂
-<br>
-Tap Me
-
-</div>
-
-<div class="inside">
-
-Bhai hamesha tere side hai.
-
-</div>
-
-</div>
-
-
-<div class="secret" onclick="flip(this)">
-
-<div class="front">
-
-🎀
-<br>
-Tap Me
-
-</div>
-
-<div class="inside">
-
-Happy Raksha Bandhan, Tanisha!
-
-</div>
-
-</div>
+    </div>
 
 
-</div>
+    <button class="btn"
+            onclick="next('reasons')"
+            style="margin-top:30px">
 
+        There is more →
 
-<button onclick="next()">
-
-NEXT SECRET 💌
-
-</button>
+    </button>
 
 </div>
 
 </section>
 
 
-<!-- PAGE 4 -->
+<!-- =================================
+     05 — REASONS
+================================= -->
 
-<section class="page">
+<section class="screen" id="reasons">
 
-<div class="box">
+<div class="container center reveal">
 
-<p>PRIVATE MESSAGE</p>
+    <div class="kicker">
+        04 · Tap to reveal
+    </div>
 
-<h1>Bhai Ki Chitthi 💌</h1>
+    <h2 class="title">
+        Kujh gallan<br>
+        tere baare.
+    </h2>
 
-<p>
-Envelope par tap karo...
-</p>
-
-
-<div
-class="envelope"
-id="envelope"
-onclick="openLetter(this)"
->
-
-
-<div class="letter">
-
-Dear Tanisha ❤️
-
-<br>
-
-Tum mujhe apna bhai maano ya na maano,
-lekin main tumhe apni behen maanta hoon. 🫂
-
-<br>
-
-Tumne kaha tha na ki tum mere liye special ho...
-toh yaad rakhna, tum bhi mere liye bahut special ho. ❤️
-
-<br>
-
-Tumhari har problem mein
-main hamesha tumhare saath rahunga.
-
-<br>
-
-Meri bas yahi dua hai ki
-tum hamesha khush raho,
-hamesha haste raho,
-aur tum par kabhi koi takleef na aaye. ✨
-
-<br>
-
-Happy Raksha Bandhan, Tanisha! 🎀❤️
-
-<br>
-
-— Tumhara Bhai 🫂
-
-</div>
+    <p class="desc">
+        Cards te tap karo ❤️
+    </p>
 
 
-<div class="flap"></div>
+    <div class="reasons">
 
-</div>
+        <div class="reason"
+             onclick="this.classList.toggle('open')">
 
+            <div class="front">
+                01
+            </div>
 
-<button
-id="letterBtn"
-disabled
-onclick="next()"
->
+            <div class="back">
+                Teri smile bina reason vi
+                mood better kar dindi ae. ❤️
+            </div>
 
-SECRET GIFT 🎁
-
-</button>
-
-</div>
-
-</section>
+        </div>
 
 
-<!-- PAGE 5 -->
+        <div class="reason"
+             onclick="this.classList.toggle('open')">
 
-<section class="page">
+            <div class="front">
+                02
+            </div>
 
-<div class="box">
+            <div class="back">
+                Tere naal hoi chhoti jehi gall
+                vi yaad reh jandi ae.
+            </div>
 
-<p>FINAL LEVEL</p>
-
-<h1>Mystery Gift 🎁</h1>
-
-<p>
-
-Box ko tap karo...
-
-<br>
-
-shayad kuch interesting mile. 👀
-
-</p>
+        </div>
 
 
-<div
-class="gift"
-id="gift"
-onclick="openGift(this)"
->
+        <div class="reason"
+             onclick="this.classList.toggle('open')">
 
-<div class="lid"></div>
+            <div class="front">
+                03
+            </div>
 
-<div class="giftbody"></div>
+            <div class="back">
+                Tu meri kahani da oh hissa
+                ban gayi jo main expect nahi
+                kita si.
+            </div>
 
-</div>
-
-
-<div
-class="giftResult"
-id="giftResult"
->
-
-<h2>🎉 SURPRISE! 🎉</h2>
-
-<p>
-
-Is baar expensive gift nahi de paaya...
-
-<br><br>
-
-Isliye ek aisa gift banaya
-jo paise se nahi milta. ❤️
-
-<br><br>
-
-<strong>
-Ye poori website sirf tumhare liye hai.
-</strong>
-
-</p>
-
-</div>
+        </div>
 
 
-<button
-id="giftBtn"
-disabled
-onclick="next()"
->
+        <div class="reason"
+             onclick="this.classList.toggle('open')">
 
-LAST SCREEN ❤️
+            <div class="front">
+                04
+            </div>
 
-</button>
+            <div class="back">
+                Sab ton simple gall:
+                tu mere layi bohot special ae. ✨
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button class="btn"
+            onclick="next('gift')"
+            style="margin-top:35px">
+
+        One last surprise →
+
+    </button>
 
 </div>
 
 </section>
 
 
-<!-- PAGE 6 -->
+<!-- =================================
+     06 — GIFT
+================================= -->
 
-<section class="page">
+<section class="screen" id="gift">
 
-<div class="box">
+<div class="container center reveal">
 
-<div class="emoji">🫂</div>
+    <div class="kicker">
+        05 · One last surprise
+    </div>
 
-<p>MISSION COMPLETE</p>
+    <h2 class="title">
+        Noor…<br>
+        ready?
+    </h2>
 
-<h1>Tanisha ❤️</h1>
+    <div class="gift"
+         onclick="finish()">
 
-<p>
+        🎁
 
-Chahe life kitni bhi busy ho,
+    </div>
 
-<br>
+    <p class="desc">
+        Gift te tap karo ❤️
+    </p>
 
-hamari ye bhai-behen wali bonding
-hamesha special rahegi.
+    <br>
 
-</p>
+    <button class="btn"
+            onclick="finish()">
 
-<p class="cursive">
+        Open my surprise ✦
 
-Stay Happy.
-Stay Crazy.
-Stay Tanisha. ✨
-
-</p>
-
-
-<button onclick="celebrate()">
-
-🎊 FINAL SURPRISE
-
-</button>
+    </button>
 
 </div>
 
 </section>
 
 
-<!-- NAVIGATION -->
+<!-- =================================
+     07 — FINAL
+================================= -->
 
-<div class="nav">
+<section class="screen" id="final">
 
-<button onclick="previous()">‹</button>
+<div class="container center reveal">
 
-<button onclick="next()">›</button>
+    <div class="kicker">
+        06 · Today is yours
+    </div>
+
+    <h2 class="final-title">
+        Happy Birthday
+    </h2>
+
+    <h1 class="final-name">
+        Manseerat
+    </h1>
+
+    <div class="final-sub">
+        Meri Noor ❤️
+    </div>
+
+
+    <div class="final-box">
+
+        <p id="typing"></p>
+
+    </div>
+
+
+    <button class="btn"
+            onclick="location.reload()">
+
+        Replay our story ↻
+
+    </button>
 
 </div>
+
+</section>
 
 
 <script>
 
+/* =========================
+   NAVIGATION
+========================= */
 
-/* PAGE SYSTEM */
+function next(id){
 
-let current = 0;
+    document
+    .getElementById(id)
+    .scrollIntoView({
+        behavior:"smooth"
+    });
 
-const pages =
-document.querySelectorAll(".page");
-
-
-function show(index){
-
-  if(index < 0){
-    index = 0;
-  }
-
-  if(index >= pages.length){
-    index = pages.length - 1;
-  }
+}
 
 
-  pages.forEach(
-    (page,i)=>{
+/* =========================
+   REVEAL
+========================= */
 
-      page.classList.toggle(
-        "active",
-        i === index
-      );
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target
+            .classList
+            .add("show");
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.12
+}
+
+);
+
+
+document
+.querySelectorAll(".reveal,.story-card")
+.forEach(el=>{
+
+    observer.observe(el);
+
+});
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+document
+.getElementById("envelope")
+.addEventListener(
+"click",
+function(){
+
+    this.classList.toggle("open");
+
+});
+
+
+/* =========================
+   MUSIC
+========================= */
+
+const music =
+document.getElementById("music");
+
+const musicBtn =
+document.getElementById("musicBtn");
+
+
+musicBtn.onclick =
+async function(){
+
+    try{
+
+        if(music.paused){
+
+            await music.play();
+
+            musicBtn.innerText="❚❚";
+
+        }
+
+        else{
+
+            music.pause();
+
+            musicBtn.innerText="♪";
+
+        }
 
     }
-  );
 
+    catch(error){
 
-  current = index;
+        alert(
+        "music.mp3 nu index.html de same folder ch rakho."
+        );
 
+    }
 
-  const progress =
-  document.getElementById("progress");
+};
 
 
-  const percentage =
-  (index / (pages.length - 1)) * 100;
+/* =========================
+   FINAL MESSAGE
+========================= */
 
+let typed=false;
 
-  progress.style.width =
-  percentage + "%";
 
+function finish(){
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+    next("final");
 
-
-  createFloat(5);
-
-}
-
-
-function next(){
-  show(current + 1);
-}
-
-
-function previous(){
-  show(current - 1);
-}
-
-
-/* MISSIONS */
-
-let completed = 0;
-
-
-function completeTask(el){
-
-  if(
-    el.classList.contains("done")
-  ){
-    return;
-  }
-
-
-  el.classList.add("done");
-
-  completed++;
-
-
-  if(completed === 3){
-
-    const btn =
-    document.getElementById(
-      "missionBtn"
-    );
-
-
-    btn.disabled = false;
-
-    btn.innerHTML =
-    "MISSION UNLOCKED 🔓";
-
-
-    celebrateSmall();
-
-  }
-
-}
-
-
-/* CARDS */
-
-function flip(card){
-
-  card.classList.toggle("open");
-
-}
-
-
-/* LETTER */
-
-let letterOpened = false;
-
-
-function openLetter(el){
-
-  if(letterOpened){
-    return;
-  }
-
-
-  letterOpened = true;
-
-
-  el.classList.add("open");
-
-
-  createFloat(15);
-
-
-  const button =
-  document.getElementById(
-    "letterBtn"
-  );
-
-
-  button.disabled = false;
-
-
-  button.innerHTML =
-  "SECRET GIFT UNLOCKED 🎁";
-
-}
-
-
-/* GIFT */
-
-let giftOpened = false;
-
-
-function openGift(el){
-
-  if(giftOpened){
-    return;
-  }
-
-
-  giftOpened = true;
-
-
-  el.classList.add("open");
-
-
-  const result =
-  document.getElementById(
-    "giftResult"
-  );
-
-
-  result.style.display =
-  "block";
-
-
-  const button =
-  document.getElementById(
-    "giftBtn"
-  );
-
-
-  button.disabled = false;
-
-
-  button.innerHTML =
-  "LAST SCREEN ❤️";
-
-
-  celebrate();
-
-}
-
-
-/* FLOATING EMOJIS */
-
-function createFloat(number){
-
-  for(
-    let i=0;
-    i<number;
-    i++
-  ){
-
-    const e =
-    document.createElement("div");
-
-
-    e.className =
-    "float";
-
-
-    const emojis = [
-
-      "❤️",
-      "💖",
-      "✨",
-      "🌸",
-      "🎀",
-      "🪢"
-
-    ];
-
-
-    e.innerHTML =
-    emojis[
-      Math.floor(
-        Math.random() *
-        emojis.length
-      )
-    ];
-
-
-    e.style.left =
-    Math.random() * 100 + "vw";
-
-
-    e.style.fontSize =
-    (
-      18 +
-      Math.random() * 25
-    ) + "px";
-
-
-    e.style.animationDuration =
-    (
-      4 +
-      Math.random() * 4
-    ) + "s";
-
-
-    document.body.appendChild(e);
-
+    createConfetti();
 
     setTimeout(
-      ()=>{
-        e.remove();
-      },
-      8000
+        typeMessage,
+        900
     );
 
-  }
+}
+
+
+function typeMessage(){
+
+    if(typed)return;
+
+    typed=true;
+
+    const text =
+    "Meri Noor, ajj tera birthday ae. Main bas eh wish karda haan ke tere kol hamesha smile karan de reasons hon. Rabb kare tere saare dreams pure hon, tu hamesha khush rave, te zindagi tenu bohot sohṇe moments deve. Te haan… meri story dekhdi-dekhdi tu meri kahani da bohot sohṇa hissa ban gayi. Happy Birthday Manseerat. ❤️";
+
+    const element =
+    document.getElementById("typing");
+
+    let index=0;
+
+    const timer =
+    setInterval(()=>{
+
+        element.innerText +=
+        text[index] || "";
+
+        index++;
+
+        if(index >= text.length){
+
+            clearInterval(timer);
+
+        }
+
+    },25);
 
 }
 
 
-function celebrateSmall(){
-  createFloat(20);
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti(){
+
+    const symbols=[
+        "❤",
+        "♡",
+        "✦",
+        "✧",
+        "🎀",
+        "•"
+    ];
+
+    for(
+        let i=0;
+        i<100;
+        i++
+    ){
+
+        const el =
+        document.createElement("span");
+
+        el.className="confetti";
+
+        el.innerText =
+        symbols[
+            Math.floor(
+                Math.random()*
+                symbols.length
+            )
+        ];
+
+        el.style.left =
+        Math.random()*100+"vw";
+
+        el.style.fontSize =
+        (12+
+        Math.random()*16)+"px";
+
+        el.style.setProperty(
+            "--x",
+            (Math.random()-.5)*
+            350+"px"
+        );
+
+        el.style.animationDelay =
+        Math.random()+"s";
+
+        document.body.appendChild(el);
+
+        setTimeout(
+            ()=>el.remove(),
+            5000
+        );
+
+    }
+
 }
 
 
-function celebrate(){
-  createFloat(70);
+/* =========================
+   SCROLL PROGRESS
+========================= */
+
+window.addEventListener(
+"scroll",
+()=>{
+
+    const max =
+    document.documentElement
+    .scrollHeight -
+    window.innerHeight;
+
+    const percent =
+    (window.scrollY/max)*100;
+
+    document
+    .getElementById("progress")
+    .style.width =
+    percent+"%";
+
+});
+
+
+/* =========================
+   STAR FIELD
+========================= */
+
+const canvas =
+document.getElementById("stars");
+
+const ctx =
+canvas.getContext("2d");
+
+let stars=[];
+
+
+function resizeCanvas(){
+
+    canvas.width =
+    window.innerWidth *
+    window.devicePixelRatio;
+
+    canvas.height =
+    window.innerHeight *
+    window.devicePixelRatio;
+
+    canvas.style.width =
+    window.innerWidth+"px";
+
+    canvas.style.height =
+    window.innerHeight+"px";
+
+    ctx.setTransform(
+        window.devicePixelRatio,
+        0,
+        0,
+        window.devicePixelRatio,
+        0,
+        0
+    );
+
+
+    stars =
+    Array.from(
+        {
+            length:
+            Math.min(
+                180,
+                Math.floor(
+                    window.innerWidth/3
+                )
+            )
+        },
+
+        ()=>({
+
+            x:
+            Math.random()*
+            window.innerWidth,
+
+            y:
+            Math.random()*
+            window.innerHeight,
+
+            r:
+            Math.random()*1.4+.2,
+
+            phase:
+            Math.random()*10
+
+        })
+
+    );
+
 }
 
 
-/* MOBILE SWIPE */
-
-let touchStartX = 0;
-let touchStartY = 0;
+resizeCanvas();
 
 
-document.addEventListener(
-  "touchstart",
-  function(e){
-
-    if(
-      !e.touches ||
-      !e.touches[0]
-    ){
-      return;
-    }
-
-
-    touchStartX =
-    e.touches[0].clientX;
-
-
-    touchStartY =
-    e.touches[0].clientY;
-
-  },
-  {
-    passive:true
-  }
+window.addEventListener(
+"resize",
+resizeCanvas
 );
 
 
-document.addEventListener(
-  "touchend",
-  function(e){
+function animateStars(){
 
-    if(
-      !e.changedTouches ||
-      !e.changedTouches[0]
-    ){
-      return;
-    }
+    ctx.clearRect(
+        0,
+        0,
+        window.innerWidth,
+        window.innerHeight
+    );
 
 
-    const endX =
-    e.changedTouches[0].clientX;
+    stars.forEach(star=>{
+
+        star.phase += .015;
+
+        const alpha =
+        .15+
+        Math.abs(
+            Math.sin(star.phase)
+        )*.5;
 
 
-    const endY =
-    e.changedTouches[0].clientY;
+        ctx.beginPath();
+
+        ctx.arc(
+            star.x,
+            star.y,
+            star.r,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle =
+        `rgba(255,225,235,${alpha})`;
+
+        ctx.fill();
+
+    });
 
 
-    const diffX =
-    endX - touchStartX;
+    requestAnimationFrame(
+        animateStars
+    );
+
+}
 
 
-    const diffY =
-    endY - touchStartY;
+animateStars();
 
 
-    /*
-      Left/right swipe = page change.
-      Up/down swipe = normal scrolling.
-    */
+/* =========================
+   FIRST SCREEN
+========================= */
 
-    if(
+setTimeout(()=>{
 
-      Math.abs(diffX) > 80 &&
+    document
+    .querySelector("#intro .reveal")
+    .classList
+    .add("show");
 
-      Math.abs(diffX) >
-      Math.abs(diffY) * 1.4
-
-    ){
-
-      if(diffX < 0){
-        next();
-      }
-      else{
-        previous();
-      }
-
-    }
-
-  },
-  {
-    passive:true
-  }
-);
-
-
-/* KEYBOARD */
-
-document.addEventListener(
-  "keydown",
-  function(e){
-
-    if(e.key === "ArrowRight"){
-      next();
-    }
-
-    if(e.key === "ArrowLeft"){
-      previous();
-    }
-
-  }
-);
-
-
-/* START */
-
-setTimeout(
-  ()=>{
-    createFloat(8);
-  },
-  500
-);
+},300);
 
 </script>
 
