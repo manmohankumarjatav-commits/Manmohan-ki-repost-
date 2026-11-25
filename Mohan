@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>For Harshpreet Kaur | Birthday Special</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink:#e978a2;
+  --deep:#b74776;
+  --light:#fff0f5;
+  --cream:#fffaf9;
+  --text:#713b54;
+  --gold:#cda56b;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+  background:var(--cream);
+  color:var(--text);
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+}
+
+.hidden { display:none!important; }
+
+button { font-family:inherit; }
+
+/* BACKGROUND */
+
+body:before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    radial-gradient(ellipse at 10% 10%,#ffe2ed,transparent 45%),
+    radial-gradient(ellipse at 90% 90%,#fce0e9,transparent 40%),
+    #fffaf9;
+}
+
+/* FLOATING PARTICLES */
+
+#particles {
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:10;
+  overflow:hidden;
+}
+
+.particle {
+  position:absolute;
+  bottom:-40px;
+  opacity:0;
+  animation:floatParticle linear forwards;
+}
+
+@keyframes floatParticle {
+  10% { opacity:.8; }
+  100% {
+    transform:translateY(-115vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* INTRO */
+
+.intro {
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:25px;
+  text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%,#ffd8e7,transparent 45%),
+    linear-gradient(135deg,#fff7fa,#fbe1eb);
+  position:relative;
+}
+
+.intro-card {
+  max-width:490px;
+  width:100%;
+  padding:55px 30px;
+  background:#ffffffb8;
+  border:1px solid #ffffff;
+  border-radius:32px;
+  box-shadow:0 25px 80px #c45e8520;
+  backdrop-filter:blur(20px);
+  animation:fadeUp 1.2s ease;
+}
+
+.intro-label {
+  letter-spacing:4px;
+  font-size:10px;
+  color:var(--gold);
+  font-weight:600;
+}
+
+.intro h1 {
+  font-family:'Great Vibes',cursive;
+  font-size:65px;
+  color:var(--deep);
+  margin:20px 0 10px;
+}
+
+.intro p {
+  font-size:13px;
+  line-height:2;
+  color:#97667d;
+}
+
+.envelope {
+  font-size:85px;
+  margin:30px 0;
+  animation:float 3s ease-in-out infinite;
+}
+
+.btn {
+  padding:15px 30px;
+  border:1px solid #e78aaa;
+  border-radius:40px;
+  background:linear-gradient(120deg,#d75d8d,#f39abb);
+  color:white;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:1px;
+  cursor:pointer;
+  box-shadow:0 10px 30px #d75d8d45;
+  transition:.35s;
+}
+
+.btn:hover {
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px #d75d8d65;
+}
+
+/* MAIN */
+
+.hero {
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  padding:60px 20px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 45%,#fff 0%,#fff0f5 55%,#f8dce7 100%);
+}
+
+.hero:before,
+.hero:after {
+  content:"✿";
+  position:absolute;
+  font-size:180px;
+  color:#e98aab18;
+  animation:rotate 30s linear infinite;
+}
+
+.hero:before {
+  top:5%;
+  left:-40px;
+}
+
+.hero:after {
+  bottom:5%;
+  right:-40px;
+}
+
+.small-label {
+  font-size:10px;
+  letter-spacing:5px;
+  color:var(--gold);
+  font-weight:600;
+}
+
+.hero h1 {
+  font-family:'Great Vibes',cursive;
+  color:var(--deep);
+  font-size:clamp(65px,12vw,115px);
+  line-height:1.3;
+  margin-top:25px;
+  text-shadow:0 10px 30px #d75d8d20;
+  animation:fadeUp 1.3s ease;
+}
+
+.hero h2 {
+  font-family:'Playfair Display',serif;
+  font-weight:400;
+  font-size:clamp(25px,5vw,42px);
+  letter-spacing:2px;
+  color:#9f426a;
+}
+
+.hero-desc {
+  max-width:420px;
+  font-size:13px;
+  line-height:2;
+  margin:20px auto;
+  color:#9a6c80;
+}
+
+.hero-cake {
+  font-size:110px;
+  margin:20px 0;
+  filter:drop-shadow(0 15px 15px #d77a9a30);
+  animation:float 3s ease-in-out infinite;
+}
+
+.hero-bottom {
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:15px;
+  color:#b57d91;
+  margin-bottom:20px;
+}
+
+/* DIVIDER */
+
+.divider {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  color:var(--gold);
+  margin-bottom:25px;
+}
+
+.divider:before,
+.divider:after {
+  content:"";
+  width:50px;
+  height:1px;
+  background:#e8c5d1;
+}
+
+/* SECTIONS */
+
+.section {
+  padding:100px 20px;
+  text-align:center;
+  position:relative;
+}
+
+.section:nth-of-type(even) {
+  background:#fff0f5;
+}
+
+.section-label {
+  color:var(--gold);
+  letter-spacing:4px;
+  font-size:10px;
+  font-weight:600;
+}
+
+.section-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,6vw,46px);
+  font-weight:400;
+  color:#a74e72;
+  margin:18px 0 35px;
+}
+
+.section-title em {
+  color:#df83a5;
+}
+
+.glass-card {
+  max-width:600px;
+  margin:auto;
+  padding:45px 30px;
+  background:#ffffffc9;
+  border:1px solid #fff;
+  border-radius:28px;
+  box-shadow:0 20px 65px #b95c8015;
+  backdrop-filter:blur(15px);
+  transition:.4s;
+}
+
+.glass-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 25px 70px #b95c8025;
+}
+
+.crown {
+  font-size:65px;
+  margin-bottom:20px;
+}
+
+.certificate-name {
+  font-family:'Great Vibes',cursive;
+  font-size:48px;
+  color:var(--deep);
+  margin:20px 0;
+}
+
+.glass-card p {
+  font-size:13px;
+  line-height:2.2;
+  color:#896278;
+}
+
+.valid {
+  margin-top:25px;
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:11px;
+}
+
+/* LETTER */
+
+.letter {
+  max-width:650px;
+  margin:auto;
+  padding:45px 35px;
+  border-radius:4px 28px 28px 4px;
+  background:#fffdfd;
+  border-left:5px solid #e99bb6;
+  box-shadow:0 20px 60px #b95c8018;
+  text-align:left;
+  position:relative;
+}
+
+.letter-top {
+  text-align:center;
+  color:#cb8b9f;
+  font-size:12px;
+  letter-spacing:2px;
+  margin-bottom:35px;
+}
+
+.letter h3 {
+  font-family:'Great Vibes',cursive;
+  font-size:36px;
+  color:var(--deep);
+  margin-bottom:20px;
+}
+
+.letter p {
+  font-size:13px;
+  line-height:2.3;
+  margin-bottom:20px;
+  color:#80566a;
+}
+
+.signature {
+  text-align:right;
+  font-family:'Great Vibes',cursive;
+  font-size:32px;
+  color:var(--deep);
+  margin-top:35px;
+}
+
+/* SPECIAL QUOTE */
+
+.quote {
+  max-width:650px;
+  margin:auto;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(22px,4vw,32px);
+  line-height:1.8;
+  font-style:italic;
+  color:#a74e72;
+}
+
+.quote span { color:#e18baa; }
+
+/* GIFT */
+
+.gift-section {
+  background:linear-gradient(135deg,#fff0f5,#ffe0ec);
+}
+
+.gift-box {
+  font-size:110px;
+  cursor:pointer;
+  display:inline-block;
+  margin:20px;
+  filter:drop-shadow(0 15px 20px #c66b9030);
+  animation:float 2.5s ease-in-out infinite;
+  transition:.3s;
+}
+
+.gift-box:hover {
+  transform:scale(1.15) rotate(5deg);
+}
+
+.gift-result {
+  max-width:520px;
+  margin:25px auto;
+  padding:35px 25px;
+  background:#ffffffd9;
+  border-radius:25px;
+  box-shadow:0 15px 40px #c66b9020;
+  animation:fadeUp .8s ease;
+}
+
+.gift-result h2 {
+  font-family:'Great Vibes',cursive;
+  font-size:48px;
+  color:var(--deep);
+}
+
+.gift-result p {
+  font-size:13px;
+  line-height:2.2;
+}
+
+/* FOOTER */
+
+footer {
+  padding:75px 20px;
+  background:#f8dce7;
+  text-align:center;
+}
+
+footer h2 {
+  font-family:'Great Vibes',cursive;
+  font-size:55px;
+  color:var(--deep);
+}
+
+footer p {
+  font-size:12px;
+  line-height:2;
+  color:#9a637d;
+}
+
+.footer-heart {
+  font-size:35px;
+  margin-bottom:20px;
+}
+
+/* REVEAL ANIMATION */
+
+.reveal {
+  opacity:0;
+  transform:translateY(45px);
+  transition:opacity 1s ease,transform 1s ease;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* KEYFRAMES */
+
+@keyframes float {
+  50% { transform:translateY(-15px); }
+}
+
+@keyframes rotate {
+  to { transform:rotate(360deg); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity:0;
+    transform:translateY(35px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+  .intro-card { padding:45px 22px; }
+  .intro h1 { font-size:55px; }
+  .section { padding:75px 18px; }
+  .glass-card { padding:35px 23px; }
+  .letter { padding:35px 22px; }
+  .hero-cake { font-size:90px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<!-- INTRO SCREEN -->
+
+<section class="intro" id="intro">
+  <div class="intro-card">
+
+    <div class="divider">✦ ✿ ✦</div>
+
+    <div class="intro-label">
+      A LITTLE SURPRISE MADE WITH LOVE
+    </div>
+
+    <h1>Dear Harshpreet</h1>
+
+    <p>
+      Ajj da din thoda hor vi special ae...
+      kyunki ajj birthday ae ik bohat hi khaas insaan da! 💗
+    </p>
+
+    <div class="envelope">💌</div>
+
+    <button class="btn" onclick="startSurprise()">
+      OPEN YOUR SURPRISE ✨
+    </button>
+
+    <p style="margin-top:25px;font-size:10px;">
+      Made with love, laughter & a little pagalpan ❤️
+    </p>
+
+  </div>
+</section>
+
+<!-- MAIN WEBSITE -->
+
+<main id="main" class="hidden">
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="small-label">
+      ✦ A DAY AS BEAUTIFUL AS YOU ✦
+    </div>
+
+    <h1>Happy Birthday</h1>
+
+    <h2>Harshpreet Kaur</h2>
+
+    <p class="hero-desc">
+      Ajj sirf tera din ae. So smile, shine and enjoy
+      every little moment. Tu special si, special ae
+      te hamesha special rahengi! 💗
+    </p>
+
+    <div class="hero-cake">🎂</div>
+
+    <div class="hero-bottom">
+      A little magic, made especially for you.
+    </div>
+
+    <button class="btn" onclick="goTo('friendship')">
+      LET'S CELEBRATE ↓
+    </button>
+
+  </section>
+
+  <!-- FRIENDSHIP -->
+
+  <section class="section reveal" id="friendship">
+
+    <div class="section-label">A SPECIAL TITLE FOR YOU</div>
+
+    <h2 class="section-title">
+      My Favourite <em>Person</em> 🫶
+    </h2>
+
+    <div class="glass-card">
+
+      <div class="crown">👑</div>
+
+      <div class="section-label">
+        OFFICIALLY CERTIFIED
+      </div>
+
+      <div class="certificate-name">
+        Harshpreet Kaur
+      </div>
+
+      <p>
+        50% cute, 50% nautanki, 100% pagal! 😂
+        <br><br>
+        Tainu officially award ditta janda ae
+        duniya di sab ton vadh tang karan wali,
+        par sab ton pyaari best friend hon da!
+      </p>
+
+      <div class="valid">
+        VALID FOREVER ♾️
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LETTER -->
+
+  <section class="section reveal" id="letter">
+
+    <div class="section-label">WORDS FROM THE HEART</div>
+
+    <h2 class="section-title">
+      Ik Chhoti Jehi <em>Gall</em> 💌
+    </h2>
+
+    <div class="letter">
+
+      <div class="letter-top">
+        ✿ A LETTER JUST FOR YOU ✿
+      </div>
+
+      <h3>Dear Harshpreet,</h3>
+
+      <p>
+        Sab ton pehla taan Happy Birthday meri favourite
+        pagal insaan! 😂❤️
+      </p>
+
+      <p>
+        Rabb kare teri life ch inniyan khushiyan aun
+        ki tu hass hass ke thakk javein,
+        te tere saare supne poore hon.
+      </p>
+
+      <p>
+        Tere vargi friend milni vi koi easy gall nahi.
+        Kade tu inni cute lagdi ae, te kade inni
+        nautanki kardi ae ke banda sochda reh janda
+        ae ke ehnu samjhavan ja hassan! 🤣
+      </p>
+
+      <p>
+        Par sach dassan, teri eh pagalpan wali nature
+        hi tenu sab ton vakhra banaundi ae.
+      </p>
+
+      <p>
+        Hamesha eddan hi hassdi reh, khush reh,
+        te apni cute jehi smile kade na khona.
+      </p>
+
+      <p>
+        Te haan, birthday aa gaya taan eh na samjhi
+        ke hun tu mature ho gayi...
+        pagalpan da license lifetime layi valid ae! 😂
+      </p>
+
+      <p>
+        Rabb tenu duniya di har oh khushi devein
+        jisdi tu deserve kardi ae.
+        Hamesha khush reh meri dost! 🥹💕
+      </p>
+
+      <div class="signature">
+        Tera Best Friend ❤️
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- QUOTE -->
+
+  <section class="section reveal">
+
+    <div class="section-label">SOMETHING TO REMEMBER</div>
+
+    <h2 class="section-title">
+      A Little <em>Reminder</em>
+    </h2>
+
+    <div class="quote">
+      "Kujh lok zindagi ch gift hunde ne...
+      te tu ohna vicho ik ae.
+      <span>Bas thodi jehi zyada pagal! 😂💗</span>"
+    </div>
+
+  </section>
+
+  <!-- GIFT -->
+
+  <section class="section gift-section reveal">
+
+    <div class="section-label">THE FINAL SURPRISE</div>
+
+    <h2 class="section-title">
+      Tere Layee Ik <em>Gift</em> 🎁
+    </h2>
+
+    <p>
+      Gift box te tap kar, kujh special tera wait kar reha ae!
+    </p>
+
+    <div class="gift-box" onclick="openGift()">
+      🎁
+    </div>
+
+    <div id="giftResult" class="gift-result hidden">
+
+      <h2>Surpriseeee! 🥹</h2>
+
+      <p>
+        Tera gift koi mehngi cheez nahi...
+        <br><br>
+        Eh promise ae ke teri life ch hassan de,
+        pagalpan de te beautiful memories de
+        hor bohat saare moments aun!
+        <br><br>
+        Te haan, main tenu tang karna kade band nahi karna! 😂
+      </p>
+
+      <h3 style="color:#b74776;">
+        Love You Bestie! ❤️
+      </h3>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-heart">💗</div>
+
+    <h2>Stay Beautiful</h2>
+
+    <p>
+      Hamesha hassdi reh, chamakdi reh,
+      te eddan hi sab nu pagal banaundi reh! 😂
+    </p>
+
+    <p style="margin-top:25px;">
+      MADE WITH ENDLESS LOVE FOR
+    </p>
+
+    <h3 style="color:#b74776;">
+      HARSHpreet KAUR ✨
+    </h3>
+
+    <p style="margin-top:35px;font-size:10px;">
+      ONE DAY. ONE SPECIAL PERSON. INFINITE MEMORIES.
+    </p>
+
+  </footer>
+
+</main>
+
+<script>
+
+// OPEN SURPRISE
+
+function startSurprise() {
+
+  document.getElementById("intro").style.display="none";
+
+  document.getElementById("main").classList.remove("hidden");
+
+  createParticles(45);
+
+  window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+// FLOATING PETALS AND HEARTS
+
+function createParticles(amount=10) {
+
+  const emojis=["🌸","💗","✨","💕","🌷","♡"];
+
+  for(let i=0;i<amount;i++) {
+
+    const particle=document.createElement("div");
+
+    particle.className="particle";
+
+    particle.innerText=
+      emojis[Math.floor(Math.random()*emojis.length)];
+
+    particle.style.left=Math.random()*100+"vw";
+
+    particle.style.fontSize=
+      (14+Math.random()*20)+"px";
+
+    const duration=5+Math.random()*6;
+
+    particle.style.animationDuration=duration+"s";
+
+    document.getElementById("particles").appendChild(particle);
+
+    setTimeout(()=>particle.remove(),duration*1000);
+
+  }
+
+}
+
+// CONTINUOUS PARTICLES
+
+setInterval(()=>{
+
+  if(!document.getElementById("main").classList.contains("hidden")) {
+    createParticles(3);
+  }
+
+},1400);
+
+// SCROLL
+
+function goTo(id) {
+
+  document.getElementById(id).scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+// REVEAL SECTIONS
+
+const observer=new IntersectionObserver((entries)=>{
+
+  entries.forEach(entry=>{
+
+    if(entry.isIntersecting) {
+
+      entry.target.classList.add("visible");
+
+      observer.unobserve(entry.target);
+
+    }
+
+  });
+
+},{threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+  observer.observe(el);
+});
+
+// GIFT SURPRISE
+
+function openGift() {
+
+  const gift=document.getElementById("giftResult");
+
+  gift.classList.remove("hidden");
+
+  createParticles(65);
+
+  gift.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
+
+</script>
+
+</body>
+</html>
